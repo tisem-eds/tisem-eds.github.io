@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://tisem-eds.github.io/prog/index.html</loc>
+    <lastmod>2024-08-21T12:20:38.961Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tisem-eds.github.io/prog/02-getting-started.html</loc>
+    <lastmod>2024-08-21T08:45:19.267Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tisem-eds.github.io/prog/03-python-as-a-calculator.html</loc>
+    <lastmod>2024-08-21T09:05:47.358Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tisem-eds.github.io/prog/04-data-types-part1.html</loc>
+    <lastmod>2024-08-21T11:34:46.323Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tisem-eds.github.io/prog/05-data-types-part2.html</loc>
+    <lastmod>2024-08-21T11:47:55.983Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tisem-eds.github.io/prog/06-defining-functions.html</loc>
+    <lastmod>2024-08-21T12:16:26.774Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tisem-eds.github.io/prog/07-intro-to-numpy.html</loc>
+    <lastmod>2024-08-21T12:36:44.412Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tisem-eds.github.io/prog/Programming-for-TiSEM-Essential-Digital-Skills.pdf</loc>
+    <lastmod>2024-08-21T12:38:04.093Z</lastmod>
+  </url>
+</urlset>
