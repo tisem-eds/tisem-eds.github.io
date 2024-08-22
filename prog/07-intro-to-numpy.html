@@ -59,6 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
+<link href="./4-files.html" rel="next">
 <link href="./06-defining-functions.html" rel="prev">
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -204,6 +205,30 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduction to Numpy</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4-files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Reading, editing and storing files</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./5-errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Error handling</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./6-classes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Classes, objects and methods</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./7-math.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Basic math and plotting</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -263,7 +288,7 @@ window.Quarto = {
 <section id="example-1" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="example-1">Example 1</h3>
 <p>For the first example, suppose we have a list <code>x</code> of numbers and we want to double each of the elements. We can’t use <code>2 * x</code> because as we learned in <a href="05-data-types-part2.html" class="quarto-xref"><span>Chapter 5</span></a> that just repeats the list twice. We have to do something like:</p>
-<div id="0c065150" class="cell" data-execution_count="1">
+<div id="af34dd46" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>]</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> []</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> x:</span>
@@ -274,7 +299,7 @@ window.Quarto = {
 </div>
 </div>
 <p>We create an empty list <code>y</code>. We then loop over the elements of <code>x</code> and append two times the element to <code>y</code>. This is very clunky. A better way of doing this is using a list comprehension:</p>
-<div id="1aab125b" class="cell" data-execution_count="2">
+<div id="09b48698" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">2</span> <span class="op">*</span> i <span class="cf">for</span> i <span class="kw">in</span> x]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -293,7 +318,7 @@ window.Quarto = {
 </span> and we want to calculate <span class="math inline">\boldsymbol{z}</span> from this which is:</p>
 <p><span class="math display">\boldsymbol{z}=\left(x_1 \times y_2, x_2 \times y_2, \dots, x_n \times y_n\right)
 </span> We can’t do <code>x * y</code>. That would return an error. But we could do this using a <code>for</code> loop:</p>
-<div id="6fde11e3" class="cell" data-execution_count="3">
+<div id="3dc01e13" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">2</span>]</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> []</span>
@@ -305,7 +330,7 @@ window.Quarto = {
 </div>
 </div>
 <p>Because we want to loop over the elements of both <code>x</code> and <code>y</code>, we have to loop over the indices 0, 1, 2. We could have written <code>for i in [0, 1, 2]</code>, but <code>range(len(x))</code> does this for us automatically (which is very useful if we have a long list). To see better what range is doing we can do:</p>
-<div id="45b634cc" class="cell" data-execution_count="4">
+<div id="8647be93" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>[0, 1, 2, 3, 4]</code></pre>
@@ -313,7 +338,7 @@ window.Quarto = {
 </div>
 <p>We can see it creates a list from 0 up to but not including the argument.</p>
 <p>We can improve on this code slightly by using the <code>zip()</code> function, which combines several <em>iterables</em> into one <em>iterable</em>.</p>
-<div id="59434f69" class="cell" data-execution_count="5">
+<div id="b87d0a9f" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>]</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">2</span>]</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> []</span>
@@ -325,7 +350,7 @@ window.Quarto = {
 </div>
 </div>
 <p>Similarly we can use <code>zip()</code> to do the task with a list comprehension:</p>
-<div id="0bb4e7e4" class="cell" data-execution_count="6">
+<div id="5f17304e" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>]</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">2</span>]</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>[i <span class="op">*</span> j <span class="cf">for</span> i, j <span class="kw">in</span> <span class="bu">zip</span>(x, y)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -339,7 +364,7 @@ window.Quarto = {
 <h3 class="unnumbered anchored" data-anchor-id="example-3">Example 3</h3>
 <p>For the last example, suppose we want to find the median of a list of numbers. Recall that if the length of the list of numbers is odd, then the median is just the number in the middle when we sort the numbers. If the length of the list of numbers is even, then the median is the average of the two numbers closest to the middle when we sort the numbers.</p>
 <p>We could create our own function to do this:</p>
-<div id="04a1f883" class="cell" data-execution_count="7">
+<div id="e370f64d" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> median(x):</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> <span class="bu">sorted</span>(x)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(y) <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
@@ -349,13 +374,13 @@ window.Quarto = {
 </div>
 <p>The function first sorts the list. The <code>sorted()</code> function gives the sorted list as the output. We do this instead of <code>x.sort()</code> because otherwise the function would sort our input list globally which we may not want it to do. The <code>if len(y) % 2 == 0:</code> checks if the length of the list is even. If it is even it takes the average of the element with index <code>len(y) // 2 - 1</code> (just left of the middle) and the element with index <code>len(y) // 2</code> (just right of the middle). We use <code>//</code> to ensure the division returns an integer instead of a float. If the length of the list is odd it returns the element with index <code>len(y) // 2</code>. Because <code>len(y) / 2</code> is not an integer when <code>len(y)</code> is odd we use <code>//</code> to round down.</p>
 <p>Let’s test it out:</p>
-<div id="9640713b" class="cell" data-execution_count="8">
+<div id="0c3f1e88" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>median([<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">4</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>4</code></pre>
 </div>
 </div>
-<div id="c065196a" class="cell" data-execution_count="9">
+<div id="db5504f6" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>median([<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">4</span>, <span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>3.5</code></pre>
@@ -368,12 +393,12 @@ window.Quarto = {
 <section id="importing-numpy" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="importing-numpy"><span class="header-section-number">7.3</span> Importing Numpy</h2>
 <p>We can import the <code>numpy</code> module using <code>import numpy</code> like with other modules. However it is conventional to load numpy the following way:</p>
-<div id="5f43a6ef" class="cell" data-execution_count="10">
+<div id="df22c52f" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This way we can use the functions from numpy with the shorter <code>np</code> instead of having to type <code>numpy</code> out in full every time. Doing this shortcut is okay because so many people do it that it’s easy for people to read. You can load other modules with shortcuts in a similar way, but you should follow the normal conventions when you can.</p>
 <p>Numpy works with <em>arrays</em>. We can create an array using numpy’s array function. Because we can shorten <code>numpy</code> to <code>np</code>, we can create an array with the function <code>np.array()</code> like this:</p>
-<div id="5aeb4ea4" class="cell" data-execution_count="11">
+<div id="11339985" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>])</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -389,7 +414,7 @@ window.Quarto = {
 <section id="example-1-1" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="example-1-1">Example 1</h3>
 <p>To double every number in array:</p>
-<div id="4fbef80e" class="cell" data-execution_count="12">
+<div id="ee63b879" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>])</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="op">*</span> x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
@@ -400,7 +425,7 @@ window.Quarto = {
 <section id="example-2-1" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="example-2-1">Example 2</h3>
 <p>To multiply the elements of two arrays element-by-element:</p>
-<div id="50e91cdc" class="cell" data-execution_count="13">
+<div id="c4e43a75" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>])</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array([<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">2</span>])</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">*</span> y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -412,14 +437,14 @@ window.Quarto = {
 <section id="example-3-1" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="example-3-1">Example 3</h3>
 <p>To get the median of an array:</p>
-<div id="79591045" class="cell" data-execution_count="14">
+<div id="e9b88bf5" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">4</span>])</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>np.median(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>4.0</code></pre>
 </div>
 </div>
-<div id="2795082b" class="cell" data-execution_count="15">
+<div id="98ea540e" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">4</span>, <span class="dv">3</span>]</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>np.median(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
@@ -427,7 +452,7 @@ window.Quarto = {
 </div>
 </div>
 <p>The <code>np.median()</code> function also works if we just provide a list instead of an <code>np.array</code>:</p>
-<div id="a2e4ed89" class="cell" data-execution_count="16">
+<div id="899c61e2" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>np.median([<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">4</span>, <span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>3.5</code></pre>
@@ -868,6 +893,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./4-files.html" class="pagination-link" aria-label="Reading, editing and storing files">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Reading, editing and storing files</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

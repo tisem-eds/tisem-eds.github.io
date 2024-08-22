@@ -205,6 +205,30 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduction to Numpy</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4-files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Reading, editing and storing files</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./5-errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Error handling</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./6-classes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Classes, objects and methods</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./7-math.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Basic math and plotting</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -254,28 +278,28 @@ window.Quarto = {
 <h2 data-number="3.1" class="anchored" data-anchor-id="addition-subtraction-multiplication-and-division"><span class="header-section-number">3.1</span> Addition, Subtraction, Multiplication and Division</h2>
 <p>We start with the most basic operations. Addition, subtraction, multiplication and division are given by the standard <code>+</code>, <code>-</code>, <code>*</code> and <code>/</code> operators that you would use in other programs like Excel. For example:</p>
 <p>Addition:</p>
-<div id="bd5fbb1e" class="cell" data-execution_count="1">
+<div id="1ef34b15" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="op">+</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>5</code></pre>
 </div>
 </div>
 <p>Subtraction:</p>
-<div id="6a313dc9" class="cell" data-execution_count="2">
+<div id="f0f3b89f" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="op">-</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>2</code></pre>
 </div>
 </div>
 <p>Multiplication:</p>
-<div id="07579969" class="cell" data-execution_count="3">
+<div id="b604e59c" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="op">*</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>6</code></pre>
 </div>
 </div>
 <p>Division:</p>
-<div id="99be230f" class="cell" data-execution_count="4">
+<div id="2335ac67" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="op">/</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>1.5</code></pre>
@@ -284,7 +308,7 @@ window.Quarto = {
 <p>It is also possible to do multiple operations at the same time using parentheses. For example, suppose we wanted to calculate: <span class="math display">
 \frac{2+4}{4\times 2} = \frac{6}{8} = 0.75
 </span> We can calculate this in Python as follows:</p>
-<div id="c112f3cc" class="cell" data-execution_count="5">
+<div id="f9b65a2a" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">2</span> <span class="op">+</span> <span class="dv">4</span>) <span class="op">/</span> (<span class="dv">4</span> <span class="op">*</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>0.75</code></pre>
@@ -301,7 +325,7 @@ window.Quarto = {
 <section id="exponentiation-taking-powers-of-numbers" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="exponentiation-taking-powers-of-numbers"><span class="header-section-number">3.3</span> Exponentiation (Taking Powers of Numbers)</h2>
 <p><span class="math inline">x^n</span> multiplies <span class="math inline">x</span> by itself <span class="math inline">n</span> times. For example, <span class="math inline">2^3=2\times 2\times 2 = 8</span>. In Python we use <code>**</code> to do this:</p>
-<div id="5106e866" class="cell" data-execution_count="6">
+<div id="4c819eb7" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="op">**</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>8</code></pre>
@@ -323,7 +347,7 @@ window.Quarto = {
 <li><span class="math inline">|3|=3</span>.</li>
 </ul>
 <p>This is what the function looks like when we plot it for different <span class="math inline">x</span>:</p>
-<div id="6a023633" class="cell" data-execution_count="7">
+<div id="a84bec6a" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Show code generating the plot below</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -363,13 +387,13 @@ window.Quarto = {
 </div>
 <p>We’ll learn how to make plots like this later in this course.</p>
 <p>In Python we can calculate absolute values with:</p>
-<div id="4d6e4e22" class="cell" data-execution_count="8">
+<div id="7cf7f7b5" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">abs</span>(<span class="op">-</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>2</code></pre>
 </div>
 </div>
-<div id="97c7f371" class="cell" data-execution_count="9">
+<div id="937d73bb" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">abs</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>3</code></pre>
@@ -389,7 +413,7 @@ abs(x, /)
 <h2 data-number="3.5" class="anchored" data-anchor-id="square-roots"><span class="header-section-number">3.5</span> Square Roots</h2>
 <p>The square root of a number <span class="math inline">x</span> is the <span class="math inline">y</span> that solves <span class="math inline">y^2=x</span>. For example, if <span class="math inline">x=4</span>, both <span class="math inline">y=-2</span> and <span class="math inline">y=2</span> solve this. The principal square root is the positive <span class="math inline">y</span> from this.</p>
 <p>Here is what the square root function looks like for different <span class="math inline">x</span>:</p>
-<div id="c2b37d4c" class="cell" data-execution_count="10">
+<div id="560d4380" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Show code generating the plot below</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -432,7 +456,7 @@ abs(x, /)
 <p><span class="math display">
 \sqrt{x} = x^\frac{1}{2}
 </span></p>
-<div id="091577ba" class="cell" data-execution_count="11">
+<div id="ef52fd52" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span> <span class="op">**</span> (<span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>3.0</code></pre>
@@ -440,7 +464,7 @@ abs(x, /)
 </div>
 <p>We can follow a very similar approach to above to get the cubed root of a number, such as: <span class="math inline">\sqrt[3]{8}=8^\frac{1}{3}=2</span>:</p>
 <p>In Python:</p>
-<div id="5e26b65a" class="cell" data-execution_count="12">
+<div id="e3df1d9c" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span> <span class="op">**</span> (<span class="dv">1</span><span class="op">/</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>2.0</code></pre>
@@ -449,7 +473,7 @@ abs(x, /)
 <p>Python also has a square root function, but it is not built in. We need to load this function by loading the <em>module</em> <code>math</code>. A module is a collection of additional functions and other objects that we can load in our Python script. The module <code>math</code> contains many mathematical functions, including the <code>sqrt()</code> function.</p>
 <p>To load the <code>math</code> module, we need to include <code>import math</code> in our script before executing any of its functions. To run the <code>sqrt()</code> function from the <code>math</code> module, we need to type <code>math.sqrt()</code>. This “dot” notation means we use the <code>sqrt()</code> function within the <code>math</code> module.</p>
 <p>To get <span class="math inline">\sqrt{9}</span> then we can do:</p>
-<div id="32add807" class="cell" data-execution_count="13">
+<div id="00544fc7" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>math.sqrt(<span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
@@ -458,7 +482,7 @@ abs(x, /)
 </div>
 <p>To view the help page <code>math.sqrt()</code>, we can use <code>help(math.sqrt)</code>.</p>
 <p>If you only want to use the <code>sqrt()</code> function from the <code>math</code> module, you could alternatively import the function the following way:</p>
-<div id="cdd58893" class="cell" data-execution_count="14">
+<div id="051b5a1e" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> sqrt</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>sqrt(<span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
@@ -474,7 +498,7 @@ e^x = \underset{n\rightarrow \infty}{\lim} \left(1 + \frac{x}{n}\right)^n
 </span></p>
 <p><em>Note:</em> you don’t need to know or remember this definition for the exam. You only need to know how to calculate the exponential function in Python.</p>
 <p>This is what the function looks like:</p>
-<div id="78303f39" class="cell" data-execution_count="15">
+<div id="510d0f67" class="cell" data-execution_count="15">
 <details class="code-fold">
 <summary>Show code generating the plot below</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -513,7 +537,7 @@ e^x = \underset{n\rightarrow \infty}{\lim} \left(1 + \frac{x}{n}\right)^n
 </div>
 </div>
 <p>In Python we can use the <code>exp()</code> function from the <code>math</code> module to calculate the exponential of any number:</p>
-<div id="d8c43088" class="cell" data-execution_count="16">
+<div id="53e91959" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>math.exp(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>2.718281828459045</code></pre>
@@ -526,7 +550,7 @@ e^x = \underset{n\rightarrow \infty}{\lim} \left(1 + \frac{x}{n}\right)^n
 <p>The log of a number <span class="math inline">x</span> to a base <span class="math inline">b</span>, denoted <span class="math inline">\log_b\left(x\right)</span>, is the number of times we need to multiply <span class="math inline">b</span> by itself to get <span class="math inline">x</span>. For example, <span class="math inline">\log_{10}\left(100\right) = 2</span>, because <span class="math inline">10\times 10=100</span>. We need to multiply the base <span class="math inline">b=10</span> by itself twice to get to <span class="math inline">x=100</span>.</p>
 <p>A special logarithm is the natural logarithm, <span class="math inline">\log_e(x)</span>, which is the logarithm to the base <span class="math inline">\exp(1)=e^1\approx 2.7183</span>. This is also written as <span class="math inline">\ln(x)</span>.</p>
 <p>This is what the function looks like:</p>
-<div id="b4dc4869" class="cell" data-execution_count="17">
+<div id="d2936dab" class="cell" data-execution_count="17">
 <details class="code-fold">
 <summary>Show code generating the plot below</summary>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -566,7 +590,7 @@ e^x = \underset{n\rightarrow \infty}{\lim} \left(1 + \frac{x}{n}\right)^n
 </div>
 </div>
 <p>In Python we use the <code>log()</code> function from the <code>math</code> module to calculate the natural logarithm:</p>
-<div id="32ca4013" class="cell" data-execution_count="18">
+<div id="cab604c0" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>math.log(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
@@ -588,7 +612,7 @@ log(...)
 </ul>
 <p>This is the first time that we have seen a function with more than one argument. Earlier when we used the <code>math.log()</code> to calculate the natural logarithm we only used one argument because we used the <em>default setting</em> for the base. But when we want to use a base other than <span class="math inline">e</span>, we need to specify it.</p>
 <p>How we calculate <span class="math inline">\log_{10}\left(100\right)</span> in Python is as follows:</p>
-<div id="2b73c82a" class="cell" data-execution_count="19">
+<div id="5908f477" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>math.log(<span class="dv">100</span>, <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
@@ -601,14 +625,14 @@ log(...)
 <h2 data-number="3.8" class="anchored" data-anchor-id="integer-division-and-the-modulus-operator"><span class="header-section-number">3.8</span> Integer Division and The Modulus Operator</h2>
 <p>When we divide 7 by 3 we get <span class="math inline">2\frac{1}{3}</span>. We could alternatively say that “7 divided by 3 equals 2 with remainder 1”. When programming it is often useful to get to get these numbers.</p>
 <p>We can perform “integer division” with the <code>//</code> operator. This always returns the fraction rounded <em>down</em> to the nearest whole number:</p>
-<div id="466520e7" class="cell" data-execution_count="20">
+<div id="2183b2c2" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span> <span class="op">//</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>2</code></pre>
 </div>
 </div>
 <p>To get the remainder we use the modulus operator <code>%</code>:</p>
-<div id="f714b7b0" class="cell" data-execution_count="21">
+<div id="52c75ca2" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span> <span class="op">%</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>1</code></pre>
@@ -616,14 +640,14 @@ log(...)
 </div>
 <p>Together then <span class="math inline">7/3</span> is 2 with remainder 1.</p>
 <p>One thing to note is that integer division with negative numbers doesn’t round to the integer closest to zero, but always down. So:</p>
-<div id="86b300a2" class="cell" data-execution_count="22">
+<div id="84a5a821" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="op">-</span><span class="dv">7</span> <span class="op">//</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>-3</code></pre>
 </div>
 </div>
 <p>and:</p>
-<div id="77ff2df2" class="cell" data-execution_count="23">
+<div id="63658cf5" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span> <span class="op">//</span> <span class="op">-</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>-3</code></pre>
