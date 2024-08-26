@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Programming for TiSEM Essential Digital Skills - 7&nbsp; Introduction to Numpy</title>
+<title>Programming for TiSEM Essential Digital Skills - 7&nbsp; Introduction to NumPy</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -114,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07-intro-to-numpy.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduction to Numpy</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07-intro-to-numpy.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduction to NumPy</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -173,7 +173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./07-intro-to-numpy.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduction to Numpy</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduction to NumPy</span></span></a>
   </div>
 </li>
     </ul>
@@ -193,8 +193,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example 2</a></li>
   <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example 3</a></li>
   </ul></li>
-  <li><a href="#importing-numpy" id="toc-importing-numpy" class="nav-link" data-scroll-target="#importing-numpy"><span class="header-section-number">7.3</span> Importing Numpy</a></li>
-  <li><a href="#solving-the-example-problems-with-numpy" id="toc-solving-the-example-problems-with-numpy" class="nav-link" data-scroll-target="#solving-the-example-problems-with-numpy"><span class="header-section-number">7.4</span> Solving the Example Problems with Numpy</a>
+  <li><a href="#importing-the-numpy-module" id="toc-importing-the-numpy-module" class="nav-link" data-scroll-target="#importing-the-numpy-module"><span class="header-section-number">7.3</span> Importing the NumPy Module</a></li>
+  <li><a href="#solving-the-example-problems-with-numpy" id="toc-solving-the-example-problems-with-numpy" class="nav-link" data-scroll-target="#solving-the-example-problems-with-numpy"><span class="header-section-number">7.4</span> Solving the Example Problems with NumPy</a>
   <ul class="collapse">
   <li><a href="#example-1-1" id="toc-example-1-1" class="nav-link" data-scroll-target="#example-1-1">Example 1</a></li>
   <li><a href="#example-2-1" id="toc-example-2-1" class="nav-link" data-scroll-target="#example-2-1">Example 2</a></li>
@@ -209,7 +209,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-intro-to-numpy" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduction to Numpy</span></span></h1>
+<h1 class="title"><span id="sec-intro-to-numpy" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introduction to NumPy</span></span></h1>
 </div>
 
 
@@ -227,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""> <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&amp;family=Fira+Sans&amp;display=swap" rel="stylesheet"></p>
 <section id="introduction" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">7.1</span> Introduction</h2>
-<p>Python’s built-in data types like lists and tuples are not particularly well-suited for mathematical operations. We will show three examples of computations that we often need to do, and we will see that using lists involves quite a lot of coding to get the tasks done. We will then see that numpy can do these tasks very efficiently.</p>
+<p>Python’s built-in data types like lists and tuples are not particularly well-suited for mathematical operations. We will show three examples of computations that we often need to do, and we will see that using lists involves quite a lot of coding to get the tasks done. We will then see that NumPy can do these tasks very efficiently.</p>
 </section>
 <section id="three-example-problems" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="three-example-problems"><span class="header-section-number">7.2</span> Three Example Problems</h2>
@@ -258,11 +258,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="unnumbered anchored" data-anchor-id="example-2">Example 2</h3>
 <p>Another example computation that we often need to do is if we have two lists of numbers <code>x</code> and <code>y</code> with the same number of elements and and we want to multiply them by each other element-by-element. Mathematically, suppose we have two vectors of numbers <span class="math inline">\boldsymbol{x}</span> and <span class="math inline">\boldsymbol{y}</span>: <span class="math display">
 \begin{split}
-\boldsymbol{x}&amp;=\left(x_1, x_2, \dots, x_n\right) \\
-\boldsymbol{y}&amp;=\left(x_1, x_2, \dots, x_n\right) \\
+\boldsymbol{x}&amp;=\left[x_1, x_2, \dots, x_n\right] \\
+\boldsymbol{y}&amp;=\left[y_1, y_2, \dots, y_n\right] \\
 \end{split}
 </span> and we want to calculate <span class="math inline">\boldsymbol{z}</span> from this which is:</p>
-<p><span class="math display">\boldsymbol{z}=\left(x_1 \times y_2, x_2 \times y_2, \dots, x_n \times y_n\right)
+<p><span class="math display">\boldsymbol{z}=\left[x_1 \times y_2, x_2 \times y_2, \dots, x_n \times y_n\right]
 </span> We can’t do <code>x * y</code>. That would return an error. But we could do this using a <code>for</code> loop:</p>
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>]</span>
@@ -336,14 +336,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We will see that functions from the module <code>numpy</code> can solve each of these problems (and a lot more) very easily.</p>
 </section>
 </section>
-<section id="importing-numpy" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="importing-numpy"><span class="header-section-number">7.3</span> Importing Numpy</h2>
-<p>We can import the <code>numpy</code> module using <code>import numpy</code> like with other modules. However it is conventional to load numpy the following way:</p>
+<section id="importing-the-numpy-module" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="importing-the-numpy-module"><span class="header-section-number">7.3</span> Importing the NumPy Module</h2>
+<p>We can import the <code>numpy</code> module using <code>import numpy</code> like with other modules. However it is conventional to load NumPy the following way:</p>
 <div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>This way we can use the functions from numpy with the shorter <code>np</code> instead of having to type <code>numpy</code> out in full every time. Doing this shortcut is okay because so many people do it that it’s easy for people to read. You can load other modules with shortcuts in a similar way, but you should follow the normal conventions when you can.</p>
-<p>Numpy works with <em>arrays</em>. We can create an array using numpy’s array function. Because we can shorten <code>numpy</code> to <code>np</code>, we can create an array with the function <code>np.array()</code> like this:</p>
+<p>This way we can use the functions from NumPy with the shorter <code>np</code> instead of having to type <code>numpy</code> out in full every time. Doing this shortcut is okay because so many people do it that it’s easy for people to read. You can load other modules with shortcuts in a similar way, but you should follow the normal conventions when you can.</p>
+<p>NumPy works with <em>arrays</em>. An array is like a list but all elements must be of the same type (such as all floats). We can create an array using NumPy’s array function. Because we can shorten <code>numpy</code> to <code>np</code>, we can create an array with the function <code>np.array()</code> like this:</p>
 <div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>])</span>
@@ -352,11 +352,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>array([2, 4, 8])</code></pre>
 </div>
 </div>
-<p>You will notice that even though we provided a list of integers, numpy converted these to floats. Numpy arrays always work with floats.</p>
-<p>We will now show the power of numpy by doing all the previous examples with very little code.</p>
+<p>You will notice that even though we provided a list of integers, NumPy converted these to floats. NumPy arrays always work with floats.</p>
+<p>We will now show the power of NumPy by doing all the previous examples with very little code.</p>
 </section>
 <section id="solving-the-example-problems-with-numpy" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="solving-the-example-problems-with-numpy"><span class="header-section-number">7.4</span> Solving the Example Problems with Numpy</h2>
+<h2 data-number="7.4" class="anchored" data-anchor-id="solving-the-example-problems-with-numpy"><span class="header-section-number">7.4</span> Solving the Example Problems with NumPy</h2>
 <section id="example-1-1" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="example-1-1">Example 1</h3>
 <p>To double every number in array:</p>
@@ -404,13 +404,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>3.5</code></pre>
 </div>
 </div>
-<p>These are just a few examples of how numpy can simplify coding drastically.</p>
+<p>These are just a few examples of how NumPy can simplify coding drastically.</p>
 <p>For many programming tasks we need to do, it’s very often many people had to do the same thing before. This means there is often a module available that can do the task. Of course we learn a lot from coding functions from scratch, but in order to complete a task quickly and efficiently it is often better to use the modules made for the task.</p>
 </section>
 </section>
 <section id="matrix-operations" class="level2" data-number="7.5">
 <h2 data-number="7.5" class="anchored" data-anchor-id="matrix-operations"><span class="header-section-number">7.5</span> Matrix Operations</h2>
-<p>Numpy can also do matrix operations very easily. For example, suppose we had two <span class="math inline">3 \times 3</span> matrices <span class="math inline">\boldsymbol{A}</span> and <span class="math inline">\boldsymbol{B}</span>:</p>
+<p>NumPy can also do matrix operations very easily. For example, suppose we had two <span class="math inline">3 \times 3</span> matrices <span class="math inline">\boldsymbol{A}</span> and <span class="math inline">\boldsymbol{B}</span>:</p>
 <p><span class="math display">
 \boldsymbol{A}
 = \left(\begin{matrix}
@@ -472,7 +472,7 @@ a_{23} b_{33}\\
 </div>
 </div>
 <p>This is an example of a triple-nested loop: a loop inside a loop inside a loop.</p>
-<p>Using numpy to do the multiplication is much easier. We can just use the <code>np.dot()</code> function:</p>
+<p>Using NumPy to do the multiplication is much easier. We can just use the <code>np.dot()</code> function:</p>
 <div class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array(A)</span>
@@ -484,7 +484,7 @@ a_{23} b_{33}\\
        [12, 14, 10]])</code></pre>
 </div>
 </div>
-<p>Numpy can also do many other matrix operations, such as transposing with and inversion with <code>np.linalg.inv()</code>. You can therefore use Python to help you with the Mathematics course that you are taking alongside this one!</p>
+<p>NumPy can also do many other matrix operations, such as transposing with and inversion with <code>np.linalg.inv()</code>. You can therefore use Python to help you with the Mathematics course that you are taking alongside this one!</p>
 
 
 </section>
