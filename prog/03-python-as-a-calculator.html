@@ -266,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Suppose by accident you left out the closing parentheses above. You typed <code>(2 + 4) / (4 * 2</code> and Enter. You don’t see the output but instead see</p>
 <pre><code>In [1]: (2 + 4) / (4 * 2
    ...:</code></pre>
-<p>Python did not run the command, but it also did not give an Error. What happened is that because there was no closing parenthesis <code>Enter</code> moved to a new line instead of executing the command. To “Escape” this situation, you just need to press the <code>Ctrl+C</code> button. In general, if anything strange happens in Python and you get stuck, you can always press <code>Ctrl+C</code> in the console to escape the current command.</p>
+<p>Python did not run the command, but it also did not give an error. What happened is that because there was no closing parenthesis <code>Enter</code> moved to a new line instead of executing the command. That’s why we see the <code>...:</code>. To “Escape” this situation, you just need to press the <code>Ctrl+C</code> button. In general, if anything strange happens in Python and you get stuck, you can always press <code>Ctrl+C</code> in the console to escape the current command.</p>
 </section>
 <section id="exponentiation-taking-powers-of-numbers" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="exponentiation-taking-powers-of-numbers"><span class="header-section-number">3.3</span> Exponentiation (Taking Powers of Numbers)</h2>
@@ -282,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="absolute-value" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="absolute-value"><span class="header-section-number">3.4</span> Absolute value</h2>
 <p>Taking the absolute value turns a negative number into the same number without a minus sign. It has no effect on positive numbers.</p>
-<p>In mathematics notation we write <span class="math inline">|x|</span> for the absolute value of <span class="math inline">x</span>. The formal definition is:</p>
+<p>In mathematical notation we write <span class="math inline">|x|</span> for the absolute value of <span class="math inline">x</span>. The formal definition is:</p>
 <p><span class="math display">
 |x| = \begin{cases} x &amp; \text{ if } x \geq 0 \\ -x &amp; \text{ otherwise}
 \end{cases}
@@ -331,7 +331,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>We’ll learn how to make plots like this later in this course.</p>
+<p>We’ll learn how to make plots like this later in this course, but if you want to see the code generating it you can click on the button “Show code generating the plot below”.</p>
 <p>In Python we can calculate absolute values with:</p>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">abs</span>(<span class="op">-</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -545,7 +545,7 @@ log(...)
 <li><code>base</code>: the base with respect to which the logarithms are computed. The default is <code>math.e</code> which equals the value of <span class="math inline">e\approx 2.718</span>. Because this argument is contained in a square bracket, it means it is an optional argument. If we don’t provide it it will use the default.</li>
 </ul>
 <p>This is the first time that we have seen a function with more than one argument. Earlier when we used the <code>math.log()</code> to calculate the natural logarithm we only used one argument because we used the <em>default setting</em> for the base. But when we want to use a base other than <span class="math inline">e</span>, we need to specify it.</p>
-<p>How we calculate <span class="math inline">\log_{10}\left(100\right)</span> in Python is as follows:</p>
+<p>To calculate <span class="math inline">\log_{10}\left(100\right)</span> in Python is then done as follows:</p>
 <div class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>math.log(<span class="dv">100</span>, <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -554,10 +554,11 @@ log(...)
 </div>
 </div>
 <p>We write both arguments into the <code>math.log()</code> function, separated by commas.</p>
+<p>The <code>math</code> module contains many more mathematical functions. To see all the functions available in the <code>math</code> module, we can use the command <code>dir(math)</code>. You will see many familiar mathematical functions, such as the trigonometric functions <code>sin()</code>, <code>cos()</code>, and <code>tan()</code>.</p>
 </section>
 <section id="integer-division-and-the-modulus-operator" class="level2" data-number="3.8">
 <h2 data-number="3.8" class="anchored" data-anchor-id="integer-division-and-the-modulus-operator"><span class="header-section-number">3.8</span> Integer Division and The Modulus Operator</h2>
-<p>When we divide 7 by 3 we get <span class="math inline">2\frac{1}{3}</span>. We could alternatively say that “7 divided by 3 equals 2 with remainder 1”. When programming it is often useful to get to get these numbers.</p>
+<p>When we divide 7 by 3 we get <span class="math inline">2\frac{1}{3}</span>. We could alternatively say that “7 divided by 3 equals 2 with remainder 1”. When programming it is often useful to get these numbers. The tutorial exercises will have several examples of this!</p>
 <p>We can perform “integer division” with the <code>//</code> operator. This always returns the fraction rounded <em>down</em> to the nearest whole number:</p>
 <div class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span> <span class="op">//</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
