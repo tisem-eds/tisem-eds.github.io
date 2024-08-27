@@ -259,7 +259,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>3</code></pre>
 </div>
 </div>
-<p>where the <code>len()</code> function returns the length of its argument. The <code>[3, 4]</code> is actually considered one element and is itself a list.</p>
+<p>where the <code>len()</code> function returns the length of its argument. The <code>[3, 4]</code> is actually considered one element and is itself a list. This kind of a list is called a nested list.</p>
 <section id="list-operations" class="level3" data-number="5.2.1">
 <h3 data-number="5.2.1" class="anchored" data-anchor-id="list-operations"><span class="header-section-number">5.2.1</span> List Operations</h3>
 <p>If we use the <code>+</code> operator on lists it just creates a longer list with one appended to the other:</p>
@@ -283,14 +283,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="list-indexing" class="level3" data-number="5.2.2">
 <h3 data-number="5.2.2" class="anchored" data-anchor-id="list-indexing"><span class="header-section-number">5.2.2</span> List Indexing</h3>
-<p>Lists are ordered so the order in which we place the elements matters. To extract a particular value from a list based on its position in the list we can use a method called <em>indexing</em>. If I want the first element of the list I can extract it with <code>a[0]</code>:</p>
+<p>Lists are ordered so the order in which we place the elements matters. To extract a particular value from a list based on its position in the list we can use a method called <em>indexing</em>. If we want the first element of the list we can extract it with <code>a[0]</code>:</p>
 <div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>2</code></pre>
 </div>
 </div>
-<p>The <code>0</code> here is the index. It means to take element 0 from the list. In Python and several other programming langauges (like C and C++), counting starts at 0 instead of 1. So element 0 is actually the 1st element. This is something that might take some getting used to, so be careful when using indexing.</p>
+<p>The <code>0</code> here is the index. It means to take element 0 from the list. In Python and several other programming languages (like C and C++), counting starts at 0 instead of 1. So element 0 is actually the 1st element. This is something that might take some getting used to, so be careful when using indexing.</p>
 <p>Even though the list has 3 elements, the last element is extracted with <code>a[2]</code>:</p>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -299,7 +299,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>If you try to do <code>a[3]</code> you get an <code>IndexError</code> saying the list index is out of range.</p>
-<p>We can also use negative indexing to extract elements from the end of a list. For example, to get last element of a list <code>a</code> we use <code>a[-1]</code>, to get the 2nd-last element we can use <code>a[2]</code>, and so on:</p>
+<p>We can also use negative indexing to extract elements from the end of a list. For example, to get the last element of a list <code>a</code> we can use <code>a[-1]</code>, to get the 2nd-last element we can use <code>a[2]</code>, and so on:</p>
 <div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>a[<span class="op">-</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -330,7 +330,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[8, 4, 6]</code></pre>
 </div>
 </div>
-<p>Because lists have this property, we say they are <em>mutable</em>.</p>
+<p>Because lists have this property, we say they are <em>mutable</em>. This is unlike strings which are immutable. You can’t change a character in a string using indexing (try it out with the commands <code>a = 'hello'</code> and <code>a[0] = g</code>).</p>
 </section>
 <section id="list-slicing" class="level3" data-number="5.2.3">
 <h3 data-number="5.2.3" class="anchored" data-anchor-id="list-slicing"><span class="header-section-number">5.2.3</span> List Slicing</h3>
@@ -387,11 +387,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Another list method is <code>reverse()</code> which reverses the ordering of the list:</p>
 <div class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">4</span>]</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>a.reverse()</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
-<pre><code>[6, 4, 2]</code></pre>
+<pre><code>[4, 6, 2]</code></pre>
 </div>
 </div>
 <p>To sort a list ascending we can use <code>sort()</code>:</p>
@@ -403,7 +403,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[1, 2, 3]</code></pre>
 </div>
 </div>
-<p>Using the <code>sort()</code> method changes our original list. Sometimes we want to see the sorted version of a list but then go back to the original ordering. In this case you shouldn’t use the <code>sort()</code> method on the list but use the <code>sorted()</code> function, which returns its input sorted:</p>
+<p>To see the full list of methods available for your list, you can use the command <code>dir(a)</code>.</p>
+<p>Using the <code>sort()</code> method changes our original list. Sometimes we want to see the sorted version of a list but then go back to the original ordering. In this case you shouldn’t use the <code>sort()</code> method on the list but use the <code>sorted()</code> function to create a sorted version of the list. The <code>sorted()</code> function returns its input sorted:</p>
 <div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>]</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="bu">sorted</span>(a)</span>
