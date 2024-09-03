@@ -244,7 +244,7 @@ f(x)=x+1
 </div>
 </div>
 <p>We get the expected output!</p>
-<p>One thing to note about this function is that the <code>y</code> that is assigned <code>x + 1</code> in the function is never stored in our environment. The <code>y</code> only exists within the function and is deleted after the function ends. We cannot access it outside. We say that <code>y</code> is a <em>local</em> variable (it is local to the function). It is possible to define <em>global</em> variables within a function that can accessed after the function is called, but for our purposes doing so is generally not very good practice and so we will not cover that here.</p>
+<p>One thing to note about this function is that the <code>y</code> that is assigned <code>x + 1</code> in the function is never stored in our environment. The <code>y</code> only exists within the function and is deleted after the function ends. We cannot access it outside. We say that <code>y</code> is a <em>local</em> variable (it is local to the function). It is possible to define <em>global</em> variables within a function that can be accessed after the function is called, but for our purposes doing so is generally not very good practice and so we will not cover that here.</p>
 <p>We could also shorten our code by doing the calculation on the same line as the <code>return</code> command:</p>
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_one(x):</span>
@@ -253,7 +253,7 @@ f(x)=x+1
 </section>
 <section id="commenting-in-python" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="commenting-in-python"><span class="header-section-number">6.3</span> Commenting in Python</h2>
-<p>As we start to write longer programs that include functions, it’s s good idea to start <em>annotating</em> your code to help other people understand its purpose (and also you when you look back at your own code after a couple of days!). We can do this by adding <em>comments</em>. In Python we can add a comment by using the <code>#</code> character. Everything after the <code>#</code> character is ignored by the Python interpreter, so what we write after it doesn’t need to be “legal” Python commands. We can add a comment to describe what a function does like this:</p>
+<p>As we start to write longer programs that include functions, it’s s good idea to start <em>annotating</em> your code to help other people understand its purpose (and also you when you look back at your own code after a couple of days!). We can do this by adding <em>comments</em>. In Python we can add a comment by using the <code>#</code> character. Everything after the <code>#</code> character is ignored by the Python interpreter, so what we write after it don’t need to be “legal” Python commands. We can add a comment to describe what a function does like this:</p>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This function returns the input plus one:</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_one(x):</span>
@@ -397,10 +397,10 @@ while True:
 y_1 = \frac{1}{2} \left( y_0 + \frac{x}{y_0}\right)
 </span> When you have <span class="math inline">y_1</span> we can update this for a more accurate approximation with: <span class="math display">
 y_2 = \frac{1}{2} \left( y_1 + \frac{x}{y_1}\right)
-</span> To write this in generate terms, given an initial guess <span class="math inline">y_0</span>, we update <span class="math inline">y_n</span>, with <span class="math inline">n=1,2,\dots</span> according to: <span class="math display">
+</span> To write this in general terms, given an initial guess <span class="math inline">y_0</span>, we update <span class="math inline">y_n</span>, with <span class="math inline">n=1,2,\dots</span> according to: <span class="math display">
 y_n = \frac{1}{2} \left( y_{n-1} + \frac{x}{y_{n-1}}\right)
 </span></p>
-<p>You continue updating this way until <span class="math inline">y_n</span> stops changing very much (for example it changes by less than 0.000001 in an interaction).</p>
+<p>You continue updating this way until <span class="math inline">y_n</span> stops changing very much (for example it changes by less than 0.000001 in an iteration).</p>
 <p>Let’s work manually with this algorithm to see how well it works. Suppose we want the square root of 2 which we know is approximately equal to 1.414214. Let’s start with a guess <span class="math inline">y_0=\frac{x}{2}=\frac{2}{2}=1</span>. This is quite far off the true 1.414214 but we’ll go with it anyway. We can update the guess with the formula:</p>
 <p><span class="math display">
 y_1 = \frac{1}{2}\left(y_0 + \frac{x}{y_0}\right) =
@@ -437,7 +437,8 @@ y_3 = \frac{1}{2}\left(y_2 + \frac{x}{y_2}\right) =
 <span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>        dist <span class="op">=</span> <span class="bu">abs</span>(y <span class="op">-</span> y_old)</span>
 <span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>We have written a function that can take 2 arguments: <code>x</code>, the number we want to take the square root of, and <code>tol</code>, which is the tolerance level for how accurate our approximation should be (a lower number is more accurate). When we write <code>tol=0.000001</code> in the function definition it means we say that <code>0.000001</code> is the default value for <code>tol</code>. If we don’t need to provide the argument it will use this value, but we can specify a different value.</p>
+<p>We have written a function that can take 2 arguments: <code>x</code>, the number we want to take the square root of, and <code>tol</code>, which is the tolerance level for how accurate our approximation should be (a lower number is more accurate). When we write <code>tol=0.000001</code> in the function definition it means we say that <code>0.000001</code> is the default value for <code>tol</code>. If we don’t provide the argument it will use this value, but we can specify a different value if we want.</p>
+<p>We now talk about the code in the function. The function first sets <span class="math inline">y_0=\frac{x}{2}</span> as the initial guess. It also needs to set <code>dist = tol + 1</code> because the while loop checks <code>dist &gt; tol</code>. For this check, <code>dist</code> needs to exist locally in the function (<code>tol</code> is created from the arguments). And for the while loop to run at least once the <code>dist</code> needs to be bigger than <code>tol</code>. This is why we add one. Inside the while loop then, because we want to compare how our guess changes we set <code>y_old = y</code> before setting the new <code>y</code> according to the approximation formula. Then we get the absolute value of the difference between the new and old guess. We then go back to the top of the loop and we check if <code>dist</code> is still bigger than <code>tol</code>. If it is, it repeats the steps again. If not the while loop terminates and we go to the next stage, where <code>y</code> is returned as the output.</p>
 <p>Let’s try it out. First using the default value:</p>
 <div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>my_sqrt(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -461,7 +462,6 @@ y_3 = \frac{1}{2}\left(y_2 + \frac{x}{y_2}\right) =
 </div>
 </div>
 <p>As expected, this is less accurate.</p>
-<p>We now talk about the code in the function. The function first sets <span class="math inline">y_0=\frac{x}{2}</span> as the initial guess. It also needs to set <code>dist = tol + 1</code> because the while loop checks <code>dist &gt; tol</code>. For this check, <code>dist</code> needs to exist locally in the function (<code>tol</code> is created from the arguments). And for the while loop to run at least once the <code>dist</code> needs to be bigger than <code>tol</code>. This is why we add one. Inside the while loop then, because we want to compare how our guess changes we set <code>y_old = y</code> before setting the new <code>y</code> according to the approximation formula. Then we get the absolute value of the difference between the new and old guess. We then go back to the top of the loop and we check if <code>dist</code> is still bigger than <code>tol</code>. If it is, it repeats the steps again. If not the while loop terminates and we go to the next stage, where <code>y</code> is returned as the output.</p>
 
 
 </section>
