@@ -325,7 +325,7 @@ x &amp; \text{ otherwise}
 <pre><code>[1, 2, 3]</code></pre>
 </div>
 </div>
-<p>This is very similar to the first <code>add_one()</code> function we defined above. The only difference is that we write <code>return x</code> as the first command in the function’s body. Although at it sets <span class="math inline">y=x+1</span> and returns <span class="math inline">y</span>, the output is always the same as the input. This is because the function returns <span class="math inline">x</span> at the top, which means the rest of the function is never executed.</p>
+<p>This is very similar to the first <code>add_one()</code> function we defined above. The only difference is that we write <code>return x</code> as the first command in the function’s body. Although the code sets <span class="math inline">y=x+1</span> and returns <span class="math inline">y</span>, the output is always the same as the input. This is because the function returns <span class="math inline">x</span> at the top, which means the rest of the function is never executed.</p>
 </section>
 <section id="if-else-if-else-statements" class="level3" data-number="6.4.2">
 <h3 data-number="6.4.2" class="anchored" data-anchor-id="if-else-if-else-statements"><span class="header-section-number">6.4.2</span> If-Else If-Else Statements</h3>
@@ -379,7 +379,7 @@ sgn(x) = \begin{cases}
 <ul>
 <li>If the 1st check is true (<span class="math inline">x&lt;0</span>), the function returns <span class="math inline">-1</span> and it done.</li>
 <li>If the 1st check is false (<span class="math inline">x\not &lt;0</span>), the function checks <span class="math inline">x=0</span>. If that is true it returns <span class="math inline">0</span> and it done.</li>
-<li>If the 1st and 2nd check are false (<span class="math inline">x\not &lt;0</span> and <span class="math inline">x\neq 0</span>), the function returns <span class="math inline">1</span> and it done.</li>
+<li>If the 1st and 2nd checks are false (<span class="math inline">x\not &lt;0</span> and <span class="math inline">x\neq 0</span>), the function returns <span class="math inline">1</span> and it done.</li>
 </ul>
 <p>It actually does exactly the same as the first code, but because there is less nesting it is easier to follow and is preferred (especially when you have even more conditions to check!).</p>
 </section>
@@ -393,7 +393,7 @@ while True:
 <p><em>Note:</em> the <code>x += 1</code> here is a shorter way of writing <code>x = x + 1</code>. The operations <code>-=</code>, <code>*=</code> and <code>/=</code> also work like this - try them out!</p>
 <p>Because <code>True</code> will always be <code>True</code>, the loop will just keep running forever, adding 1 each time. Eventually the numbers will get so big that <code>x</code> will show up as <code>inf</code> (infinity), but you would have to let the program run for a very long time before you saw that.</p>
 <p>A while loop is also useful if you want to repeat a loop until something happens, but you don’t know how many times you need to run it before that happens. One instance when this would occur is if you wanted to numerically approximate a mathematical equation with an iterative algorithm. You want to repeat the iterations until the output starts to stabilize to a certain tolerance (accuracy) level, but you don’t know in advance how many iterations this will take. Let’s take a look at an example of this now.</p>
-<p>The example we will look at is the way the ancient Greeks used to approximate square roots. Suppose you wanted to find the square root of <span class="math inline">x</span>. What the ancient Greeks did is start with an initial guess of this <span class="math inline">y_0</span>, let’s say <span class="math inline">\frac{x}{2}</span>. You then find the updated guess <span class="math inline">y_1</span> according to the formula: <span class="math display">
+<p>The example we will look at is the way the ancient Greeks approximated square roots. Suppose you wanted to find the square root of <span class="math inline">x</span>. What the ancient Greeks did is start with an initial guess of this <span class="math inline">y_0</span>, let’s say <span class="math inline">\frac{x}{2}</span>. You then find the updated guess <span class="math inline">y_1</span> according to the formula: <span class="math display">
 y_1 = \frac{1}{2} \left( y_0 + \frac{x}{y_0}\right)
 </span> When you have <span class="math inline">y_1</span> we can update this for a more accurate approximation with: <span class="math display">
 y_2 = \frac{1}{2} \left( y_1 + \frac{x}{y_1}\right)
@@ -409,7 +409,7 @@ y_1 = \frac{1}{2}\left(y_0 + \frac{x}{y_0}\right) =
 <p><span class="math display">
 y_2 = \frac{1}{2}\left(y_1 + \frac{x}{y_1}\right) =
 \frac{1}{2}\left(1.5 + \frac{2}{1.5}\right) = 1.416667
-</span> This is already pretty close (0.00245 way)! Let’s do one more:</p>
+</span> This is already pretty close (0.00245 away)! Let’s do one more:</p>
 <p><span class="math display">
 y_3 = \frac{1}{2}\left(y_2 + \frac{x}{y_2}\right) =
 \frac{1}{2}\left(1.416667 + \frac{2}{1.416667}\right) = 1.414216
@@ -438,7 +438,7 @@ y_3 = \frac{1}{2}\left(y_2 + \frac{x}{y_2}\right) =
 <span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We have written a function that can take 2 arguments: <code>x</code>, the number we want to take the square root of, and <code>tol</code>, which is the tolerance level for how accurate our approximation should be (a lower number is more accurate). When we write <code>tol=0.000001</code> in the function definition it means we say that <code>0.000001</code> is the default value for <code>tol</code>. If we don’t provide the argument it will use this value, but we can specify a different value if we want.</p>
-<p>We now talk about the code in the function. The function first sets <span class="math inline">y_0=\frac{x}{2}</span> as the initial guess. It also needs to set <code>dist = tol + 1</code> because the while loop checks <code>dist &gt; tol</code>. For this check, <code>dist</code> needs to exist locally in the function (<code>tol</code> is created from the arguments). And for the while loop to run at least once the <code>dist</code> needs to be bigger than <code>tol</code>. This is why we add one. Inside the while loop then, because we want to compare how our guess changes we set <code>y_old = y</code> before setting the new <code>y</code> according to the approximation formula. Then we get the absolute value of the difference between the new and old guess. We then go back to the top of the loop and we check if <code>dist</code> is still bigger than <code>tol</code>. If it is, it repeats the steps again. If not the while loop terminates and we go to the next stage, where <code>y</code> is returned as the output.</p>
+<p>We now talk about the code in the function. The function first sets <span class="math inline">y_0=\frac{x}{2}</span> as the initial guess. It also needs to set <code>dist = tol + 1</code> because the while loop checks if <code>dist &gt; tol</code>. For this check, <code>dist</code> needs to exist locally in the function (<code>tol</code> is created from the arguments). And for the while loop to run at least once the <code>dist</code> needs to start at a value bigger than <code>tol</code>. This is why we add one. Inside the while loop then, because we want to compare how our guess changes, we set <code>y_old = y</code> before setting the new <code>y</code> according to the approximation formula. Then we get the absolute value of the difference between the new and old guess. We then go back to the top of the loop and we check if <code>dist</code> is still bigger than <code>tol</code>. If it is, it repeats the steps again. If not, the while loop terminates and we go to the next stage, where <code>y</code> is returned as the output.</p>
 <p>Let’s try it out. First using the default value:</p>
 <div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>my_sqrt(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

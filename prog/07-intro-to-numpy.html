@@ -256,7 +256,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="example-2" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="example-2">Example 2</h3>
-<p>Another example computation that we often need to do is if we have two lists of numbers <code>x</code> and <code>y</code> with the same number of elements and and we want to multiply them by each other element-by-element. Mathematically, suppose we have two vectors of numbers <span class="math inline">\boldsymbol{x}</span> and <span class="math inline">\boldsymbol{y}</span>: <span class="math display">
+<p>Another example computation that we often need to do is if we have two lists of numbers <code>x</code> and <code>y</code> with the same number of elements and and we want to multiply them by each other element-by-element. Expressed in mathematical notation, suppose we have two vectors of numbers <span class="math inline">\boldsymbol{x}</span> and <span class="math inline">\boldsymbol{y}</span>: <span class="math display">
 \begin{split}
 \boldsymbol{x}&amp;=\left[x_1, x_2, \dots, x_n\right] \\
 \boldsymbol{y}&amp;=\left[y_1, y_2, \dots, y_n\right] \\
@@ -352,7 +352,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>array([2, 4, 8])</code></pre>
 </div>
 </div>
-<p>You will notice that even though we provided a list of integers, NumPy converted these to floats. NumPy arrays always work with floats.</p>
 <p>We will now show the power of NumPy by doing all the previous examples with very little code.</p>
 </section>
 <section id="solving-the-example-problems-with-numpy" class="level2" data-number="7.4">
@@ -405,7 +404,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>These are just a few examples of how NumPy can simplify coding drastically.</p>
-<p>For many programming tasks we need to do, it’s very often many people had to do the same thing before. This means there is often a module available that can do the task. Of course we learn a lot from coding functions from scratch, but in order to complete a task quickly and efficiently it is often better to use the modules made for the task.</p>
+<p>For many programming tasks we need to do, it’s very often many people had to do the same thing before. This means there is often a module available that can do the task. Of course we learn a lot from coding functions from scratch, but in order to complete a task quickly and efficiently it is usually better to use the modules made for the task.</p>
 </section>
 </section>
 <section id="matrix-operations" class="level2" data-number="7.5">
@@ -484,7 +483,12 @@ a_{23} b_{33}\\
        [12, 14, 10]])</code></pre>
 </div>
 </div>
-<p>NumPy can also do many other matrix operations, such as transposing with and inversion with <code>np.linalg.inv()</code>. You can therefore use Python to help you with the Mathematics course that you are taking alongside this one!</p>
+<p>NumPy can also do many other matrix operations, such as:</p>
+<ul>
+<li>transposing with the command <code>np.transpose()</code></li>
+<li>inversion with the command <code>np.linalg.inv()</code>.</li>
+</ul>
+<p>You can therefore use Python to help you with the Mathematics course that you are taking alongside this one!</p>
 
 
 </section>
