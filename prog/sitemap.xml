@@ -2,34 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tisem-eds.github.io/prog/index.html</loc>
-    <lastmod>2024-08-21T12:20:38.961Z</lastmod>
+    <lastmod>2024-08-27T08:18:35.000Z</lastmod>
   </url>
   <url>
     <loc>https://tisem-eds.github.io/prog/02-getting-started.html</loc>
-    <lastmod>2024-08-21T08:45:19.267Z</lastmod>
+    <lastmod>2024-08-21T08:45:19.000Z</lastmod>
   </url>
   <url>
     <loc>https://tisem-eds.github.io/prog/03-python-as-a-calculator.html</loc>
-    <lastmod>2024-08-21T09:05:47.358Z</lastmod>
+    <lastmod>2024-09-03T13:58:47.000Z</lastmod>
   </url>
   <url>
     <loc>https://tisem-eds.github.io/prog/04-data-types-part1.html</loc>
-    <lastmod>2024-08-22T12:21:25.608Z</lastmod>
+    <lastmod>2024-08-27T09:18:38.000Z</lastmod>
   </url>
   <url>
     <loc>https://tisem-eds.github.io/prog/05-data-types-part2.html</loc>
-    <lastmod>2024-08-22T12:23:57.542Z</lastmod>
+    <lastmod>2024-08-27T13:36:18.000Z</lastmod>
   </url>
   <url>
     <loc>https://tisem-eds.github.io/prog/06-defining-functions.html</loc>
-    <lastmod>2024-08-22T12:21:40.584Z</lastmod>
+    <lastmod>2024-09-09T13:14:22.000Z</lastmod>
   </url>
   <url>
     <loc>https://tisem-eds.github.io/prog/07-intro-to-numpy.html</loc>
-    <lastmod>2024-08-21T12:36:44.412Z</lastmod>
+    <lastmod>2024-09-09T13:23:24.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tisem-eds.github.io/prog/08-math-and-plotting.html</loc>
+    <lastmod>2024-09-12T12:52:41.004Z</lastmod>
   </url>
   <url>
     <loc>https://tisem-eds.github.io/prog/Programming-for-TiSEM-Essential-Digital-Skills.pdf</loc>
-    <lastmod>2024-08-22T14:02:11.623Z</lastmod>
+    <lastmod>2024-09-12T12:58:16.995Z</lastmod>
   </url>
 </urlset>
