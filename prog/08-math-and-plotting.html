@@ -222,6 +222,7 @@ window.Quarto = {
   <ul>
   <li><a href="#root-finding" id="toc-root-finding" class="nav-link active" data-scroll-target="#root-finding"><span class="header-section-number">8.1</span> Root finding</a></li>
   <li><a href="#minimization" id="toc-minimization" class="nav-link" data-scroll-target="#minimization"><span class="header-section-number">8.2</span> Minimization</a></li>
+  <li><a href="#sec-visualization" id="toc-sec-visualization" class="nav-link" data-scroll-target="#sec-visualization"><span class="header-section-number">8.3</span> Visualization</a></li>
   </ul>
 </nav>
     </div>
@@ -248,12 +249,13 @@ window.Quarto = {
 
 
 <p><link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""> <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&amp;family=Fira+Sans&amp;display=swap" rel="stylesheet"></p>
-<p>In this chapter we will see some mathematical algorithms from the <code>scipy</code> package (or module) as well as how to visualizing data, e.g., some of the figures we have seen in earlier chapters, using <code>matplotlib</code>. <a href="https://scipy.org/">SciPy</a> is a package that can be used to perform various mathematical task and algorithms, making it very important for data anlaysis purposes. The <a href="https://matplotlib.org/">Matplotlib</a> package is essential in Python to create insightful visual representations of your data and the analysis you performed on it.</p>
+<p>In this chapter we will see some mathematical algorithms from the <code>scipy</code> package (or module) as well as how to visualize data, e.g., some of the figures we have seen in earlier chapters, using <code>matplotlib</code>.</p>
+<p><a href="https://scipy.org/">SciPy</a> is a package that can be used to perform various mathematical task and algorithms, making it very important for data anlaysis purposes. The <a href="https://matplotlib.org/">Matplotlib</a> package is essential in Python to create insightful visual representations of your data and the analysis you performed on it.</p>
 <p>We first discuss two fundamental mathematical tasks: finding a root of a mathematical function and minimizing a mathematical function. After that, we will explain how to visualize data and mathematical functions.</p>
 <section id="root-finding" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="root-finding"><span class="header-section-number">8.1</span> Root finding</h2>
-<p>Consider the function <span class="math inline">f(x) = x^2 + 2x - 1</span>. A visualization of this function is given below. We will learn how to create this figure ourselves in <span class="quarto-unresolved-ref">?sec-visualization</span>.</p>
-<div id="2345d735" class="cell" data-execution_count="1">
+<p>Consider the function <span class="math inline">f(x) = x^2 + 2x - 1</span>. A visualization of this function is given below. We will learn how to create this figure ourselves in <a href="#sec-visualization" class="quarto-xref"><span>Section 8.3</span></a>.</p>
+<div id="bb0f2ade" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show code generating the plot below</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -304,10 +306,10 @@ window.Quarto = {
 <p><span class="math display">
 x_\ell = \frac{- b - \sqrt{b^2 - 4ac}}{2a} \ \ \text{ and } \ \ x_r = \frac{- b + \sqrt{b^2 - 4ac}}{2a}
 </span></p>
-<p>where the subscript <span class="math inline">\ell</span> is used to denote the fact that this will be the “left” root and <span class="math inline">r</span> to denote the “right” root. In fact, in one of the tutorials you will be asked to implement these formulas in a Python function.</p>
+<p>where the subscript <span class="math inline">\ell</span> is used to denote the fact that this will be the “left” root and <span class="math inline">r</span> to denote the “right” root.</p>
 <p>For <span class="math inline">f(x) = x^2 + 2x-1</span>, we have <span class="math inline">a = 1, b = 2</span> and <span class="math inline">c = -1</span>. Plugging in these values in the formula above gives <span class="math inline">x_\ell = -1 - \sqrt{2} \approx - 2.4142</span> and <span class="math inline">x_r = -1 + \sqrt{2} \approx 0.4142</span>. Although this is an easy way to find the roots of a quadratic function, we want to be able to find roots of any function <span class="math inline">f</span>, assuming they exist.</p>
-<p>The easiest way to find a root of a general function is to use the the function <code>fsolve</code> from the (sub)package <code>scipy.optimize</code>. This package contains many functions to perform mathematical tasks. In order not having to write <code>scipy.optimize</code> the whole time we will import this package under the name <code>optimize</code>, just as we did with NumPy where we used the line <code>import numpy as np</code>. Below is the code snippet that carries out the root finding procedure.</p>
-<div id="a6a2b809" class="cell" data-execution_count="2">
+<p>The easiest way to find a root of a general function is to use the the function <code>fsolve()</code> from the (sub)package <code>scipy.optimize</code>. This package contains many functions to carry out algorithmic tasks on mathematical functions. In order not having to write <code>scipy.optimize</code> the whole time we will import this package under the name <code>optimize</code>, just as we did with NumPy where we used the line <code>import numpy as np</code>. Below is the code snippet that carries out the root finding procedure.</p>
+<div id="1f662c69" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.optimize <span class="im">as</span> optimize</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
@@ -323,18 +325,18 @@ x_\ell = \frac{- b - \sqrt{b^2 - 4ac}}{2a} \ \ \text{ and } \ \ x_r = \frac{- b 
 </div>
 <p>In chronological order, this code does the following:</p>
 <ul>
-<li>Import the <code>optimize</code> (sub)module from the <code>scipy</code> package.</li>
+<li>Import the <code>optimize</code> (sub)package from the <code>scipy</code> package.</li>
 <li>Define <span class="math inline">f(x) = x^2 + 2x -1</span> as a Python function (<a href="06-defining-functions.html" class="quarto-xref"><span>Chapter 6</span></a>).</li>
 <li>Use <code>optimize.fsolve(f,guess)</code> so that Python knows that we want to use the function <code>fsolve()</code> from <code>optimize.</code></li>
 <li>The argument that is returned by <code>fsolve()</code> is assigned to the variable <code>f_zero.</code></li>
 <li>Print a message containing the root of <span class="math inline">f</span> that was found.</li>
 </ul>
-<p>We could also have used <code>optimize.fsolve(f,3)</code> instead of separately defining <code>guess = 3</code> and then using <code>guess</code> as input argument. However, when coding, it is common practice to always define input data (the number 3 in this case) in a separate variable. Especially if the number would be used in multiple places in your code, this is useful.</p>
 <p>The use of <code>fsolve()</code> requires some additional explanation. It takes two input arguments, the first one being a (mathematical) function <code>f</code> and the second one an initial guess for where a root of <span class="math inline">f</span> might be, which we store in the variable <code>guess</code>. Note that you cannot reverse the order of the input arguments: <code>f_zero = optimize.fsolve(guess,f)</code> does not work!</p>
-<p>It is important to observe that a Python function can itself be an input argument of another Python function! That is, the function <code>f</code> is an input argument of the function <code>fsolve()</code>. We also note that it is required to define the <span class="math inline">f</span> as a Python function. That is, it is not possible to use the command <code>optimize.fsolve(x**2 + 2*x - 1,guess)</code>.</p>
-<p>The second input argument <code>guess</code> is needed by <code>fsolve</code> to execute the underlying mathematical root finding method that is used to find a root of <span class="math inline">f</span>. We do not go into the actual mathematical method that is being carried out in the background by Python when we execute <code>fsolve</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, but the idea is that the method starts at the guess that we provide and then gradually finds its way to a root of <span class="math inline">f</span> by doing various calculations.</p>
-<p>In fact, the choice of initial guess can influence the outcome of <code>fsolve</code>. That is, a different initial guess can lead the underlying mathematical method to a different root of the function. This is illustrated in the code below, where we find the other root <span class="math inline">-2.4142...</span>.</p>
-<div id="d3f13c19" class="cell" data-execution_count="3">
+<p>We could also have used <code>optimize.fsolve(f,3)</code> instead of separately defining <code>guess = 3</code> and then using <code>guess</code> as input argument. However, when coding, it is common practice to always define input data (the number 3 in this case) in a separate variable. Especially if the number would be used in multiple places in your code, this is useful.</p>
+<p>It is important to observe that a Python function can itself be an input argument of another Python function! That is, the function <code>f</code> is an input argument of the function <code>fsolve()</code>. It is required to define the <span class="math inline">f</span> as a Python function. That is, it is not possible to use the command <code>optimize.fsolve(x**2 + 2*x - 1,guess)</code>.</p>
+<p>The second input argument <code>guess</code> is needed by <code>fsolve()</code> to execute the underlying mathematical root finding method that is used to find a root of <span class="math inline">f</span>. We do not go into the actual mathematical method that is being carried out in the background by Python when we execute <code>fsolve()</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, but the idea is that the method starts at the guess that we provide and then gradually finds its way to a root of <span class="math inline">f</span> by doing various calculations.</p>
+<p>In fact, the choice of initial guess can influence the outcome of <code>fsolve()</code>. That is, a different initial guess can lead the underlying mathematical method to a different root of the function. This is illustrated in the code below, where we find the other root <span class="math inline">-2.4142...</span>.</p>
+<div id="e7f04ed7" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>guess <span class="op">=</span> <span class="op">-</span><span class="dv">2</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>f_zero <span class="op">=</span> optimize.fsolve(f,guess)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -343,64 +345,74 @@ x_\ell = \frac{- b - \sqrt{b^2 - 4ac}}{2a} \ \ \text{ and } \ \ x_r = \frac{- b 
 <pre><code>A root of the function f is given by [-2.41421356]</code></pre>
 </div>
 </div>
+<p>As you might have noted, the output of <code>optimize.fsolve(f,guess)</code> is a list containing one number, for example, the last piece of code returned <code>[-2.41421356]</code>. If you instead only want to output the number <code>-2.41421356</code>, i.e., the value of the element in the string, you can use <code>optimize.fsolve(f,guess)[0]</code> instead. This means that what is stored in <code>f_zero</code> is the <span class="math inline">0</span>-th (and only) element of the list <code>optimize.fsolve(f,guess)</code>.</p>
+<div id="b223e5c9" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>guess <span class="op">=</span> <span class="op">-</span><span class="dv">2</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>f_zero <span class="op">=</span> optimize.fsolve(f,guess)[<span class="dv">0</span>]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"A root of the function f is given by"</span>, f_zero)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>A root of the function f is given by -2.414213562373095</code></pre>
+</div>
+</div>
 <p>We can also use root finding to solve other types of equations. Suppose we want to compute an <span class="math inline">x</span> such that <span class="math display">
 f(x) = 6.
 </span></p>
-<p>Moving the <span class="math inline">6</span> to the left, we see that this is the same as computing an <span class="math inline">x</span> such that <span class="math inline">f(x) - 6 = 0.</span> Therefore, if we define the function <span class="math inline">g(x) = f(x) - 6</span>, then an <span class="math inline">x</span> that satisfies <span class="math inline">g(x) = 0</span> also satisfies <span class="math inline">f(x) = 6</span>, and vice versa. Let us code this as well.</p>
-<div id="b36c0a5b" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> g(x):</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> f(x) <span class="op">-</span> <span class="dv">6</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>guess <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>f_zero <span class="op">=</span> optimize.fsolve(g,guess)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"A number x satisfying f(x) = 6, is given by"</span>, f_zero)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Moving the <span class="math inline">6</span> to the left, we see that this is the same as computing an <span class="math inline">x</span> such that <span class="math inline">f(x) - 6 = 0.</span> Therefore, if we define the function <span class="math inline">g(x) := f(x) - 6</span>, then an <span class="math inline">x</span> that satisfies <span class="math inline">g(x) = 0</span> also satisfies <span class="math inline">f(x) = 6</span>, and vice versa. Let us code this as well.</p>
+<div id="99c9da34" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> g(x):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> f(x) <span class="op">-</span> <span class="dv">6</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>guess <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>f_zero <span class="op">=</span> optimize.fsolve(g,guess)[<span class="dv">0</span>]</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"A number x satisfying f(x) = 6, is given by"</span>, f_zero)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>A number x satisfying f(x) = 6, is given by [1.82842712]</code></pre>
+<pre><code>A number x satisfying f(x) = 6, is given by 1.82842712474619</code></pre>
 </div>
 </div>
-<p>The function <span class="math inline">g</span>, taking as input a number <code>x</code>, works as follows: It computes <span class="math inline">f(x)</span> by running the function <span class="math inline">f</span> with the input <span class="math inline">x</span>, and then substracting <span class="math inline">6</span> from it. Note that we could have also defined <span class="math inline">g</span> by returning <code>x**2 + 2x - 1 - 6</code>. It is, however, more convenient to just write <code>f(x) - 6</code> here, because we have already defined the function <span class="math inline">f</span> earlier. Also, if we would change the definition of the function <span class="math inline">f</span>, the function <span class="math inline">g</span> is automatically updated as well.</p>
+<p>The function <span class="math inline">g</span> works as follows: It computes <span class="math inline">f(x)</span> by running the function <span class="math inline">f</span> with the input <span class="math inline">x</span>, and then substracting <span class="math inline">6</span> from it. Note that we could have also defined <span class="math inline">g</span> by returning <code>x**2 + 2x - 1 - 6</code>. It is, however, more convenient to just write <code>f(x) - 6</code> here, because we have already defined the function <span class="math inline">f</span> earlier. Also, if we would change the definition of the function <span class="math inline">f</span>, the function <span class="math inline">g</span> is automatically updated as well.</p>
 <p>Everything we have seen up till now also allows us to write a general Python function to solve an equation of the form <span class="math display">
 f(x) = c
 </span> for a given function <span class="math inline">f</span> and number <span class="math inline">c</span>. In the example above, we had <span class="math inline">c = 6</span>.</p>
-<div id="74c0d680" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> solve_eq(f,c,guess):</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">""" </span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Input</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">    f : A mathematical function taking as input a variable x,</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">    c : The right hand side value of the equation f(x) = c,</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">    guess : The initial guess for fsolve().</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">    -------</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">    A value x solving f(x) = c.</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> g(x):</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> f(x) <span class="op">-</span> c</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> optimize.fsolve(g,guess)</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="36071ed5" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> solve_eq(f,c,guess):</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">""" </span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Input</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">    f : A mathematical function taking as input a variable x,</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">    c : The right hand side value of the equation f(x) = c,</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">    guess : The initial guess for fsolve().</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co">    -------</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co">    A value x solving f(x) = c.</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> g(x):</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> f(x) <span class="op">-</span> c</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> optimize.fsolve(g,guess)[<span class="dv">0</span>]</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The function above takes as input the function <span class="math inline">f</span>, the number <span class="math inline">c</span> and an initial guess that <code>fsolve()</code> can use. Let us try out <code>solve_eq()</code> on some input data. The goal will be to find a solution to the equation</p>
+<p>The function above takes as input the function <span class="math inline">f</span>, the number <span class="math inline">c</span> and an initial guess that <code>fsolve()</code> can use. Let us try out <code>solve_eq()</code> on some input data. The goal will be to solve the equation</p>
 <p><span class="math display">
 3x^2 -4x + 1 = 5.
 </span></p>
-<div id="cac81518" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#We create the function h(x) = 3x^2 - 4x + 1 </span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> h(x):</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">3</span><span class="op">*</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">4</span><span class="op">*</span>x <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Right hand side of the equation h(x) = 5</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="dv">5</span> </span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Our initial guess for fsolve() (we choose 1 here).</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>initial_guess <span class="op">=</span> <span class="dv">1</span> </span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"A solution x to h(x) = d is given by"</span>, solve_eq(h,d,guess))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="31314b7a" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#We create the function h(x) = 3x^2 - 4x + 1 </span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> h(x):</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">3</span><span class="op">*</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">4</span><span class="op">*</span>x <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Right hand side of the equation h(x) = 5</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="dv">5</span> </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Our initial guess for fsolve() (we choose 1 here).</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>initial_guess <span class="op">=</span> <span class="dv">1</span> </span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"A solution x to h(x) = d is given by"</span>, solve_eq(h,d,guess))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>A solution x to h(x) = d is given by [2.]</code></pre>
+<pre><code>A solution x to h(x) = d is given by 2.0</code></pre>
 </div>
 </div>
 <p>Note that the input arguments <code>h</code>, <code>d</code> and <code>initial_guess</code> need not have the same names as the <i>local</i> variables <code>f</code>, <code>c</code> <code>guess</code> in the function <code>solve_eq()</code>. What is important is that we input the arguments in the correct order in which we want them to be identified with the local variables. That is, by doing <code>solve_eq(h,d,guess)</code> Python knows that we want to assign the first input argument <code>h</code> to the first local variable <code>f</code>, the second input argument <code>d</code> to the second local variable <code>c</code>, and the third input argument <code>initial_guess</code> to the local variable <code>guess</code>.</p>
@@ -408,59 +420,61 @@ f(x) = c
 <section id="minimization" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="minimization"><span class="header-section-number">8.2</span> Minimization</h2>
 <p>Another fundamental task in mathematics is to find the minimum value that a function can attain. Recall the function <span class="math inline">f(x) = x^2+2x-1</span> from the previous section.</p>
-<div id="3d57f670" class="cell" data-execution_count="7">
+<div id="01ad0070" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Show code generating the plot below</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the x range</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">600</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the absolute value function</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>plt.plot(x, f(x), label<span class="op">=</span><span class="st">'$f(x) = x^2 + 2x - 1$'</span>)</span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels and title</span></span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Plot of the function f on the interval [-3,3]'</span>)</span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'x'</span>)</span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'f(x)'</span>)</span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a grid</span></span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Set range</span></span>
-<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>)</span>
-<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="dv">4</span>,<span class="dv">14</span>)</span>
-<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a legend</span></span>
-<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
-<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the x range</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">600</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the absolute value function</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>plt.plot(x, f(x), label<span class="op">=</span><span class="st">'$f(x) = x^2 + 2x - 1$'</span>)</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels and title</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Plot of the function f on the interval [-3,3]'</span>)</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'x'</span>)</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'f(x)'</span>)</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a grid</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Set range</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>)</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="dv">4</span>,<span class="dv">14</span>)</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a legend</span></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="08-math-and-plotting_files/figure-html/cell-8-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="517" height="376"></p>
+<p><img src="08-math-and-plotting_files/figure-html/cell-9-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="517" height="376"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>It can be seen that the point x at which the function <span class="math inline">f</span> is the lowest, i.e., attains its minimum is <span class="math inline">x = -1</span>, and the function values in that point is <span class="math inline">f(-1) = -2</span>. Python has various ways of finding the minimum of a function, the easiest-to-use being <code>fmin()</code> from the <code>optimize</code> module.</p>
+<p><br><br> It can be seen that the point x at which the function <span class="math inline">f</span> is the lowest, i.e., attains its minimum is <span class="math inline">x = -1</span>, and the function values in that point is <span class="math inline">f(-1) = -2</span>. Python has various ways of finding the minimum of a function, the easiest-to-use being <code>fmin()</code> from the <code>optimize</code> module.</p>
 <p>The syntax that is used for this function is similar to that of <code>fsolve()</code>. Although we already defined the function <span class="math inline">f</span> in the previous section, we will redefine it in the code below for sake of completeness.</p>
-<div id="d11e03da" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">-</span> <span class="dv">1</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>guess <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>minimum <span class="op">=</span> optimize.fmin(f,guess)</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The minimum of the function f is attained at x = '</span>, minimum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="82f91fbe" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.optimize <span class="im">as</span> optimize</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>guess <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>minimum <span class="op">=</span> optimize.fmin(f,guess)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The minimum of the function f is attained at x = '</span>, minimum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Optimization terminated successfully.
          Current function value: -2.000000
@@ -470,14 +484,299 @@ The minimum of the function f is attained at x =  [-1.]</code></pre>
 </div>
 </div>
 <p>Note that Python outputs some information in the console about the mathematical optimization procedure that was performed in order to find the minimum of the function. It displays the function value at the miminum that was found, in our case <span class="math inline">-2 = f(-1)</span>, and a number of iterations and function evaluations. These last two pieces of information are not relevant for us, but are useful for an expert who wants to understand better how well the optimization procedure performed. If you want, you can suppress all this information by adding <code>disp=False</code> or <code>disp=0</code> as an argument to the fmin() function. This is illustrated below.</p>
-<div id="ea151e6b" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>minimum <span class="op">=</span> optimize.fmin(f,guess,disp<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The minimum of the function f is attained at x = '</span>, minimum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="039c1e74" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>minimum <span class="op">=</span> optimize.fmin(f,guess,disp<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The minimum of the function f is attained at x = '</span>, minimum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The minimum of the function f is attained at x =  [-1.]</code></pre>
 </div>
 </div>
+<p>Also here, if you want to return only the value <code>-1.0</code> instead of the list <code>[-1.0]</code> you can do the following as we illustrated for <code>fsolve()</code> as well.</p>
+<div id="7e3b9412" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>minimum <span class="op">=</span> optimize.fmin(f,guess,disp<span class="op">=</span><span class="va">False</span>)[<span class="dv">0</span>]</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The minimum of the function f is attained at x = '</span>, minimum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The minimum of the function f is attained at x =  -1.0000000000000018</code></pre>
+</div>
+</div>
+</section>
+<section id="sec-visualization" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="sec-visualization"><span class="header-section-number">8.3</span> Visualization</h2>
+<p>In this section we will explain the basics for plotting functions and data, for which we will use the <code>matplotlib.pyplot</code> (sub)package. We import it under the name <code>plt</code>. You might wonder why we use the name <code>plt</code> and not the perhaps more obvious choise <code>plot</code>. This is because <code>plot()</code> is a command that we will be using, so we do not want to create any conflicts with this function when executing a Python script.</p>
+<p>In this section we will explain step-by-step how to generate the figure that we have seen in the previous two sections. We start with plotting the function <span class="math inline">f(x) = x^2 + 2x -1</span> for some values of <span class="math inline">x</span> in a two-dimensional figure.</p>
+<div id="5e0c4708" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the function f</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the x range of x-values</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>])</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the function values f(x[i]) of the elements x[i] </span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="co"># and store them in the array y</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> f(x)</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a><span class="co">#Create the figure</span></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y)</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the plot</span></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="08-math-and-plotting_files/figure-html/cell-13-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="569" height="411"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><br><br></p>
+<p>You can view the figure in the Plots pane (or tab) in Spyder.</p>
+<blockquote class="blockquote">
+<p>If the resolution of the plots in the Plots pane is bad, you can increase it by going to “Tools &gt; Preferences &gt; IPython console &gt; Graphics &gt; Inline backend &gt; Resolution” and set the resolution to, for example, 300 dpi.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>You can get the Plots pane in fullscreen by going to the button with the three horizontal lines in the top right corner and choose “Undock”. You can “Dock” the pane again as well if you want to leave the fullscreen mode.</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/plot_example_spyder.png" class="img-fluid figure-img"></p>
+<figcaption>IPython Console</figcaption>
+</figure>
+</div>
+<p>We will next explain what the code above is doing. After defining the function <span class="math inline">f</span>, we create the vector (i.e., Numpy array) <span class="math display">
+x = [x_1,x_2,x_3,x_4,x_5,x_6,x_7] =  [-3,-2,-1,0,1,2,3].
+</span></p>
+<p>We then compute the function values <span class="math inline">f(x_i)</span> for <span class="math inline">i = 1,\dots,7</span> and story these in the vector <span class="math inline">y</span>. This might seem a bit strange. We defined the vector <span class="math inline">f</span> as being a function that takes as input a number <span class="math inline">x</span> and outputs the number <span class="math inline">f(x)</span>, but now we are inputting a whole vector of numbers <span class="math inline">x</span> into the function <span class="math inline">f</span>. Python is capable of handling this, and deals with this by returning the function value for every element of the vector <span class="math inline">x</span>. That is, it will output the vector</p>
+<p><span class="math display">
+[f(x_1),f(x_2),f(x_3),f(x_4),f(x_5),f(x_6),f(x_7)] = [-3,-1,-2,-1,2,6,14].
+</span></p>
+<p>We call <span class="math inline">f</span> a <i>vectorized</i> function: At first glance, it is defined to have a single number as input, but it can also handle a vector as input, in which case it returns the function evaluation for every element of the vector. This typically only works when <code>x</code> is defined to be a Numpy array. If we would have defined <code>x = [-3,-2,-1,0,1,2,3]</code> as a list of numbers, the code would have given an error (try this yourself!).</p>
+<blockquote class="blockquote">
+<p>If you use mathematical functions or functions from Numpy, Scipy or Matplotlib, it is best to store numerical input data for these functions in Numpy arrays (and not lists).</p>
+</blockquote>
+<p>Next, we create an (empty) figure using the command <code>plt.figure()</code>. Then comes the most important command, <code>plt.plot(x,y)</code>, that plots the elements in the vector <span class="math inline">x</span> against the elements in the vector <span class="math inline">y = f(x)</span>, and connects consecutive combinations <span class="math inline">(x_i,y_i)</span> and <span class="math inline">(x_{i+1},y_{i+1})</span> with a line segment. For example, we have <span class="math inline">(x_1,y_1) = (-3,2)</span> and <span class="math inline">(x_2,y_2) = (-2,-1)</span>. The left most line segment is formed by connecting these points.</p>
+<p>If you only want to plot the points <span class="math inline">(x_i,y_i)</span>, and not the line segments, you can use <code>plt.scatter(x,y)</code> instead of <code>plt.plot(x,y)</code>.</p>
+<div id="b7b4d38a" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the function f</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the x range of x-values</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>])</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the function values f(x[i]) of the elements x[i] </span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="co"># and store them in the array y</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> f(x)</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a><span class="co">#Create the figure</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>plt.scatter(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="08-math-and-plotting_files/figure-html/cell-14-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="569" height="411"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><br><br> Observe that the (blue) line in the figure that was generated using <code>plt.plot(x,y)</code> is not as “smooth” as in the figures in the previous sections, where the function does not (visibly) have these segments. To get a smoother function line, we can include more points in the vector <span class="math inline">x</span>.</p>
+<p>A quick way to generate a number <span class="math inline">k</span> of evenly spaced points in the interval <span class="math inline">[a,b]</span> is the command <code>np.linspace(a,b,k)</code> from the Numpy package. It takes as input the bounds of the interval <span class="math inline">[a,b]</span> and the number of points <span class="math inline">k</span> that we want to have in it. Consider the following example, where we want to generate <span class="math inline">k = 11</span> points in the interval <span class="math inline">[a,b] = [0,1]</span>.</p>
+<div id="197547a7" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">11</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1. ]</code></pre>
+</div>
+</div>
+<p>Note that the end points of the interval form the first and last element in the vector <span class="math inline">x</span>. “Evenly spaced” refers to the fact that the distance between two consecutive points in <span class="math inline">x</span> is always the same. For this <span class="math inline">x</span> this common distance is <span class="math inline">0.1 = (b-a)/(k-1)</span>.</p>
+<p>Let us plot again the function <span class="math inline">f</span>, but this time with <span class="math inline">600</span> elements in <span class="math inline">x</span> in the interval <span class="math inline">[-3,3]</span>. We use <code>plt.plot()</code> again, instead of <code>plt.scatter()</code>. We now obtain a much smoother function line.</p>
+<div id="e01567ee" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the function f</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the x range of x-values</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">600</span>)</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the function values f(x[i]) of the elements x[i] </span></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="co"># and store them in the array y</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> f(x)</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="co">#Create the figure</span></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="08-math-and-plotting_files/figure-html/cell-16-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="569" height="411"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><br><br> You can add a legend for the line/points that you plot by using the label argument of <code>plt.plot()</code>. For example we can add the function description using <code>plt.plot(x,y,label='$f(x) = x^2 + 2x - 1$')</code>. This is in particular useful if you plot multiple functions in one figure, as the example below illustrates. There we plot the functions <span class="math inline">f</span> and <span class="math inline">g</span>, with <span class="math inline">g(x) = 3x</span> a new function. To have the labels appear in the legend of the figure, you need to add a legend to the figure with <code>plt.legend()</code>.</p>
+<p>If you want to add labels to the horizontal and vertical axis, you can use the commands <code>plt.xlabel()</code> and <code>plt.ylabel()</code>.</p>
+<div id="49d827d2" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the function f</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the function g</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> g(x):</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">3</span><span class="op">*</span>x</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the x range of x-values</span></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">600</span>)</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the function values f(x[i]) of the elements x[i] </span></span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a><span class="co"># and store them in the array y</span></span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> f(x)</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> g(x)</span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a><span class="co">#Create the figure</span></span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, label<span class="op">=</span><span class="st">'$f(x) = x^2 + 2x - 1$'</span>)</span>
+<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a>plt.plot(x, z, label<span class="op">=</span><span class="st">'$g(x) = 3x$'</span>)</span>
+<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Create labels for axes</span></span>
+<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'x'</span>)</span>
+<span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Function value'</span>)</span>
+<span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the legend with the specified labels</span></span>
+<span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a>plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="08-math-and-plotting_files/figure-html/cell-17-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="596" height="432"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><br><br> You might observe that the range on the vertical axis changed now that we added a second function to the plot. When we only plotted the function <span class="math inline">f</span>, the vertical axis ranged from <span class="math inline">-2</span> to <span class="math inline">14</span>, but now with the function <span class="math inline">g</span> added to it, it ranges from <span class="math inline">-10</span> to <span class="math inline">15</span>.</p>
+<p>You can fix the range <span class="math inline">[c,d]</span> on the vertical axis using the command <code>plt.ylim(c,d)</code>, and to fix the range of the horizontal axis to <span class="math inline">[a,b]</span>, you can use <code>plt.xlim(a,b)</code>. In the figure below, we fix the vertical range to <span class="math inline">[c,d] = [-10,14]</span> and the horizontal axis to <span class="math inline">[a,b] = [-3,3]</span>.</p>
+<div id="5bff818c" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the function f</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the function g</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> g(x):</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">3</span><span class="op">*</span>x</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the x range of x-values</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">600</span>)</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the function values f(x[i]) of the elements x[i] </span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a><span class="co"># and store them in the array y</span></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> f(x)</span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> g(x)</span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a><span class="co">#Create the figure</span></span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, label<span class="op">=</span><span class="st">'$f(x) = x^2 + 2x - 1$'</span>)</span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>plt.plot(x, z, label<span class="op">=</span><span class="st">'$g(x) = 3x$'</span>)</span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Create labels for axes</span></span>
+<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'x'</span>)</span>
+<span id="cb26-29"><a href="#cb26-29" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Function value'</span>)</span>
+<span id="cb26-30"><a href="#cb26-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-31"><a href="#cb26-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the legend with the specified labels</span></span>
+<span id="cb26-32"><a href="#cb26-32" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb26-33"><a href="#cb26-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-34"><a href="#cb26-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Fix the range of the axes</span></span>
+<span id="cb26-35"><a href="#cb26-35" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>)</span>
+<span id="cb26-36"><a href="#cb26-36" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="dv">10</span>,<span class="dv">14</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="08-math-and-plotting_files/figure-html/cell-18-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="600" height="429"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><br><br> Finally, you can also add a title to the plot using the command <code>plt.title()</code> as well as a grid in the background of the figure using <code>plt.grid()</code>. These are illustrated in the figure below.</p>
+<div id="75cdda9a" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the function f</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the function g</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> g(x):</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">3</span><span class="op">*</span>x</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the x range of x-values</span></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">600</span>)</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the function values f(x[i]) of the elements x[i] </span></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="co"># and store them in the array y</span></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> f(x)</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> g(x)</span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a><span class="co">#Create the figure</span></span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, label<span class="op">=</span><span class="st">'$f(x) = x^2 + 2x - 1$'</span>)</span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>plt.plot(x, z, label<span class="op">=</span><span class="st">'$g(x) = 3x$'</span>)</span>
+<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Create labels for axes</span></span>
+<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'x'</span>)</span>
+<span id="cb27-29"><a href="#cb27-29" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Function value'</span>)</span>
+<span id="cb27-30"><a href="#cb27-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-31"><a href="#cb27-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the legend with the specified labels</span></span>
+<span id="cb27-32"><a href="#cb27-32" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb27-33"><a href="#cb27-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-34"><a href="#cb27-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Fix the range of the axes</span></span>
+<span id="cb27-35"><a href="#cb27-35" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>)</span>
+<span id="cb27-36"><a href="#cb27-36" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="dv">10</span>,<span class="dv">14</span>)</span>
+<span id="cb27-37"><a href="#cb27-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-38"><a href="#cb27-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Add title to the plot</span></span>
+<span id="cb27-39"><a href="#cb27-39" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'A first plot in Python of two functions'</span>)</span>
+<span id="cb27-40"><a href="#cb27-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-41"><a href="#cb27-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Add grid to the background</span></span>
+<span id="cb27-42"><a href="#cb27-42" aria-hidden="true" tabindex="-1"></a>plt.grid()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="08-math-and-plotting_files/figure-html/cell-19-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="600" height="449"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><br><br> This completes the description of how to plot figures like those we saw in the previous two sections. As a final remark, there are many more plotting options that we do not cover here. For example, with the <code>plt.xticks()</code> and <code>plt.yticks()</code> commands you can specify the numbers you want to have displayed on the horizontal and vertical axis, respectively. Also, there are commands to specify line color, width, type (e.g., dashed) and much more! You do not need to know this, but feel free to play around with such commands!</p>
 
 
 </section>
