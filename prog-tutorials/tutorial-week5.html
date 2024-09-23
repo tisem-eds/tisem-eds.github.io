@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Tutorial Exercises Week 5 - Solutions</title>
+<title>Tutorial Exercises Week 5</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -125,7 +125,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Tutorial Exercises Week 5 - Solutions</h1>
+<h1 class="title">Tutorial Exercises Week 5</h1>
 </div>
 
 
@@ -146,7 +146,7 @@ window.Quarto = {
 <section id="question-1" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="question-1">Question 1</h4>
 <p>Copy the following extended dataset from the course document into Python.</p>
-<div id="16b653bd" class="cell" data-execution_count="1">
+<div id="b2b6a69f" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> { </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a> <span class="st">'name'</span> : [<span class="st">"Aiden"</span>, <span class="st">"Bella"</span>, <span class="st">"Carlos"</span>, <span class="st">"Dalia"</span>, <span class="st">"Elena"</span>, <span class="st">"Farhan"</span>, <span class="st">"Geert"</span>, <span class="st">"Hadi"</span>, <span class="st">"Ian"</span>, <span class="st">"Jane"</span>],</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a> <span class="st">'height (cm)'</span> : [<span class="dv">185</span>, <span class="dv">155</span>, <span class="dv">190</span>, <span class="dv">185</span>, <span class="dv">160</span>, <span class="dv">170</span>, <span class="dv">165</span>, <span class="dv">178</span>, <span class="dv">192</span>, <span class="dv">158</span>],</span>
@@ -158,7 +158,7 @@ window.Quarto = {
 <ol type="a">
 <li>Turn the dataset above into a Pandas data frame and print it.</li>
 </ol>
-<div id="02087c8a" class="cell" data-execution_count="2">
+<div id="9c2ce76a" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-stdout">
 <pre><code>     name  height (cm)  weight (kg)  age (years) dietary preference
 0   Aiden          185           80           23             Veggie
@@ -176,7 +176,7 @@ window.Quarto = {
 <ol start="2" type="a">
 <li>Print all the odd numbered rows from the data frame:</li>
 </ol>
-<div id="ee1aed63" class="cell" data-execution_count="3">
+<div id="2fb05e11" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-stdout">
 <pre><code>     name  height (cm)  weight (kg)  age (years) dietary preference
 1   Bella          155           60           23             Veggie
@@ -189,7 +189,7 @@ window.Quarto = {
 <ol start="3" type="a">
 <li>Print the following part of the frame:</li>
 </ol>
-<div id="7ad16e75" class="cell" data-execution_count="4">
+<div id="68fed8b4" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-stdout">
 <pre><code>     name dietary preference
 1   Bella             Veggie
@@ -202,7 +202,7 @@ window.Quarto = {
 <ol start="4" type="a">
 <li>Print the rows of the people whose weight is greater or equal than <span class="math inline">75</span> kilograms:</li>
 </ol>
-<div id="3aecd27f" class="cell" data-execution_count="5">
+<div id="64ca8bdf" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-stdout">
 <pre><code>     name  height (cm)  weight (kg)  age (years) dietary preference
 0   Aiden          185           80           23             Veggie
@@ -217,7 +217,7 @@ window.Quarto = {
 <ol start="5" type="a">
 <li>Print the rows of the people whose height is in the interval <span class="math inline">[170,190]</span>:</li>
 </ol>
-<div id="5d18114b" class="cell" data-execution_count="6">
+<div id="f806f9f1" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-stdout">
 <pre><code>     name  height (cm)  weight (kg)  age (years) dietary preference
 0   Aiden          185           80           23             Veggie
@@ -231,7 +231,7 @@ window.Quarto = {
 <ol start="6" type="a">
 <li>Use a for-loop to print three frames based on the dietary preferences that the people have. So one frame containing all the rows of people whose preference is Veggie, one with people whose preference is Vegan, and one with people whose preference is None:</li>
 </ol>
-<div id="136c70a2" class="cell" data-execution_count="7">
+<div id="a5674f98" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-stdout">
 <pre><code>    name  height (cm)  weight (kg)  age (years) dietary preference
 0  Aiden          185           80           23             Veggie
@@ -255,7 +255,7 @@ window.Quarto = {
 <ol type="a">
 <li>Adjust the weight column so that the weights are displayed in pounds (lbs) instead of kilograms (kg). For this, you may use that 1 kg = 2.2205 lbs. The column name should be changed to <code>'weight (lbs)'</code>. The frame should look like this in the end:</li>
 </ol>
-<div id="0d4a70bc" class="cell" data-execution_count="8">
+<div id="68dad29f" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-stdout">
 <pre><code>     name  height (cm)  weight (lbs)  age (years) dietary preference
 0   Aiden          185      177.6400           23             Veggie
@@ -278,7 +278,7 @@ window.Quarto = {
 </ol>
 <p><i> Hint: The same hint as in part a) applies. Also recall that you can use <code>//</code> to do modulo operations. For example <code>14 // 3</code> gives <code>4</code> because <span class="math inline">3</span> fits <span class="math inline">4</span> times in <span class="math inline">14</span>.</i></p>
 <p>The new frame should look like this:</p>
-<div id="152bbd61" class="cell" data-execution_count="9">
+<div id="a2f278b2" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-stdout">
 <pre><code>     name height (f'i'')  weight (lbs)  age (years) dietary preference
 0   Aiden       [6.0, 1]            80           23             Veggie
@@ -305,7 +305,7 @@ window.Quarto = {
 </ol>
 <p><i>Hint: Define a function that computes the BMI for a given weight and height, and then use a for-loop to compute the BMI values.</i></p>
 <p>The new frame should look like this.</p>
-<div id="f08eaae8" class="cell" data-execution_count="10">
+<div id="76c1d469" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-stdout">
 <pre><code>     name  height (cm)  weight (kg)        BMI  age (years) dietary preference
 0   Aiden          185           80  23.374726           23             Veggie
@@ -330,7 +330,7 @@ window.Quarto = {
 <ol type="a">
 <li>Load both files into a (separate) Pandas data frame and print the first 10 rows from both. The output should look like this:</li>
 </ol>
-<div id="2ac663a9" class="cell" data-execution_count="11">
+<div id="eaf8da0c" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-stdout">
 <pre><code>           0
 0      Amina
@@ -360,7 +360,7 @@ window.Quarto = {
 <ol start="2" type="a">
 <li>Create a new data frame that contains three columns: One with the team number (ranging from 1 to 100), one with the first team member from the first dataset, and one with the second team member from the second dataset. The first five rows of the new frame should look like this:</li>
 </ol>
-<div id="eca38e85" class="cell" data-execution_count="12">
+<div id="3b8d33ac" class="cell" data-execution_count="12">
 <div class="cell-output cell-output-stdout">
 <pre><code>   Team number   Member 1 Member 2
 0            1      Amina    Maria
