@@ -274,7 +274,7 @@ window.Quarto = {
 <p><link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""> <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&amp;family=Fira+Sans&amp;display=swap" rel="stylesheet"></p>
 <p>Python is what is called an <i>object oriented</i> programming language. Almost everything in Python is an object on which, e.g., functions can be applied. Recall, for example, the Pandas data frames that we say in the last chapter: We could change elements in the frame, compute summary statistics of its columns, and modify its size.</p>
 <p>Objects in Python are generated as instances of a <i>class</i>. Even something simple as a decimal number is an object from a class. To figure out what class an object is from, you can use the <code>type()</code> function.</p>
-<div id="1e121140" class="cell" data-execution_count="1">
+<div id="f72a3fd9" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">1.42</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(x)) <span class="co"># x is an object from the class float</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -283,7 +283,7 @@ window.Quarto = {
 </div>
 </div>
 <p>To illustrate the concept of a class in more detail, we will create a class whose objects model students. The class could, for example, be used to keep track of the student administration at a school or university. You should think of a class as a blueprint: It describes the type of information we keep track of of every student, and how we can retrieve and manipulate it. The basic syntax for creating a class is given by <code>class class_name:</code>. For example if we want to create an (empty) class called <code>Student</code> we can do the following</p>
-<div id="def84957" class="cell" data-execution_count="2">
+<div id="15ebfff7" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Student:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Here the code to create and manipulate objects would be given</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -292,7 +292,7 @@ window.Quarto = {
 <section id="attributes" class="level2" data-number="10.1">
 <h2 data-number="10.1" class="anchored" data-anchor-id="attributes"><span class="header-section-number">10.1</span> Attributes</h2>
 <p>In general, to create an object of a class we need to have some basic information of the object. For example, we can require that every student needs to have a name, age and student number. These pieces of information, needed to create an object of the class, are called <i>attributes</i>. We use a special function in Python called <code>__init__()</code>, that can be used to so-called <i>initialize</i> an object. For the student class with attributes name, age and student number (ID), this is done as follows.</p>
-<div id="eee66f7d" class="cell" data-execution_count="3">
+<div id="1f6b90ae" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Student:</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This function initializes an object of the class Student</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># by setting the attributes (name, age and ID) of an object.   </span></span>
@@ -301,11 +301,11 @@ window.Quarto = {
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.ID <span class="op">=</span> student_number </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>In general, the <code>__init__()</code> function has a first input called <code>self</code> which you should think of as representing the empty mould that we are going to fill with the student’s information. The other input arguments of <code>__init__()</code> are the inputs for the attributes of the student.</p>
+<p>In general, the <code>__init__()</code> function has a first input called <code>self</code> which you should think of as representing an empty object that we are going to fill with the student’s information. The other input arguments of <code>__init__()</code> are the inputs for the attributes of the student.</p>
 <p>The attributes we set by doing <code>self.attribute_name = attribute_input</code>, where <code>attribute_name</code> is the name of the attribute (name, age and ID) here and <code>attribute_input</code> the input arguments of the function <code>__init__()</code> (name, age and student_number here).</p>
 <p>Note that the variables we use for the input arguments of <code>__init__()</code> do not have to be the same as the names of the attributes themselves. For example, for the student number, we use the input argument <code>student_number</code> in <code>__init__()</code>, but we set this argument to be the ID attribute (when we do <code>self.ID = student_number</code>).</p>
 <p>We next create an object (i.e., student) of the class with given inputs for the attributes.</p>
-<div id="1acff64e" class="cell" data-execution_count="4">
+<div id="73ce5dc0" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating an object (called stud) of the class Student</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>student1 <span class="op">=</span> Student(<span class="st">"Aidan"</span>,<span class="dv">19</span>,<span class="st">"2029912"</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -319,9 +319,9 @@ Age of student is 19
 Student number of student is 2029912</code></pre>
 </div>
 </div>
-<p>The line <code>stud = Student("Aidan",19,"2029912")</code> creates an object (or instance) of the Student class called <code>student1</code>. The input arguments of <code>Student("Aidan",19,"2029912")</code> are automatically passed to the (by every class required) <code>__init__()</code> function, that is, <code>name = "Aidan"</code>, <code>age=19</code>, and <code>student_number="2029912"</code>.</p>
+<p>The line <code>student1 = Student("Aidan",19,"2029912")</code> creates an object (or instance) of the Student class called <code>student1</code>. The input arguments of <code>Student("Aidan",19,"2029912")</code> are automatically passed to the (by every class required) <code>__init__()</code> function, that is, <code>name = "Aidan"</code>, <code>age=19</code>, and <code>student_number="2029912"</code>. You should think of <code>student1</code> becoming the local variable <code>self</code> in the <code>__init__()</code> function.</p>
 <p>It is also possible to, after an object has been created, change its attributes.</p>
-<div id="7382c16a" class="cell" data-execution_count="5">
+<div id="23a7d294" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add last name of student as well</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>student1.name <span class="op">=</span> <span class="st">"Aidan Amir"</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -335,7 +335,7 @@ Student number of student is 2029912</code></pre>
 <h2 data-number="10.2" class="anchored" data-anchor-id="methods"><span class="header-section-number">10.2</span> Methods</h2>
 <p>In a class we define, next to <code>__init__()</code>, additional functions that can be used to used to modify or obtain information of the student. Such function in a class are called <i>methods</i>. The <code>__init__()</code> function is also strictly speaking a method of the class.</p>
 <p>As a first example, suppose we want to check if a student is of adult age (18 years or older). We can do this by adding the method <code>adult()</code> to the Student class. The first input of such an additional function always should be <code>self</code>. Next to that, there could also be additional arguments (we will give an example of this later).</p>
-<div id="67fa85c7" class="cell" data-execution_count="6">
+<div id="0db8f5c1" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Student:</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This method initializes an object of the class Student</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># by setting the attributes (name, age, and ID) of an object.   </span></span>
@@ -350,7 +350,7 @@ Student number of student is 2029912</code></pre>
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
 <span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="bu">print</span>(<span class="va">self</span>.name,<span class="st">"is not an adult"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="3ec82bfb" class="cell" data-execution_count="7">
+<div id="697ad22f" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create two Student objects</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>student1 <span class="op">=</span> Student(<span class="st">"Aidan"</span>,<span class="dv">19</span>,<span class="st">"2029912"</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>student2 <span class="op">=</span> Student(<span class="st">"Bella"</span>,<span class="dv">17</span>,<span class="st">"2034912"</span>)</span>
@@ -366,7 +366,7 @@ Bella is not an adult</code></pre>
 <section id="input-arguments" class="level3" data-number="10.2.1">
 <h3 data-number="10.2.1" class="anchored" data-anchor-id="input-arguments"><span class="header-section-number">10.2.1</span> Input arguments</h3>
 <p>We also give an example of a method that takes additional input arguments (next to <code>self</code>). Suppose we have a list of student numbers that have registered for a course. We create a method <code>reg_check</code> that takes as input the list of student numbers and checks whether a student (i.e., object) has registered or not by inspecting whether or not the student number of the student is contained in the list.</p>
-<div id="4a141e42" class="cell" data-execution_count="8">
+<div id="a2f41be5" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Student:</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This method initializes an object of the class Student</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># by setting the attributes (name, age, and ID) of an object.   </span></span>
@@ -387,7 +387,7 @@ Bella is not an adult</code></pre>
 <span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> <span class="bu">print</span>(<span class="va">self</span>.name, <span class="st">"is registered"</span>)</span>
 <span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">print</span>(<span class="va">self</span>.name, <span class="st">"is not registered"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="92a53b74" class="cell" data-execution_count="9">
+<div id="c32788f6" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>student1 <span class="op">=</span> Student(<span class="st">"Aidan"</span>,<span class="dv">19</span>,<span class="st">"2029912"</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>course_A <span class="op">=</span> [<span class="st">"2034757"</span>,<span class="st">"2029912"</span>,<span class="st">"2087645"</span>,<span class="st">"2091234"</span>,<span class="st">"2198765"</span>]</span>
@@ -407,7 +407,7 @@ Aidan is not registered</code></pre>
 <section id="updating-attributes" class="level3" data-number="10.2.2">
 <h3 data-number="10.2.2" class="anchored" data-anchor-id="updating-attributes"><span class="header-section-number">10.2.2</span> Updating attributes</h3>
 <p>We can also include more involved attributes in a class. For example, suppose that we want to be able to keep track of the courses that a student is taking part in. To achieve this, we create an extra attribute <code>courses</code> that is initialized as an empty list in <code>__init__()</code>. In addition to this, we define a method <code>addCourse()</code> that allows us to append a course to the courses list. We temporarily remove the methods <code>age</code> and <code>reg_check</code> to not make the code too long.</p>
-<div id="aa7d2cb3" class="cell" data-execution_count="10">
+<div id="985e144c" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Student:</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This method initializes an object of the class Student</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># by setting the attributes (name, age, and ID) of an object.   </span></span>
@@ -421,7 +421,7 @@ Aidan is not registered</code></pre>
 <span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.courses.append(course_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Note that the <code>courses</code> attribute is not obtained from an input argument of <code>__init__()</code>. This is because we define it to be an empty list.</p>
-<div id="7f18c0ae" class="cell" data-execution_count="11">
+<div id="00339dca" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>student1 <span class="op">=</span> Student(<span class="st">"Aidan"</span>,<span class="dv">19</span>,<span class="st">"2029912"</span>)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Initially the courses list is empty</span></span>
@@ -441,7 +441,7 @@ Aidan is not registered</code></pre>
 </div>
 </div>
 <p>Similarly, we can also define a method that can be used to delete a course. Deleting an element from a list can be done using the <code>remove</code> function, that is illustrated below.</p>
-<div id="630792c9" class="cell" data-execution_count="12">
+<div id="9fa6f5e4" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="st">'Aidan'</span>,<span class="st">'Bella'</span>,<span class="st">'Charlie'</span>]</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>x.remove(<span class="st">'Bella'</span>)</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -451,7 +451,7 @@ Aidan is not registered</code></pre>
 </div>
 </div>
 <p>Next, we give the class with the addition and deletion method for courses.</p>
-<div id="e84ab0a8" class="cell" data-execution_count="13">
+<div id="f462341d" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Student:</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This method initializes an object of the class Student</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># by setting the attributes (name, age, and ID) of an object.   </span></span>
@@ -469,7 +469,7 @@ Aidan is not registered</code></pre>
 <span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> delCourse(<span class="va">self</span>,course_name):</span>
 <span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.courses.remove(course_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="9a840d87" class="cell" data-execution_count="14">
+<div id="4416f65c" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>student1 <span class="op">=</span> Student(<span class="st">"Aidan"</span>,<span class="dv">19</span>,<span class="st">"2029912"</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Initially the courses list is empty</span></span>
@@ -496,12 +496,12 @@ Aidan is not registered</code></pre>
 </section>
 <section id="overview" class="level3" data-number="10.2.3">
 <h3 data-number="10.2.3" class="anchored" data-anchor-id="overview"><span class="header-section-number">10.2.3</span> Overview</h3>
-<p>To summarize, a class consists of an initialization method <code>__init__()</code> that is mandatory and used to initialize objects/instances of a class by setting the attributes of an object. Next to that, there can be other methods that either can be used to manipulate or to derive properties of an object.</p>
-<p>For the class at the end of the previous subsection, we can summarize the aspects of the Student class as follows.</p>
+<p>To summarize, a class consists of an initialization method <code>__init__()</code> that is mandatory and used to initialize objects/instances of a class by setting the attributes of an object. Next to that, there can be other methods that either can be used to manipulate and/or to derive properties of an object.</p>
+<p>We can summarize the aspects of the Student class as follows.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 46%">
-<col style="width: 53%">
+<col style="width: 44%">
+<col style="width: 55%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -516,62 +516,108 @@ Aidan is not registered</code></pre>
 </tr>
 <tr class="even">
 <td><i>Methods</i></td>
-<td>initialization, add course, delete course</td>
+<td>initialization, check age, check registration</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>add course, delete course</td>
 </tr>
 </tbody>
 </table>
+<div id="edcaa920" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import packages here if needed</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define class with all its methods here</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Student:</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This method initializes an object of the class Student</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># by setting the attributes (name, age, and ID) of an object.   </span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age, student_number):</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.ID <span class="op">=</span> student_number </span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This method check if student is &gt;= 18</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> adult(<span class="va">self</span>):</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.age <span class="op">&gt;=</span> <span class="dv">18</span>:</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="bu">print</span>(<span class="va">self</span>.name,<span class="st">"is an adult"</span>)</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="bu">print</span>(<span class="va">self</span>.name,<span class="st">"is not an adult"</span>)</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This method checks if ID is included in list registrations</span></span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> reg_check(<span class="va">self</span>,registrations):</span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i <span class="kw">in</span> registrations:</span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span>(i <span class="op">==</span> <span class="va">self</span>.ID):</span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> <span class="bu">print</span>(<span class="va">self</span>.name, <span class="st">"is registered"</span>)</span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">print</span>(<span class="va">self</span>.name, <span class="st">"is not registered"</span>)</span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This method adds a course to the list courses</span></span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> addCourse(<span class="va">self</span>,course_name):</span>
+<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.courses.append(course_name)</span>
+<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This method deletes a course from the list courses</span></span>
+<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> delCourse(<span class="va">self</span>,course_name):</span>
+<span id="cb23-33"><a href="#cb23-33" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.courses.remove(course_name)</span>
+<span id="cb23-34"><a href="#cb23-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-35"><a href="#cb23-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Put here code to initialize objects.</span></span>
+<span id="cb23-36"><a href="#cb23-36" aria-hidden="true" tabindex="-1"></a>student1 <span class="op">=</span> Student(<span class="st">"Aidan"</span>,<span class="dv">19</span>,<span class="st">"2029912"</span>)</span>
+<span id="cb23-37"><a href="#cb23-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-38"><a href="#cb23-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Print attributes or test methods </span></span>
+<span id="cb23-39"><a href="#cb23-39" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>It is important to separate your testing code from the class. All the methods that form the class have to be indented under the <code>class Student:</code> line. Testing code should come afterwards (when the complete class has been defined).</p>
 </section>
 </section>
 <section id="inheritance" class="level2" data-number="10.3">
 <h2 data-number="10.3" class="anchored" data-anchor-id="inheritance"><span class="header-section-number">10.3</span> Inheritance</h2>
 <p>In Python you can also build classes on top of each other, so that the new class <i>inherit</i> the attributes and methods of an old class. Suppose we start with a simple class Person, whose objects are people that have a name and age. There is also a method in this class that checks whether someone is an adult (<span class="math inline">18</span> years or older).</p>
-<div id="abb9c626" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Person:</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Initialize a person</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Check if person is an adult</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> adult(<span class="va">self</span>):</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(<span class="va">self</span>.age <span class="op">&gt;=</span> <span class="dv">18</span>):</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="bu">print</span>(<span class="va">self</span>.name, <span class="st">"is an adult"</span>)</span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="bu">print</span>(<span class="va">self</span>.name, <span class="st">"is not an adult"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="a83dbd53" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Person:</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Initialize a person</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Check if person is an adult</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> adult(<span class="va">self</span>):</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(<span class="va">self</span>.age <span class="op">&gt;=</span> <span class="dv">18</span>):</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="bu">print</span>(<span class="va">self</span>.name, <span class="st">"is an adult"</span>)</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="bu">print</span>(<span class="va">self</span>.name, <span class="st">"is not an adult"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="2f92f465" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>person1 <span class="op">=</span> Person(<span class="st">"Bella"</span>, <span class="dv">19</span>)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if Bella is an adult</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>person1.adult()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="8fbeca66" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>person1 <span class="op">=</span> Person(<span class="st">"Bella"</span>, <span class="dv">19</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if Bella is an adult</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>person1.adult()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Bella is an adult</code></pre>
 </div>
 </div>
 <p>Suppose we now also want to create a class Student, where every student object has the attributes name, age and student number. We can do this by defining this class from scratch, but we can also make more clever use of the class Person that we already have created. Note that in terms of attributes, every student (having age, name and student number) can be seen as a special case of a person (having age and name), but not the other way around. In this case, we call Person the <i>parent class</i> and Student the <i>child class</i>.</p>
 <p>It is possible to define the class Student so that it automatically inherits the attributes and methods of the class Person. To achieve this, we should put the parent class in brackets of the new child class that we want to define, so in our case we should define the Student class using <code>class Student(Person)</code>. Let us do this with Python code as well, where we in addition also set the student number as attribute.</p>
-<div id="41fba533" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Student(Person):</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Initialize a student</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age, student_number):</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>        Person.<span class="fu">__init__</span>(<span class="va">self</span>,name,age)</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.ID <span class="op">=</span> student_number</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="a159950a" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Student(Person):</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Initialize a student</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age, student_number):</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>        Person.<span class="fu">__init__</span>(<span class="va">self</span>,name,age)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.ID <span class="op">=</span> student_number</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The class Student also needs an <code>__init__()</code> method, which takes as input all the attributes that we want to set (age, name and student number). Instead of using <code>self.name = name</code> and <code>self.age = age</code> to set the name and age of a student, we call the <code>__init__()</code> function from the Person class with the line <code>Person.__init__(self,name,age)</code> with arguments <code>name</code> and <code>age</code>.</p>
 <p>You could, of course, argue that we might as well have typed <code>self.name = name</code> and <code>self.age = age</code> here, but you should imagine that objects in Python can have hundreds of attributes. If you are building classes on top of each other with this number of attributes, calling the initialization method from a parent class is much more efficient than setting all the attributes of an object from a child class explicitly again.</p>
 <p>After having created an object from the class Person with the line <code>Person.__init__(self,name,age)</code>, theryby setting the name and age of the student, we, in addition, set the student number with <code>self.ID = student_number</code>.</p>
-<div id="89a98064" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>student1 <span class="op">=</span> Student(<span class="st">"Bella"</span>,<span class="dv">19</span>,<span class="st">"20143576"</span>)</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(student1.name, student1.age, student1.ID)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="7bd27a03" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>student1 <span class="op">=</span> Student(<span class="st">"Bella"</span>,<span class="dv">19</span>,<span class="st">"20143576"</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(student1.name, student1.age, student1.ID)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Bella 19 20143576</code></pre>
 </div>
 </div>
 <p>We can also check is the student is an adult by using the <code>adult()</code> method from the class Person. Because we defined the class Student to be the child of the parent class Person, we can use this method right away also on objects of the class Student.</p>
-<div id="494b46d7" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if Bella is an adult</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>student1.adult()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="2618f65e" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if Bella is an adult</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>student1.adult()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Bella is an adult</code></pre>
 </div>
@@ -580,41 +626,41 @@ Aidan is not registered</code></pre>
 <section id="mathematical-example" class="level2" data-number="10.4">
 <h2 data-number="10.4" class="anchored" data-anchor-id="mathematical-example"><span class="header-section-number">10.4</span> Mathematical example</h2>
 <p>In this section we will define a class whose objects are two-dimension rectangles in the two-dimensional plane <span class="math inline">\mathbb{R}^2</span>, and we define some methods do derive properties from these rectangles. An example of a rectangle in <span class="math inline">\mathbb{R}^2</span>, with corner points <span class="math inline">(1,3), (4,3), (4,1), (1,1)</span> is given below.</p>
-<div id="09b39c48" class="cell" data-execution_count="20">
+<div id="e293f1ea" class="cell" data-execution_count="21">
 <details class="code-fold">
 <summary>Show code generating the plot below</summary>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the x range</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>x_coord <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">1</span>]</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>y_coord <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">1</span>]</span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>plt.plot(x_coord, y_coord,linewidth<span class="op">=</span><span class="dv">3</span>)</span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels and title</span></span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'A rectangle with corners $(1,3), (4,3), (4,1), (1,1)$'</span>)</span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a grid</span></span>
-<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Set range</span></span>
-<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">0</span>,<span class="dv">5</span>)</span>
-<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>,<span class="dv">4</span>)</span>
-<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Set ticks</span></span>
-<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a>plt.xticks([<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>])</span>
-<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a>plt.yticks([<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>])</span>
-<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Show plot</span></span>
-<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the x range</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>x_coord <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">1</span>]</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>y_coord <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">1</span>]</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>plt.plot(x_coord, y_coord,linewidth<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels and title</span></span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'A rectangle with corners $(1,3), (4,3), (4,1), (1,1)$'</span>)</span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a grid</span></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Set range</span></span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">0</span>,<span class="dv">5</span>)</span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>,<span class="dv">4</span>)</span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Set ticks</span></span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>plt.xticks([<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>])</span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>plt.yticks([<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>])</span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Show plot</span></span>
+<span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="10-object-oriented-programming_files/figure-html/cell-21-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="488" height="358"></p>
+<p><img src="10-object-oriented-programming_files/figure-html/cell-22-output-1.png" class="quarto-figure quarto-figure-center figure-img" width="488" height="358"></p>
 </figure>
 </div>
 </div>
@@ -623,21 +669,21 @@ Aidan is not registered</code></pre>
 <p>To keep things simple, we assume that the rectangles never appear at an angle, but always with the horizontal and vertical sides parallel to the horizontal and vertical axis, respectively.</p>
 <p>We should first think about how we want to represent a rectangle in Python, i.e., what will the attributes of a rectangle object of the class be? There are many possibilities here, for example, we could explicitly choose four corner points, that together form the rectangle, as its attributes. This would require eight input numbers: four <span class="math inline">x</span>-coordinates and four <span class="math inline">y</span>-coordinates.</p>
 <p>A more efficient way of doing this is to store the coordinates of the upper-left corner point, the height, and the width of the rectangle (only four input numbers). In the example above the upper-left corner point is <span class="math inline">(4,1)</span>, the height of the rectangle is <span class="math inline">2</span>, and the width is <span class="math inline">3</span>. Note that this information is enough to derive the locations of the other corner points, i.e., <span class="math inline">(4+\text{width},1), (4,1-\text{height}), (4 + \text{width},1 - \text{height}).</span></p>
-<div id="61b6aae2" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Rectangle:</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Here corner is the upper-left corner point which </span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># should be a list containing the x- and y-coordinate.</span></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, corner, height, width):</span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.corner<span class="op">=</span> corner</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.height <span class="op">=</span> height</span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.width <span class="op">=</span> width</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="ee6f0aa6" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Rectangle:</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Here corner is the upper-left corner point which </span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># should be a list containing the x- and y-coordinate.</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, corner, height, width):</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.corner<span class="op">=</span> corner</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.height <span class="op">=</span> height</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.width <span class="op">=</span> width</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Note that we assume that the upper left corner is given in a list whose first entry is the <span class="math inline">x</span>-coordinate of the upper left corner, and whose second entry is the <span class="math inline">y</span>-coordinate. This is merely a modeling choice; we could also have defined two separate attributes for the <span class="math inline">x</span>- and <span class="math inline">y</span>-coordinate.</p>
-<div id="1534c4d8" class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>rectangle1 <span class="op">=</span> Rectangle([<span class="dv">1</span>,<span class="dv">3</span>],<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Print upper left corner of the rectangle</span></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rectangle1.corner)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="451d6c53" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>rectangle1 <span class="op">=</span> Rectangle([<span class="dv">1</span>,<span class="dv">3</span>],<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Print upper left corner of the rectangle</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rectangle1.corner)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1, 3]</code></pre>
 </div>
@@ -646,32 +692,32 @@ Aidan is not registered</code></pre>
 <h3 data-number="10.4.1" class="anchored" data-anchor-id="methods-1"><span class="header-section-number">10.4.1</span> Methods</h3>
 <p>We will next define three methods that can be used to compute explicitly the corner points of the rectangle, its area and its circumference.</p>
 <p>Let us start with the area (width times height) and circumference (two times width plus two times height) of the rectangle. Note that these are relatively straightforward to compute these given that the width and height of a rectangle object are two of its attributes.</p>
-<div id="9e011a54" class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Rectangle:</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Here corner is the upper-left corner point which </span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># should be a list containing the x- and y-coordinate.</span></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, corner, height, width):</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.corner<span class="op">=</span> corner</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.height <span class="op">=</span> height</span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.width <span class="op">=</span> width</span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute area</span></span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> area(<span class="va">self</span>):</span>
-<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.width<span class="op">*</span><span class="va">self</span>.height</span>
-<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute circumference</span></span>
-<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> circumference(<span class="va">self</span>):</span>
-<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">2</span><span class="op">*</span><span class="va">self</span>.width <span class="op">+</span> <span class="dv">2</span><span class="op">*</span><span class="va">self</span>.height</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fff2d936" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Rectangle:</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Here corner is the upper-left corner point which </span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># should be a list containing the x- and y-coordinate.</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, corner, height, width):</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.corner<span class="op">=</span> corner</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.height <span class="op">=</span> height</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.width <span class="op">=</span> width</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute area</span></span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> area(<span class="va">self</span>):</span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.width<span class="op">*</span><span class="va">self</span>.height</span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute circumference</span></span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> circumference(<span class="va">self</span>):</span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">2</span><span class="op">*</span><span class="va">self</span>.width <span class="op">+</span> <span class="dv">2</span><span class="op">*</span><span class="va">self</span>.height</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="7b172faf" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>rectangle1 <span class="op">=</span> Rectangle([<span class="dv">1</span>,<span class="dv">3</span>],<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute and print list of corner points of the rectangle</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>area1 <span class="op">=</span> rectangle1.area()</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>circumference1 <span class="op">=</span> rectangle1.circumference()</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The area of the rectange is"</span>, area1)</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The circumference of the rectange is"</span>, circumference1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="de0f7df0" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>rectangle1 <span class="op">=</span> Rectangle([<span class="dv">1</span>,<span class="dv">3</span>],<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute and print list of corner points of the rectangle</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>area1 <span class="op">=</span> rectangle1.area()</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>circumference1 <span class="op">=</span> rectangle1.circumference()</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The area of the rectange is"</span>, area1)</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The circumference of the rectange is"</span>, circumference1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The area of the rectange is 6
 The circumference of the rectange is 10</code></pre>
@@ -679,29 +725,29 @@ The circumference of the rectange is 10</code></pre>
 </div>
 <p>We continue with the corner points method <code>corners()</code>; we leave out the area and circumference method from the code to keep the code snippet short.</p>
 <p>If we know that the left upper corner point is located at <span class="math inline">[x,y]</span> then the upper-right corner is <span class="math inline">[x + \text{width},y]</span>, the lower-right corner <span class="math inline">[x + \text{width},y - \text{height}]</span>, and the lower-left corner <span class="math inline">[x,y - \text{height}]</span>. We will write a method that returns these points, including the upper-left corner, in a list (restulting in a list of lists as all the corner points themselves will be lists of two elements).</p>
-<div id="26ffe458" class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Rectangle:</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Here corner is the upper-left corner point which </span></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># should be a list containing the x- and y-coordinate.</span></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, corner, height, width):</span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.corner<span class="op">=</span> corner</span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.height <span class="op">=</span> height</span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.width <span class="op">=</span> width</span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute corner points: the output has the points in the </span></span>
-<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># order [upper-left, upper-right, lower-right, lower-left]</span></span>
-<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> corners(<span class="va">self</span>):</span>
-<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>        up_right <span class="op">=</span> [<span class="va">self</span>.corner[<span class="dv">0</span>] <span class="op">+</span> <span class="va">self</span>.width, <span class="va">self</span>.corner[<span class="dv">1</span>]]</span>
-<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>        low_right<span class="op">=</span>[<span class="va">self</span>.corner[<span class="dv">0</span>]<span class="op">+</span><span class="va">self</span>.width,<span class="va">self</span>.corner[<span class="dv">1</span>]<span class="op">-</span><span class="va">self</span>.height]</span>
-<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>        low_left <span class="op">=</span> [<span class="va">self</span>.corner[<span class="dv">0</span>],  <span class="va">self</span>.corner[<span class="dv">1</span>] <span class="op">-</span> <span class="va">self</span>.height]       </span>
-<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [<span class="va">self</span>.corner, up_right, low_right, low_left]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="f80cf189" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Rectangle:</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Here corner is the upper-left corner point which </span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># should be a list containing the x- and y-coordinate.</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, corner, height, width):</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.corner<span class="op">=</span> corner</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.height <span class="op">=</span> height</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.width <span class="op">=</span> width</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute corner points: the output has the points in the </span></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># order [upper-left, upper-right, lower-right, lower-left]</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> corners(<span class="va">self</span>):</span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>        up_right <span class="op">=</span> [<span class="va">self</span>.corner[<span class="dv">0</span>] <span class="op">+</span> <span class="va">self</span>.width, <span class="va">self</span>.corner[<span class="dv">1</span>]]</span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>        low_right<span class="op">=</span>[<span class="va">self</span>.corner[<span class="dv">0</span>]<span class="op">+</span><span class="va">self</span>.width,<span class="va">self</span>.corner[<span class="dv">1</span>]<span class="op">-</span><span class="va">self</span>.height]</span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>        low_left <span class="op">=</span> [<span class="va">self</span>.corner[<span class="dv">0</span>],  <span class="va">self</span>.corner[<span class="dv">1</span>] <span class="op">-</span> <span class="va">self</span>.height]       </span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [<span class="va">self</span>.corner, up_right, low_right, low_left]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="23505c5e" class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>rectangle1 <span class="op">=</span> Rectangle([<span class="dv">1</span>,<span class="dv">3</span>],<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute and print list of corner points of the rectangle</span></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>corners1 <span class="op">=</span> rectangle1.corners()</span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(corners1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="776b056e" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>rectangle1 <span class="op">=</span> Rectangle([<span class="dv">1</span>,<span class="dv">3</span>],<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute and print list of corner points of the rectangle</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>corners1 <span class="op">=</span> rectangle1.corners()</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(corners1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1, 3], [4, 3], [4, 1], [1, 1]]</code></pre>
 </div>
@@ -710,60 +756,60 @@ The circumference of the rectange is 10</code></pre>
 <section id="plotting-method" class="level3" data-number="10.4.2">
 <h3 data-number="10.4.2" class="anchored" data-anchor-id="plotting-method"><span class="header-section-number">10.4.2</span> Plotting method</h3>
 <p>We conclude this section with a method that can be used to plot a rectangle in a two-dimension plane, like the figure given at the beginning of this section. For the plotting method, we also make use of the method to determine the corner points, so this is included in the class below as well. The following code will be explained below.</p>
-<div id="bb579abc" class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Rectangle:</span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Here corner is the upper-left corner point which </span></span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># should be a list containing the x- and y-coordinate.</span></span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, corner, height, width):</span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.corner<span class="op">=</span> corner</span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.height <span class="op">=</span> height</span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.width <span class="op">=</span> width</span>
-<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute corner points: the output has the points in the </span></span>
-<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># order [upper-left, upper-right, lower-right, lower-left]</span></span>
-<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> corners(<span class="va">self</span>):</span>
-<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>        up_right <span class="op">=</span> [<span class="va">self</span>.corner[<span class="dv">0</span>] <span class="op">+</span> <span class="va">self</span>.width, <span class="va">self</span>.corner[<span class="dv">1</span>]]</span>
-<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>        low_right<span class="op">=</span>[<span class="va">self</span>.corner[<span class="dv">0</span>]<span class="op">+</span><span class="va">self</span>.width,<span class="va">self</span>.corner[<span class="dv">1</span>]<span class="op">-</span><span class="va">self</span>.height]</span>
-<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>        low_left <span class="op">=</span> [<span class="va">self</span>.corner[<span class="dv">0</span>],  <span class="va">self</span>.corner[<span class="dv">1</span>] <span class="op">-</span> <span class="va">self</span>.height]       </span>
-<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [<span class="va">self</span>.corner, up_right, low_right, low_left]</span>
-<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Plot the rectangle</span></span>
-<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> plotting(<span class="va">self</span>):</span>
-<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a>        plt.figure()</span>
-<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Obtain corner points of the rectangle using corners()</span></span>
-<span id="cb41-24"><a href="#cb41-24" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> <span class="va">self</span>.corners()</span>
-<span id="cb41-25"><a href="#cb41-25" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb41-26"><a href="#cb41-26" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Define two lists: x-coordinates and y-coordinates</span></span>
-<span id="cb41-27"><a href="#cb41-27" aria-hidden="true" tabindex="-1"></a>        x_coord <span class="op">=</span> [c[<span class="dv">0</span>][<span class="dv">0</span>],c[<span class="dv">1</span>][<span class="dv">0</span>],c[<span class="dv">2</span>][<span class="dv">0</span>],c[<span class="dv">3</span>][<span class="dv">0</span>],c[<span class="dv">0</span>][<span class="dv">0</span>]]</span>
-<span id="cb41-28"><a href="#cb41-28" aria-hidden="true" tabindex="-1"></a>        y_coord <span class="op">=</span> [c[<span class="dv">0</span>][<span class="dv">1</span>],c[<span class="dv">1</span>][<span class="dv">1</span>],c[<span class="dv">2</span>][<span class="dv">1</span>],c[<span class="dv">3</span>][<span class="dv">1</span>],c[<span class="dv">0</span>][<span class="dv">1</span>]]</span>
-<span id="cb41-29"><a href="#cb41-29" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb41-30"><a href="#cb41-30" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Define ranges (margin of 3 around the rectangle)</span></span>
-<span id="cb41-31"><a href="#cb41-31" aria-hidden="true" tabindex="-1"></a>        plt.xlim(<span class="va">self</span>.corner[<span class="dv">0</span>]<span class="op">-</span><span class="dv">3</span>,<span class="va">self</span>.corner[<span class="dv">0</span>] <span class="op">+</span> <span class="va">self</span>.width <span class="op">+</span> <span class="dv">3</span>)</span>
-<span id="cb41-32"><a href="#cb41-32" aria-hidden="true" tabindex="-1"></a>        plt.ylim(<span class="va">self</span>.corner[<span class="dv">1</span>]<span class="op">-</span> <span class="va">self</span>.height <span class="op">-</span> <span class="dv">3</span>,<span class="va">self</span>.corner[<span class="dv">1</span>] <span class="op">+</span> <span class="dv">3</span>)</span>
-<span id="cb41-33"><a href="#cb41-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-34"><a href="#cb41-34" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Create the plot</span></span>
-<span id="cb41-35"><a href="#cb41-35" aria-hidden="true" tabindex="-1"></a>        plt.plot(x_coord, y_coord)</span>
-<span id="cb41-36"><a href="#cb41-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="59608cc2" class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>rectangle1 <span class="op">=</span> Rectangle([<span class="dv">1</span>,<span class="dv">3</span>],<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<div id="3b40efd3" class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Corner points of the rectangle</span></span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>corners1 <span class="op">=</span> rectangle1.corners()</span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(corners1)</span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the rectangle</span></span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>rectangle1.plotting()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Rectangle:</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Here corner is the upper-left corner point which </span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># should be a list containing the x- and y-coordinate.</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, corner, height, width):</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.corner<span class="op">=</span> corner</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.height <span class="op">=</span> height</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.width <span class="op">=</span> width</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute corner points: the output has the points in the </span></span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># order [upper-left, upper-right, lower-right, lower-left]</span></span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> corners(<span class="va">self</span>):</span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>        up_right <span class="op">=</span> [<span class="va">self</span>.corner[<span class="dv">0</span>] <span class="op">+</span> <span class="va">self</span>.width, <span class="va">self</span>.corner[<span class="dv">1</span>]]</span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>        low_right<span class="op">=</span>[<span class="va">self</span>.corner[<span class="dv">0</span>]<span class="op">+</span><span class="va">self</span>.width,<span class="va">self</span>.corner[<span class="dv">1</span>]<span class="op">-</span><span class="va">self</span>.height]</span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a>        low_left <span class="op">=</span> [<span class="va">self</span>.corner[<span class="dv">0</span>],  <span class="va">self</span>.corner[<span class="dv">1</span>] <span class="op">-</span> <span class="va">self</span>.height]       </span>
+<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [<span class="va">self</span>.corner, up_right, low_right, low_left]</span>
+<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Plot the rectangle</span></span>
+<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> plotting(<span class="va">self</span>):</span>
+<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a>        plt.figure()</span>
+<span id="cb42-22"><a href="#cb42-22" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb42-23"><a href="#cb42-23" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Obtain corner points of the rectangle using corners()</span></span>
+<span id="cb42-24"><a href="#cb42-24" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> <span class="va">self</span>.corners()</span>
+<span id="cb42-25"><a href="#cb42-25" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb42-26"><a href="#cb42-26" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Define two lists: x-coordinates and y-coordinates</span></span>
+<span id="cb42-27"><a href="#cb42-27" aria-hidden="true" tabindex="-1"></a>        x_coord <span class="op">=</span> [c[<span class="dv">0</span>][<span class="dv">0</span>],c[<span class="dv">1</span>][<span class="dv">0</span>],c[<span class="dv">2</span>][<span class="dv">0</span>],c[<span class="dv">3</span>][<span class="dv">0</span>],c[<span class="dv">0</span>][<span class="dv">0</span>]]</span>
+<span id="cb42-28"><a href="#cb42-28" aria-hidden="true" tabindex="-1"></a>        y_coord <span class="op">=</span> [c[<span class="dv">0</span>][<span class="dv">1</span>],c[<span class="dv">1</span>][<span class="dv">1</span>],c[<span class="dv">2</span>][<span class="dv">1</span>],c[<span class="dv">3</span>][<span class="dv">1</span>],c[<span class="dv">0</span>][<span class="dv">1</span>]]</span>
+<span id="cb42-29"><a href="#cb42-29" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb42-30"><a href="#cb42-30" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Define ranges (margin of 3 around the rectangle)</span></span>
+<span id="cb42-31"><a href="#cb42-31" aria-hidden="true" tabindex="-1"></a>        plt.xlim(<span class="va">self</span>.corner[<span class="dv">0</span>]<span class="op">-</span><span class="dv">3</span>,<span class="va">self</span>.corner[<span class="dv">0</span>] <span class="op">+</span> <span class="va">self</span>.width <span class="op">+</span> <span class="dv">3</span>)</span>
+<span id="cb42-32"><a href="#cb42-32" aria-hidden="true" tabindex="-1"></a>        plt.ylim(<span class="va">self</span>.corner[<span class="dv">1</span>]<span class="op">-</span> <span class="va">self</span>.height <span class="op">-</span> <span class="dv">3</span>,<span class="va">self</span>.corner[<span class="dv">1</span>] <span class="op">+</span> <span class="dv">3</span>)</span>
+<span id="cb42-33"><a href="#cb42-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-34"><a href="#cb42-34" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Create the plot</span></span>
+<span id="cb42-35"><a href="#cb42-35" aria-hidden="true" tabindex="-1"></a>        plt.plot(x_coord, y_coord)</span>
+<span id="cb42-36"><a href="#cb42-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="f9d8c357" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>rectangle1 <span class="op">=</span> Rectangle([<span class="dv">1</span>,<span class="dv">3</span>],<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Corner points of the rectangle</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>corners1 <span class="op">=</span> rectangle1.corners()</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(corners1)</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the rectangle</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>rectangle1.plotting()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1, 3], [4, 3], [4, 1], [1, 1]]</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="10-object-oriented-programming_files/figure-html/cell-29-output-2.png" class="quarto-figure quarto-figure-center figure-img" width="573" height="416"></p>
+<p><img src="10-object-oriented-programming_files/figure-html/cell-30-output-2.png" class="quarto-figure quarto-figure-center figure-img" width="573" height="416"></p>
 </figure>
 </div>
 </div>
@@ -783,61 +829,52 @@ y = [y_{\text{upper-left}},y_{\text{upper-right}},y_{\text{lower-right}},y_{\tex
 <section id="overview-1" class="level3" data-number="10.4.3">
 <h3 data-number="10.4.3" class="anchored" data-anchor-id="overview-1"><span class="header-section-number">10.4.3</span> Overview</h3>
 <p>The complete class of the previous subsections, containing all the methods that we set up, is given below.</p>
-<div id="41a6ccaa" class="cell" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Rectangle:</span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Here corner is the upper-left corner point which </span></span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># should be a list containing the x- and y-coordinate.</span></span>
-<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, corner, height, width):</span>
-<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.corner<span class="op">=</span> corner</span>
-<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.height <span class="op">=</span> height</span>
-<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.width <span class="op">=</span> width</span>
-<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute area</span></span>
-<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> area(<span class="va">self</span>):</span>
-<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.width<span class="op">*</span><span class="va">self</span>.height</span>
-<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute circumference</span></span>
-<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> circumference(<span class="va">self</span>):</span>
-<span id="cb44-17"><a href="#cb44-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">2</span><span class="op">*</span><span class="va">self</span>.width <span class="op">+</span> <span class="dv">2</span><span class="op">*</span><span class="va">self</span>.height</span>
-<span id="cb44-18"><a href="#cb44-18" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb44-19"><a href="#cb44-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute corner points: the output has the points in the </span></span>
-<span id="cb44-20"><a href="#cb44-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># order [upper-left, upper-right, lower-right, lower-left]</span></span>
-<span id="cb44-21"><a href="#cb44-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> corners(<span class="va">self</span>):</span>
-<span id="cb44-22"><a href="#cb44-22" aria-hidden="true" tabindex="-1"></a>        up_right <span class="op">=</span> [<span class="va">self</span>.corner[<span class="dv">0</span>] <span class="op">+</span> <span class="va">self</span>.width, <span class="va">self</span>.corner[<span class="dv">1</span>]]</span>
-<span id="cb44-23"><a href="#cb44-23" aria-hidden="true" tabindex="-1"></a>        low_right<span class="op">=</span>[<span class="va">self</span>.corner[<span class="dv">0</span>]<span class="op">+</span><span class="va">self</span>.width,<span class="va">self</span>.corner[<span class="dv">1</span>]<span class="op">-</span><span class="va">self</span>.height]</span>
-<span id="cb44-24"><a href="#cb44-24" aria-hidden="true" tabindex="-1"></a>        low_left <span class="op">=</span> [<span class="va">self</span>.corner[<span class="dv">0</span>],  <span class="va">self</span>.corner[<span class="dv">1</span>] <span class="op">-</span> <span class="va">self</span>.height]       </span>
-<span id="cb44-25"><a href="#cb44-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [<span class="va">self</span>.corner, up_right, low_right, low_left]</span>
-<span id="cb44-26"><a href="#cb44-26" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb44-27"><a href="#cb44-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Plot the rectangle    </span></span>
-<span id="cb44-28"><a href="#cb44-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> plotting(<span class="va">self</span>):</span>
-<span id="cb44-29"><a href="#cb44-29" aria-hidden="true" tabindex="-1"></a>        plt.figure()</span>
-<span id="cb44-30"><a href="#cb44-30" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb44-31"><a href="#cb44-31" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Obtain corner points of the rectangle using corners()</span></span>
-<span id="cb44-32"><a href="#cb44-32" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> <span class="va">self</span>.corners()</span>
-<span id="cb44-33"><a href="#cb44-33" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb44-34"><a href="#cb44-34" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Define two lists: x-coordinates and y-coordinates</span></span>
-<span id="cb44-35"><a href="#cb44-35" aria-hidden="true" tabindex="-1"></a>        x_coord <span class="op">=</span> [c[<span class="dv">0</span>][<span class="dv">0</span>],c[<span class="dv">1</span>][<span class="dv">0</span>],c[<span class="dv">2</span>][<span class="dv">0</span>],c[<span class="dv">3</span>][<span class="dv">0</span>],c[<span class="dv">0</span>][<span class="dv">0</span>]]</span>
-<span id="cb44-36"><a href="#cb44-36" aria-hidden="true" tabindex="-1"></a>        y_coord <span class="op">=</span> [c[<span class="dv">0</span>][<span class="dv">1</span>],c[<span class="dv">1</span>][<span class="dv">1</span>],c[<span class="dv">2</span>][<span class="dv">1</span>],c[<span class="dv">3</span>][<span class="dv">1</span>],c[<span class="dv">0</span>][<span class="dv">1</span>]]</span>
-<span id="cb44-37"><a href="#cb44-37" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb44-38"><a href="#cb44-38" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Define ranges (margin of 3 around the rectangle)</span></span>
-<span id="cb44-39"><a href="#cb44-39" aria-hidden="true" tabindex="-1"></a>        plt.xlim(<span class="va">self</span>.corner[<span class="dv">0</span>]<span class="op">-</span><span class="dv">3</span>,<span class="va">self</span>.corner[<span class="dv">0</span>] <span class="op">+</span> <span class="va">self</span>.width <span class="op">+</span> <span class="dv">3</span>)</span>
-<span id="cb44-40"><a href="#cb44-40" aria-hidden="true" tabindex="-1"></a>        plt.ylim(<span class="va">self</span>.corner[<span class="dv">1</span>]<span class="op">-</span> <span class="va">self</span>.height <span class="op">-</span> <span class="dv">3</span>,<span class="va">self</span>.corner[<span class="dv">1</span>] <span class="op">+</span> <span class="dv">3</span>)</span>
-<span id="cb44-41"><a href="#cb44-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-42"><a href="#cb44-42" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Create the plot</span></span>
-<span id="cb44-43"><a href="#cb44-43" aria-hidden="true" tabindex="-1"></a>        plt.plot(x_coord, y_coord)</span>
-<span id="cb44-44"><a href="#cb44-44" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="6410b6dd" class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Rectangle:</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Here corner is the upper-left corner point which </span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># should be a list containing the x- and y-coordinate.</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, corner, height, width):</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.corner<span class="op">=</span> corner</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.height <span class="op">=</span> height</span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.width <span class="op">=</span> width</span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute area</span></span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> area(<span class="va">self</span>):</span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.width<span class="op">*</span><span class="va">self</span>.height</span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute circumference</span></span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> circumference(<span class="va">self</span>):</span>
+<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">2</span><span class="op">*</span><span class="va">self</span>.width <span class="op">+</span> <span class="dv">2</span><span class="op">*</span><span class="va">self</span>.height</span>
+<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute corner points: the output has the points in the </span></span>
+<span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># order [upper-left, upper-right, lower-right, lower-left]</span></span>
+<span id="cb45-21"><a href="#cb45-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> corners(<span class="va">self</span>):</span>
+<span id="cb45-22"><a href="#cb45-22" aria-hidden="true" tabindex="-1"></a>        up_right <span class="op">=</span> [<span class="va">self</span>.corner[<span class="dv">0</span>] <span class="op">+</span> <span class="va">self</span>.width, <span class="va">self</span>.corner[<span class="dv">1</span>]]</span>
+<span id="cb45-23"><a href="#cb45-23" aria-hidden="true" tabindex="-1"></a>        low_right<span class="op">=</span>[<span class="va">self</span>.corner[<span class="dv">0</span>]<span class="op">+</span><span class="va">self</span>.width,<span class="va">self</span>.corner[<span class="dv">1</span>]<span class="op">-</span><span class="va">self</span>.height]</span>
+<span id="cb45-24"><a href="#cb45-24" aria-hidden="true" tabindex="-1"></a>        low_left <span class="op">=</span> [<span class="va">self</span>.corner[<span class="dv">0</span>],  <span class="va">self</span>.corner[<span class="dv">1</span>] <span class="op">-</span> <span class="va">self</span>.height]       </span>
+<span id="cb45-25"><a href="#cb45-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [<span class="va">self</span>.corner, up_right, low_right, low_left]</span>
+<span id="cb45-26"><a href="#cb45-26" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb45-27"><a href="#cb45-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Plot the rectangle    </span></span>
+<span id="cb45-28"><a href="#cb45-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> plotting(<span class="va">self</span>):</span>
+<span id="cb45-29"><a href="#cb45-29" aria-hidden="true" tabindex="-1"></a>        plt.figure()</span>
+<span id="cb45-30"><a href="#cb45-30" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb45-31"><a href="#cb45-31" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Obtain corner points of the rectangle using corners()</span></span>
+<span id="cb45-32"><a href="#cb45-32" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> <span class="va">self</span>.corners()</span>
+<span id="cb45-33"><a href="#cb45-33" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb45-34"><a href="#cb45-34" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Define two lists: x-coordinates and y-coordinates</span></span>
+<span id="cb45-35"><a href="#cb45-35" aria-hidden="true" tabindex="-1"></a>        x_coord <span class="op">=</span> [c[<span class="dv">0</span>][<span class="dv">0</span>],c[<span class="dv">1</span>][<span class="dv">0</span>],c[<span class="dv">2</span>][<span class="dv">0</span>],c[<span class="dv">3</span>][<span class="dv">0</span>],c[<span class="dv">0</span>][<span class="dv">0</span>]]</span>
+<span id="cb45-36"><a href="#cb45-36" aria-hidden="true" tabindex="-1"></a>        y_coord <span class="op">=</span> [c[<span class="dv">0</span>][<span class="dv">1</span>],c[<span class="dv">1</span>][<span class="dv">1</span>],c[<span class="dv">2</span>][<span class="dv">1</span>],c[<span class="dv">3</span>][<span class="dv">1</span>],c[<span class="dv">0</span>][<span class="dv">1</span>]]</span>
+<span id="cb45-37"><a href="#cb45-37" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb45-38"><a href="#cb45-38" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Define ranges (margin of 3 around the rectangle)</span></span>
+<span id="cb45-39"><a href="#cb45-39" aria-hidden="true" tabindex="-1"></a>        plt.xlim(<span class="va">self</span>.corner[<span class="dv">0</span>]<span class="op">-</span><span class="dv">3</span>,<span class="va">self</span>.corner[<span class="dv">0</span>] <span class="op">+</span> <span class="va">self</span>.width <span class="op">+</span> <span class="dv">3</span>)</span>
+<span id="cb45-40"><a href="#cb45-40" aria-hidden="true" tabindex="-1"></a>        plt.ylim(<span class="va">self</span>.corner[<span class="dv">1</span>]<span class="op">-</span> <span class="va">self</span>.height <span class="op">-</span> <span class="dv">3</span>,<span class="va">self</span>.corner[<span class="dv">1</span>] <span class="op">+</span> <span class="dv">3</span>)</span>
+<span id="cb45-41"><a href="#cb45-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-42"><a href="#cb45-42" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Create the plot</span></span>
+<span id="cb45-43"><a href="#cb45-43" aria-hidden="true" tabindex="-1"></a>        plt.plot(x_coord, y_coord)</span>
+<span id="cb45-44"><a href="#cb45-44" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<!---
-
-Do student class as example in class.
-Do rectangle example in class as exercise that you discuss later.
-
-Do bank account as exercise.
-Do hotel booking as exercise.
-
--->
 
 
 </section>
