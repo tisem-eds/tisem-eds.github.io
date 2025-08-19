@@ -206,14 +206,14 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./08-math-and-plotting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mathematics and plotting</span></span></a>
+  <a href="./08-files-and-pandas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data handling with Pandas</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-files-and-pandas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Data handling with Pandas</span></span></a>
+  <a href="./09-math-and-plotting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Mathematics and plotting</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -285,7 +285,7 @@ window.Quarto = {
 <section id="syntax-error" class="level3" data-number="11.1.1">
 <h3 data-number="11.1.1" class="anchored" data-anchor-id="syntax-error"><span class="header-section-number">11.1.1</span> Syntax error</h3>
 <p>A syntax error occurs when Python does not understand the words or characters, i.e., syntax, that you use in your code. In more technical terms, Python is unable to interpret the code that you wrote because you did not use the correct syntax.</p>
-<div id="a8c20ecd" class="cell" data-execution_count="1">
+<div id="34e553a2" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">"Hello'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
@@ -296,11 +296,11 @@ window.Quarto = {
 </div>
 <p>In the example above, we define a string <code>x</code>, but on the left we use a double quote and on the right a single quote. This is not correct, we should either use double quotes or single quotes on both sides. The output message indicates that the error occurs on the first line of the code, although the term “unterminated string literal” might not directly make sense to you.</p>
 <p>Roughly speaking, Python tries say you started the creation of a string by using the double quotes at the beginning, and is therefore expecting the string to be concluded somewhere as well with double quotes, but this never happens. The code should have been as follows.</p>
-<div id="fe4b059c" class="cell" data-execution_count="2">
+<div id="75f4ce03" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">"Hello"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Sometimes it is more obvious what is going wrong in your code. In the example above, Python raises an error saying that the colon <code>:</code> is missing, which is needed in order to define a function in Python.</p>
-<div id="9635c077" class="cell" data-execution_count="3">
+<div id="6d7183fa" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the function f(x) = x^2</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -312,7 +312,7 @@ window.Quarto = {
 </figure>
 </div>
 <p>The code should have been as follows.</p>
-<div id="d7c51fcc" class="cell" data-execution_count="4">
+<div id="a8759384" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the function f(x) = x^2</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -322,7 +322,7 @@ window.Quarto = {
 <h3 data-number="11.1.2" class="anchored" data-anchor-id="runtime-error"><span class="header-section-number">11.1.2</span> Runtime error</h3>
 <p>A runtime error occurs when Python runs (or executes) your code, but cannot create any output because the operations you try to perform on the variables that you defined are not possible. These errors are typically trickier than syntax errors: It might be that on some input data, your code does exactly what you want it to do, but on other input data it is not able to execute your code.</p>
 <p>Consider the example below where we define a division function that takes as input two numbers <span class="math inline">a</span> and <span class="math inline">b</span>, and returns <span class="math inline">a/b</span>.</p>
-<div id="1b86ef25" class="cell" data-execution_count="5">
+<div id="2f69447e" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> division(a,b):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a<span class="op">/</span>b</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -336,7 +336,7 @@ window.Quarto = {
 </div>
 </div>
 <p>This function works perfectly fine for the inputs <code>a = 1</code> and <code>b = 3</code>. However, if we we would take <span class="math inline">b = 0</span>, then Python raises a ZeroDivisionError, which indicates that we are trying to divide by <span class="math inline">0</span>, which is mathematically not possible.</p>
-<div id="62cd68f8" class="cell" data-execution_count="6">
+<div id="79505039" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> division(a,b):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a<span class="op">/</span>b</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -353,7 +353,7 @@ window.Quarto = {
 </figure>
 </div>
 <p>Another common runtime error in the context of functions is a TypeError. Such an errors occur when, you do not provide the correct number of input arguments for a function. In the code below, we have forgotten to input the second variable <code>b</code> that the function <code>division()</code> requires.</p>
-<div id="a0295cad" class="cell" data-execution_count="7">
+<div id="33f73d4e" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> division(a,b):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a<span class="op">/</span>b</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -370,7 +370,7 @@ window.Quarto = {
 </figure>
 </div>
 <p>In the context of indexing or accessing data in, e.g., a list, a common runtime error is the IndexError. Such an error occurs when you are, for example, trying to access an element of a string that does not exist. In the example below the list <code>x</code> has four elements. Since Python starts counting indices at <span class="math inline">0</span>, we have <code>x[0] = 2</code>, <code>x[1] = 1</code>, <code>x[2] = 6</code> and <code>x[3] = 8</code>. Therefore, <code>x[4]</code> does not exist and so Python is not able to access it.</p>
-<div id="5172a7f2" class="cell" data-execution_count="8">
+<div id="71798bf4" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">6</span>,<span class="dv">8</span>]</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x[<span class="dv">4</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -382,7 +382,7 @@ window.Quarto = {
 </figure>
 </div>
 <p>For scripts with classes, a common runtime error is an AttributeError which occurs if you are trying to access an attribute of an object that does not exist. In the below example, every student object has attributes name and age, but not ID. The code executes correctly up to the last line, but the last line itself gives an error.</p>
-<div id="790452ca" class="cell" data-execution_count="9">
+<div id="985a80f9" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Student:</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>,name,age):</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
@@ -402,7 +402,7 @@ window.Quarto = {
 <h3 data-number="11.1.3" class="anchored" data-anchor-id="logical-error"><span class="header-section-number">11.1.3</span> Logical error</h3>
 <p>Arguably the most difficult to deal with are logical errors. These are errors that are not raised by Python, but are errors in the logic of the code. For example, a function that does not return the output it is supposed to return.</p>
 <p>Consider the example below where the goal is to create a function that substracts a number <span class="math inline">b</span> from another number <span class="math inline">a</span>, i.e., the function is supposed to return <span class="math inline">a - b</span>. The programmer made a mistake and instead, the function returns <span class="math inline">a + b</span>. There is nothing wrong with the syntax of the function, nor does Python encounter issues while running the code. However, the function does not what the programmer wants it to do.</p>
-<div id="06866331" class="cell" data-execution_count="10">
+<div id="41fcee89" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> substract(a,b):</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">#This function substracts the number b from a</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
@@ -419,7 +419,7 @@ window.Quarto = {
 <p>In the example above, it is fairly easy to conclude that the function is not behaving as it should, because almost all choices of <span class="math inline">a</span> and <span class="math inline">b</span> (excluding cases where <span class="math inline">a</span> and/or <span class="math inline">b</span> or zero) will return the wrong output.</p>
 <p>Sometimes, however, logical errors are harder to spot as a function might still give the correct ouput for many input arguments.</p>
 <p>As an example, suppose we want to create a function that can decided whether two intervals <span class="math inline">[a,b]</span> and <span class="math inline">[c,d]</span>, with <span class="math inline">a,b,c,d \in \mathbb{R}</span> and <span class="math inline">a \leq b, c \leq d</span> are overlapping or not. If the first interval is <span class="math inline">[a,b]</span> lies completelely left of the interval <span class="math inline">[c,d],</span> i.e., if <span class="math inline">b &lt; c,</span> then the intervals do not overlap.</p>
-<div id="ace2e5ee" class="cell" data-execution_count="11">
+<div id="bbc18905" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> overlap(a,b,c,d):</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> b <span class="op">&lt;</span> c:</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">print</span>(<span class="st">"No overlap!"</span>)</span>
@@ -437,7 +437,7 @@ window.Quarto = {
 </div>
 </div>
 <p>However, this function does not always give the correct output, because it does not account for the fact that the second interval <span class="math inline">[c,d]</span> might lie completely left of the first interval <span class="math inline">[a,b]</span>, in which case there is also no overlap.</p>
-<div id="95c10469" class="cell" data-execution_count="12">
+<div id="4999fbfb" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> overlap(a,b,c,d):</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This function check whether two intervals [a,b] and [c,d]</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># have overlap or not.</span></span>
@@ -467,7 +467,7 @@ window.Quarto = {
 g(x,k) = \sqrt{\sum_{i=1}^k x^k} = \sqrt{x + x^2 + x^3 + \dots + x^k}.
 </span></p>
 <p>Note that <span class="math inline">x</span> can be any number, but <span class="math inline">k</span> has to be an integer for the summation to be well-defined. For example, for <span class="math inline">x = 1.3</span> and <span class="math inline">k = 3</span>, we have <span class="math inline">g(1.3,3) = 1.3 + 1.3^2 + 1.3^3 = 5.187</span>.</p>
-<div id="13502af8" class="cell" data-execution_count="13">
+<div id="c96e8b7d" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the function g(x,k)</span></span>
@@ -486,7 +486,7 @@ g(x,k) = \sqrt{\sum_{i=1}^k x^k} = \sqrt{x + x^2 + x^3 + \dots + x^k}.
 </div>
 </div>
 <p>Multiple things can go wrong with trying to execute this function. For example, we might input a number <span class="math inline">k</span> which is not an integer. This gives rise to a TypeError, because the <code>range()</code> function only works for integer inputs.</p>
-<div id="9e7be5b4" class="cell" data-execution_count="14">
+<div id="32492217" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">1.3</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="fl">2.1</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>g(x,k)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -498,7 +498,7 @@ g(x,k) = \sqrt{\sum_{i=1}^k x^k} = \sqrt{x + x^2 + x^3 + \dots + x^k}.
 </figure>
 </div>
 <p>Or we might input a number <code>x</code> for which the summation <span class="math inline">\sum_{i=1}^k x^k</span> is negative, in which case we cannot take the square root (recall that the square root of a negative number does not exist).</p>
-<div id="8b938ccd" class="cell" data-execution_count="15">
+<div id="743521eb" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="op">-</span><span class="dv">10</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">3</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>g(x,k)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -510,7 +510,7 @@ g(x,k) = \sqrt{\sum_{i=1}^k x^k} = \sqrt{x + x^2 + x^3 + \dots + x^k}.
 </figure>
 </div>
 <p>To inform a user that tries to execute this function what goes wrong, we can use a <code>try-except</code> construction. The rough outline of such a construction is as follows.</p>
-<div id="068269bc" class="cell" data-execution_count="16">
+<div id="fdc5cea6" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Some code that Python should execute</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> SomeError:</span>
@@ -521,7 +521,7 @@ g(x,k) = \sqrt{\sum_{i=1}^k x^k} = \sqrt{x + x^2 + x^3 + \dots + x^k}.
 <span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># occurs, then do ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>A simple example, when trying to divide by zero, is given below.</p>
-<div id="941ffff6" class="cell" data-execution_count="17">
+<div id="daaa4abe" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">5</span><span class="op">/</span><span class="dv">0</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ZeroDivisionError</span>:</span>
@@ -532,7 +532,7 @@ g(x,k) = \sqrt{\sum_{i=1}^k x^k} = \sqrt{x + x^2 + x^3 + \dots + x^k}.
 </div>
 <p>Python will first try to execute the code under the <code>try</code> statement. If this gives rise to an error (i.e., exception), then it will do as is specified under the <code>except</code> statement of the error that was raised.</p>
 <p>You can use the <code>try-except</code> construction also within a function. Let us do this for the function <span class="math inline">g</span> above.</p>
-<div id="8d93848d" class="cell" data-execution_count="18">
+<div id="895c0929" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the function g(x,k)</span></span>
@@ -548,7 +548,7 @@ g(x,k) = \sqrt{\sum_{i=1}^k x^k} = \sqrt{x + x^2 + x^3 + \dots + x^k}.
 <span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
 <span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">print</span>(<span class="st">"Cannot take square root of negative power sum."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="9ad8a44f" class="cell" data-execution_count="19">
+<div id="d493bce8" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">1.3</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="fl">2.1</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>g(x,k) <span class="co"># Gives TypeError because k not integer.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -556,7 +556,7 @@ g(x,k) = \sqrt{\sum_{i=1}^k x^k} = \sqrt{x + x^2 + x^3 + \dots + x^k}.
 <pre><code>Parameter k should be an integer.</code></pre>
 </div>
 </div>
-<div id="1e2d3f9a" class="cell" data-execution_count="20">
+<div id="98505ce5" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="op">-</span><span class="dv">10</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">3</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>g(x,k) <span class="co">#Gives ValueError because power sum is negative.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -573,7 +573,7 @@ g(x,k) = \sqrt{\sum_{i=1}^k x^k} = \sqrt{x + x^2 + x^3 + \dots + x^k}.
 <section id="use-print-statements" class="level3" data-number="11.3.1">
 <h3 data-number="11.3.1" class="anchored" data-anchor-id="use-print-statements"><span class="header-section-number">11.3.1</span> Use <code>print()</code> statements</h3>
 <p>One way to get some insight into what your function is doing, is to create print statements in the code. Let us have another look at the example given above.</p>
-<div id="0e491aec" class="cell" data-execution_count="21">
+<div id="7dec48f0" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the function g(x,k)</span></span>
@@ -598,7 +598,7 @@ g(x,k) = \sqrt{\sum_{i=1}^k x^k} = \sqrt{x + x^2 + x^3 + \dots + x^k}.
 </figure>
 </div>
 <p>Python tells us that there is a <i>math domain error</i>, but it does not give any explicit information about what went wrong. Given that we use the <code>sum</code> variable as input for the square root function, it is a good idea to keep track of how the <code>sum</code> argument changes throughout the execution of the function, especially what its value is when we try to input it into the square root function. We use a <code>try-except</code> construction to not have Python print the whole error code.</p>
-<div id="727bb90a" class="cell" data-execution_count="22">
+<div id="09864372" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the function g(x,k)</span></span>
@@ -632,7 +632,7 @@ None</code></pre>
 <section id="use-assert" class="level3" data-number="11.3.2">
 <h3 data-number="11.3.2" class="anchored" data-anchor-id="use-assert"><span class="header-section-number">11.3.2</span> Use <code>assert</code></h3>
 <p>If we already would have had some suspicion that the <code>sum</code> variable being negative is what is causing the error in the function <span class="math inline">g</span>, we could have also checked this quickly by adding the command <code>assert sum &gt;= 0</code> after the for-loop, instead of adding the print() statements and the <code>try-except</code> construction. If the assertion is not true, then Python raises an AssertionError.</p>
-<div id="710d2c0d" class="cell" data-execution_count="23">
+<div id="a1ec26cc" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the function g(x,k)</span></span>
@@ -655,7 +655,7 @@ None</code></pre>
 </figure>
 </div>
 <p>We can also check the assertion with a <code>try-except</code> construction to avoid the error being printed.</p>
-<div id="06563835" class="cell" data-execution_count="24">
+<div id="1772b432" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the function g(x,k)</span></span>
