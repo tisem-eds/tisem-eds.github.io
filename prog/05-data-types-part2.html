@@ -291,7 +291,7 @@ window.Quarto = {
 <section id="lists" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="lists"><span class="header-section-number">5.2</span> Lists</h2>
 <p>A very common way to store a sequence of values (which could be integers, floats, strings or Booleans), is in a list. You can create a list by putting the values in between square brackets, separated by commas:</p>
-<div id="1c3036e5" class="cell" data-execution_count="1">
+<div id="20bac3db" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
@@ -299,15 +299,15 @@ window.Quarto = {
 </div>
 </div>
 <p>Lists can also be composed of floats, Booleans, or strings, or even a combination of them:</p>
-<div id="71a09700" class="cell" data-execution_count="2">
+<div id="50645cce" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">1</span>, <span class="fl">1.1</span>, <span class="va">True</span>, <span class="st">'hello'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Lists can even have other lists as elements:</p>
-<div id="62f03e41" class="cell" data-execution_count="3">
+<div id="352283ca" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, [<span class="dv">3</span>, <span class="dv">4</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Although we see 4 numbers, this list actually has only 3 elements:</p>
-<div id="1bd9fdc9" class="cell" data-execution_count="4">
+<div id="6c7bb6e7" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>3</code></pre>
@@ -317,7 +317,7 @@ window.Quarto = {
 <section id="list-operations" class="level3" data-number="5.2.1">
 <h3 data-number="5.2.1" class="anchored" data-anchor-id="list-operations"><span class="header-section-number">5.2.1</span> List Operations</h3>
 <p>If we use the <code>+</code> operator on lists it just creates a longer list with one appended to the other:</p>
-<div id="45cbd5fb" class="cell" data-execution_count="5">
+<div id="ea54df37" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [<span class="dv">8</span>, <span class="dv">10</span>]</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">+</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -326,7 +326,7 @@ window.Quarto = {
 </div>
 </div>
 <p>If we use the <code>*</code> operator it repeats the list:</p>
-<div id="e52e4a17" class="cell" data-execution_count="6">
+<div id="87ba1643" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">*</span> <span class="dv">3</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
@@ -338,7 +338,7 @@ window.Quarto = {
 <section id="list-indexing" class="level3" data-number="5.2.2">
 <h3 data-number="5.2.2" class="anchored" data-anchor-id="list-indexing"><span class="header-section-number">5.2.2</span> List Indexing</h3>
 <p>Lists are ordered so the order in which we place the elements matters. To extract a particular value from a list based on its position in the list we can use a method called <em>indexing</em>. If we want the first element of the list we can extract it with <code>a[0]</code>:</p>
-<div id="accf5be2" class="cell" data-execution_count="7">
+<div id="7f761092" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>2</code></pre>
@@ -346,29 +346,29 @@ window.Quarto = {
 </div>
 <p>The <code>0</code> here is the index. It means to take element 0 from the list. In Python and several other programming languages (like C and C++), counting starts at 0 instead of 1. So element 0 is actually the 1st element. This is something that might take some getting used to, so be careful when using indexing.</p>
 <p>Even though the list has 3 elements, the last element is extracted with <code>a[2]</code>:</p>
-<div id="b7b26e13" class="cell" data-execution_count="8">
+<div id="c23e8e3d" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>6</code></pre>
 </div>
 </div>
 <p>If you try to do <code>a[3]</code> you get an <code>IndexError</code> saying the list index is out of range.</p>
-<p>We can also use negative indexing to extract elements from the end of a list. For example, to get the last element of a list <code>a</code> we can use <code>a[-1]</code>, to get the 2nd-last element we can use <code>a[2]</code>, and so on:</p>
-<div id="39681caa" class="cell" data-execution_count="9">
+<p>We can also use negative indexing to extract elements from the end of a list. For example, to get the last element of a list <code>a</code> we can use <code>a[-1]</code>, to get the second-last element we can use <code>a[-2]</code>, and so on:</p>
+<div id="1520eeec" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>a[<span class="op">-</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>6</code></pre>
 </div>
 </div>
-<div id="4107126c" class="cell" data-execution_count="10">
+<div id="ae4a702c" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>a[<span class="op">-</span><span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>5</code></pre>
 </div>
 </div>
 <p>Indexing like this also works for strings, and many other objects with multiple values. For example, to get the first character in a string we can get the value at index 0:</p>
-<div id="bde62240" class="cell" data-execution_count="11">
+<div id="f34074d8" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="st">'hello'</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
@@ -376,7 +376,7 @@ window.Quarto = {
 </div>
 </div>
 <p>We can also use indexing to change values in a list:</p>
-<div id="4e654e3d" class="cell" data-execution_count="12">
+<div id="157fe114" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">8</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -389,7 +389,7 @@ window.Quarto = {
 <section id="list-slicing" class="level3" data-number="5.2.3">
 <h3 data-number="5.2.3" class="anchored" data-anchor-id="list-slicing"><span class="header-section-number">5.2.3</span> List Slicing</h3>
 <p>To get all elements starting from <code>1</code> up to but not including index <code>3</code> (the 2nd and 3rd element) we can do:</p>
-<div id="116e5bd4" class="cell" data-execution_count="13">
+<div id="205263b2" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">1</span>:<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
@@ -397,21 +397,21 @@ window.Quarto = {
 </div>
 </div>
 <p>To get all elements starting from index <code>2</code> (the 3rd element onwards) we can do:</p>
-<div id="ac125080" class="cell" data-execution_count="14">
+<div id="b899052e" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">2</span>:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>[3, 4, 5]</code></pre>
 </div>
 </div>
 <p>To get all elements up to but not including index <code>2</code> (the 1st and 2nd element) we can do:</p>
-<div id="05fb7351" class="cell" data-execution_count="15">
+<div id="d1832335" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>a[:<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>[1, 2]</code></pre>
 </div>
 </div>
 <p>Finally, the following just returns the original list:</p>
-<div id="3a2a9609" class="cell" data-execution_count="16">
+<div id="fbc4b2ef" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>a[:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>[1, 2, 3, 4, 5]</code></pre>
@@ -421,7 +421,7 @@ window.Quarto = {
 <section id="list-methods" class="level3" data-number="5.2.4">
 <h3 data-number="5.2.4" class="anchored" data-anchor-id="list-methods"><span class="header-section-number">5.2.4</span> List Methods</h3>
 <p>Lists, like many objects in Python, have <em>methods</em>. A method in Python is like a function but instead of using the object as an argument to the function, we apply the function <em>to the object</em>. We’ll see what we mean by this with an example. Suppose we wanted to add another number to our list at the end, like the number 8. Instead of recreating the entire list with <code>a = [2, 4, 6, 8]</code>, we can <em>append</em> 8 to the end of the list using the <code>append()</code> method. Methods are invoked by placing them after the object separated with a <code>.</code> like this:</p>
-<div id="e5f18d3c" class="cell" data-execution_count="17">
+<div id="b5ec36d7" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>a.append(<span class="dv">8</span>)</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -431,7 +431,7 @@ window.Quarto = {
 </div>
 <p>Notice that we didn’t need to assign the output of <code>append()</code> to an object with <code>=</code>. It altered <code>a</code> <em>in place</em>. This is what the method does.</p>
 <p>To remove an element from a list we can use the <code>pop()</code> method. For example, to remove the 2nd element (element with index 1), we can do:</p>
-<div id="3496b7cd" class="cell" data-execution_count="18">
+<div id="d4eca589" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>a.pop(<span class="dv">1</span>)</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -440,7 +440,7 @@ window.Quarto = {
 </div>
 </div>
 <p>Another list method is <code>reverse()</code> which reverses the ordering of the list:</p>
-<div id="c29108d1" class="cell" data-execution_count="19">
+<div id="e23e674b" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">4</span>]</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>a.reverse()</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -449,7 +449,7 @@ window.Quarto = {
 </div>
 </div>
 <p>To sort a list ascending we can use <code>sort()</code>:</p>
-<div id="76dec127" class="cell" data-execution_count="20">
+<div id="9964bfa5" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>]</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>a.sort()</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -459,7 +459,7 @@ window.Quarto = {
 </div>
 <p>To see the full list of methods available for your list, you can use the command <code>dir(a)</code>.</p>
 <p>Using the <code>sort()</code> method changes our original list. Sometimes we want to see the sorted version of a list but then go back to the original ordering. In this case you shouldn’t use the <code>sort()</code> method on the list but use the <code>sorted()</code> function to create a sorted version of the list. The <code>sorted()</code> function returns its input sorted:</p>
-<div id="6a4ff349" class="cell" data-execution_count="21">
+<div id="dd76372a" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>]</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="bu">sorted</span>(a)</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -471,7 +471,7 @@ window.Quarto = {
 <section id="iterating-over-items-in-a-list" class="level3" data-number="5.2.5">
 <h3 data-number="5.2.5" class="anchored" data-anchor-id="iterating-over-items-in-a-list"><span class="header-section-number">5.2.5</span> Iterating over Items in a List</h3>
 <p>A useful feature of a list is that we can iterate over each element, performing the same operation or set of operations on each element one by one. For example, suppose we wanted to see what the square of each element in the list was. We can use what is called a <code>for</code> loop to do this. Here is how to code it:</p>
-<div id="4d11d944" class="cell" data-execution_count="22">
+<div id="34d881d9" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>]</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> a:</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i <span class="op">**</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -484,7 +484,7 @@ window.Quarto = {
 </div>
 <p>In words, what is happening is “for all <span class="math inline">i</span> in the list <span class="math inline">a</span>, print <span class="math inline">i^2</span>”. We use <code>i</code> as a sort of temporary variable for each element in <code>a</code>. The next line then prints <code>i ** 2</code> which squares <code>i</code>. You will notice that the <code>print()</code> command is indented with 4 spaces. This is to tell Python that this command is part of the loop. When there is code under the <code>for</code> loop that is not indented, Python interprets this as not being part of the loop.</p>
 <p>To understand this, compare the following two snippets, which are almost the same except the first <code>print('hello')</code> is indented and the second is not:</p>
-<div id="e68ce506" class="cell" data-execution_count="23">
+<div id="82b4337d" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>]</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> a:</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i <span class="op">**</span> <span class="dv">2</span>)</span>
@@ -500,7 +500,7 @@ hello
 hello</code></pre>
 </div>
 </div>
-<div id="20b100bc" class="cell" data-execution_count="24">
+<div id="b6cd7781" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> a:</span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i <span class="op">**</span> <span class="dv">2</span>)</span>
@@ -512,15 +512,15 @@ hello</code></pre>
 hello</code></pre>
 </div>
 </div>
-<p>The first code prints <code>'hello'</code> 3 times, and the second only once, even though the code looks almost the same except for the indentations. This is because in the first case, the indentation tells Python that that <code>print()</code> call is part of the loop. In each iteration of the loop, we have to print the square of <span class="math inline">i</span> and print hello. The loop iterates 3 times, so we see <code>'hello'</code> 3 times.</p>
+<p>The first code prints <code>'hello'</code> 3 times, and the second only once, even though the code looks almost the same except for the indentations. This is because in the first case, the indentation tells Python that the second <code>print()</code> call is part of the loop. In each iteration of the loop, we have to print the square of <span class="math inline">i</span> and print hello. The loop iterates 3 times, so we see <code>'hello'</code> 3 times.</p>
 <p>In the second case, the lack of indentation tells Python that the <code>print('hello')</code> is not in the loop. Python first finishes the loop (squaring each element of <span class="math inline">a</span> and printing it). It only then gets to the next part of the code and prints <code>'hello'</code>.</p>
-<p>Therefore it is very important to be careful with indentation with Python. You should indent with 4 spaces (not tabs) for content in a loop.</p>
+<p>Therefore it is very important to be careful with indentation with Python. You should indent with 4 spaces (and not a tab) for content in a loop.</p>
 <p>Another thing to note here is that a <code>for</code> loop is a situation where the code is no longer running line-by-line from top to bottom. The code goes to the end of the loop and if there are iterations remaining to be done it goes back to the start of the loop. Only when it has completed all the iterations does it go to the next line after the loop.</p>
 </section>
 <section id="list-comprehensions" class="level3" data-number="5.2.6">
 <h3 data-number="5.2.6" class="anchored" data-anchor-id="list-comprehensions"><span class="header-section-number">5.2.6</span> List Comprehensions</h3>
 <p>Suppose we wanted to save the square of each element of <code>a</code> into a new list called <code>b</code>. One way to do that would be to create an empty list called <code>b</code> with <code>b = []</code>. This is a list with no elements. Then we could use the <code>for</code> loop to append the values to <code>b</code>, like this:</p>
-<div id="0504ad52" class="cell" data-execution_count="25">
+<div id="caa5bb2d" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> []</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> a:</span>
@@ -531,7 +531,7 @@ hello</code></pre>
 </div>
 </div>
 <p>This works just fine, but the code is a bit “clunky”. Moreover, if your list is very very large it would run very slowly. A cleaner and faster way to do this kind of operation is by using <em>list comprehensions</em>.</p>
-<div id="07b326ef" class="cell" data-execution_count="26">
+<div id="06c3bbb6" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [i <span class="op">**</span> <span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> a]</span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -544,14 +544,14 @@ hello</code></pre>
 <section id="list-membership" class="level3" data-number="5.2.7">
 <h3 data-number="5.2.7" class="anchored" data-anchor-id="list-membership"><span class="header-section-number">5.2.7</span> List Membership</h3>
 <p>To see if an element is contained somewhere in a list, we can use the <code>in</code> operator:</p>
-<div id="b484cc2a" class="cell" data-execution_count="27">
+<div id="8b7d37ed" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="kw">in</span> a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="27">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="3d3d87a9" class="cell" data-execution_count="28">
+<div id="e32d69ef" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="kw">in</span> a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
 <pre><code>False</code></pre>
@@ -562,7 +562,7 @@ hello</code></pre>
 <section id="copying-lists" class="level3" data-number="5.2.8">
 <h3 data-number="5.2.8" class="anchored" data-anchor-id="copying-lists"><span class="header-section-number">5.2.8</span> Copying Lists</h3>
 <p>One thing to note about lists, which may be unexpected, is that if we create a list <code>a</code> and set <code>b = a</code>, we are actually telling Python that <code>a</code> and <code>b</code> refer to the same object, not just that they have the same values. This has the consequence that if we change <code>a</code> that <code>b</code> will also change. For example:</p>
-<div id="2ae85023" class="cell" data-execution_count="29">
+<div id="cc350c1a" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a</span>
 <span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">8</span></span>
@@ -573,7 +573,7 @@ hello</code></pre>
 </div>
 <p>We set <code>b = a</code> but otherwise perform no operations on <code>b</code>. We change the first element of <code>a</code> (element 0) to 8, and the first element of <code>b</code> changes to 8 as well!</p>
 <p>Often when we are programming we don’t want this to happen. We often want to copy a list to a new one to perform some operations and leave the original list unchanged. What we can do instead is set <code>b</code> equal to <code>a[:]</code> instead of <code>a</code>. This way <code>b</code> won’t change when <code>a</code> changes:</p>
-<div id="3900d9fb" class="cell" data-execution_count="30">
+<div id="9faa3cc4" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a[:]</span>
 <span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">8</span></span>
@@ -583,7 +583,7 @@ hello</code></pre>
 </div>
 </div>
 <p>Another way is to use the <code>copy()</code> method:</p>
-<div id="eca15aac" class="cell" data-execution_count="31">
+<div id="5041c752" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
 <span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a.copy()</span>
 <span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">8</span></span>
@@ -598,7 +598,7 @@ hello</code></pre>
 <li><em>Shallow copy:</em> This copies <code>a</code> to <code>b</code> but does not recursively copy its elements. Instead it only copies the references to the elements in <code>a</code> (like the address for where in the computer’s memory those elements are stored). This means that changes to elements of <code>a</code> will affect the elements of <code>b</code>.</li>
 </ol>
 <p>The <code>b = a</code> example is a shallow copy and the <code>b = a[:]</code> example is like a deep copy. However, it is not a full deep copy. Using <code>a[:]</code> or <code>a.copy()</code> only works if our list is not nested. This method only takes a deep copy of the outermost list. If we copy with <code>a[:]</code> or <code>a.copy()</code> to <code>b</code> with a nested listed and then change an element inside one of the nested lists, then the copied object will change as well. For example:</p>
-<div id="2c72d80d" class="cell" data-execution_count="32">
+<div id="56f4a8f5" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, [<span class="dv">6</span>, <span class="dv">8</span>]]</span>
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a[:]</span>
 <span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">2</span>][<span class="dv">1</span>] <span class="op">=</span> <span class="dv">5</span></span>
@@ -608,7 +608,7 @@ hello</code></pre>
 </div>
 </div>
 <p><code>b</code> changes as well! The same happens with the <code>copy()</code> method:</p>
-<div id="78d1ad08" class="cell" data-execution_count="33">
+<div id="7c121770" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, [<span class="dv">6</span>, <span class="dv">8</span>]]</span>
 <span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a.copy()</span>
 <span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">2</span>][<span class="dv">1</span>] <span class="op">=</span> <span class="dv">5</span></span>
@@ -618,7 +618,7 @@ hello</code></pre>
 </div>
 </div>
 <p>To make a full deep copy which recursively copies the entire object, we can use the <code>deepcopy()</code> function from the <code>copy</code> module:</p>
-<div id="a6cd3314" class="cell" data-execution_count="34">
+<div id="b7669c6d" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> copy</span>
 <span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, [<span class="dv">6</span>, <span class="dv">8</span>]]</span>
 <span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> copy.deepcopy(a)</span>
@@ -634,41 +634,41 @@ hello</code></pre>
 <h2 data-number="5.3" class="anchored" data-anchor-id="tuples"><span class="header-section-number">5.3</span> Tuples</h2>
 <p>A <code>tuple</code> is another data type that is quite similar to a list. One important difference, however, is that they are <em>immutable</em>. We cannot change individual values of a tuple after they are created, and we cannot append values to a tuple.</p>
 <p>We can create a tuple in Python using parentheses instead of square brackets:</p>
-<div id="7a4efcca" class="cell" data-execution_count="35">
+<div id="f4b1910e" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> (<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Indexing and many other operations that work for lists also work with tuples. We index them the same way as lists (using square brackets like <code>a[0]</code>) and we can iterate over the items with <code>for</code> loops in the same way. However the list of methods for tuples is much shorter. We cannot append or pop values because the tuples are immutable.</p>
 <section id="tuple-assignment" class="level3" data-number="5.3.1">
 <h3 data-number="5.3.1" class="anchored" data-anchor-id="tuple-assignment"><span class="header-section-number">5.3.1</span> Tuple Assignment</h3>
 <p>One useful thing we can do with tuples is <em>tuple assignment</em>. Suppose we have a list <code>x = ['a', 'b', 'c']</code> and we wanted to create 3 objects from this: <code>x_0 = 'a'</code>, <code>x_1 = 'b'</code> and <code>x_2 = 'c'</code>. One way to do this is:</p>
-<div id="b933e557" class="cell" data-execution_count="36">
+<div id="a54203c6" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>]</span>
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>x_0 <span class="op">=</span> x[<span class="dv">0</span>]</span>
 <span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>x_1 <span class="op">=</span> x[<span class="dv">1</span>]</span>
 <span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>x_2 <span class="op">=</span> x[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>But a much more elegant way to do this is using tuple assignment:</p>
-<div id="820e882f" class="cell" data-execution_count="37">
+<div id="27f4559e" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>]</span>
 <span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>(x_0, x_1, x_2) <span class="op">=</span> x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This assigns <code>'a'</code> to <code>x_0</code>, <code>'b'</code> to <code>x_1</code> and <code>'c'</code> to <code>x_2</code> all in one line.</p>
 <p>This is especially useful if you have a function that returns multiple objects and we want to assign each output to a different variable. For example, the function <code>divmod(a, b)</code> gives the quotient and remainder from dividing <code>a</code> with <code>b</code>. It essentially calculates <code>a // b</code> and <code>a % b</code> and returns a tuple with both objects:</p>
-<div id="81279745" class="cell" data-execution_count="38">
+<div id="f7cabac9" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="bu">divmod</span>(<span class="dv">7</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>(2, 1)</code></pre>
 </div>
 </div>
 <p>This means 7 divided by 3 is 2 with remainder 1. We can use tuple assignment with the output to get:</p>
-<div id="4dc82072" class="cell" data-execution_count="39">
+<div id="01287225" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>(quotient, remainder) <span class="op">=</span> <span class="bu">divmod</span>(<span class="dv">7</span>, <span class="dv">3</span>)</span>
 <span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>quotient</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="39">
 <pre><code>2</code></pre>
 </div>
 </div>
-<div id="e9c99572" class="cell" data-execution_count="40">
+<div id="70216d67" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>remainder</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="40">
 <pre><code>1</code></pre>
@@ -680,12 +680,12 @@ hello</code></pre>
 <h2 data-number="5.4" class="anchored" data-anchor-id="dictionaries"><span class="header-section-number">5.4</span> Dictionaries</h2>
 <p>Another common built-in data type is a dictionary. A dictionary maps <em>keys</em> to <em>values</em>, where the keys can be an immutable data type (usually an integer or string) and the values can be any type, for example, single values, lists, or tuples. For example, a company might have supplier IDs for its suppliers and a dictionary mapping those IDs to the actual company name. In this case, the company IDs are the keys and the company names are the values.</p>
 <p>We could create a simple dictionary like this as follows:</p>
-<div id="faa39b83" class="cell" data-execution_count="41">
+<div id="73f8df71" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>suppliers <span class="op">=</span> {<span class="dv">100001</span> : <span class="st">'ABC Ltd.'</span>, <span class="dv">100002</span> : <span class="st">'EFG Ltd.'</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Dictionaries are created within curly brackets with the structure <code>{key1 : value1, key2 : value2, key3 : value3}</code>.</p>
 <p>To find a company name using the company ID we provide the key in the place we would supply an index for a list or tuple:</p>
-<div id="e859df08" class="cell" data-execution_count="42">
+<div id="464aa604" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>suppliers[<span class="dv">100001</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="42">
 <pre><code>'ABC Ltd.'</code></pre>
@@ -693,7 +693,7 @@ hello</code></pre>
 </div>
 <p>Dictionaries are unordered, so we cannot do <code>suppliers[0]</code> to find the first supplier. There is no first value in a dictionary.</p>
 <p>We can also add new keys and values to the dictionary:</p>
-<div id="78f975a9" class="cell" data-execution_count="43">
+<div id="254b4a32" class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>suppliers[<span class="dv">100003</span>] <span class="op">=</span> <span class="st">'HIJ Ltd.'</span></span>
 <span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>suppliers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="43">
@@ -701,7 +701,7 @@ hello</code></pre>
 </div>
 </div>
 <p>We can also modify values:</p>
-<div id="9dc24fb7" class="cell" data-execution_count="44">
+<div id="1f232acc" class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>suppliers[<span class="dv">100003</span>] <span class="op">=</span> <span class="st">'KLM Ltd.'</span></span>
 <span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>suppliers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="44">
@@ -709,21 +709,21 @@ hello</code></pre>
 </div>
 </div>
 <p>To get all the keys in a dictionary we can use the <code>keys()</code> method:</p>
-<div id="c9f17982" class="cell" data-execution_count="45">
+<div id="c74ee738" class="cell" data-execution_count="45">
 <div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>suppliers.keys()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="45">
 <pre><code>dict_keys([100001, 100002, 100003])</code></pre>
 </div>
 </div>
 <p>And to get all the values in a dictionary we can use the <code>values()</code> method:</p>
-<div id="d6b7691e" class="cell" data-execution_count="46">
+<div id="2de55bbb" class="cell" data-execution_count="46">
 <div class="sourceCode cell-code" id="cb85"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>suppliers.values()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="46">
 <pre><code>dict_values(['ABC Ltd.', 'EFG Ltd.', 'KLM Ltd.'])</code></pre>
 </div>
 </div>
 <p>Using a <code>for</code> loop with a dictionary implicitly iterates over the keys. So we can loop over the keys of a dictionary in the following way:</p>
-<div id="93f71895" class="cell" data-execution_count="47">
+<div id="7dfe8652" class="cell" data-execution_count="47">
 <div class="sourceCode cell-code" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key <span class="kw">in</span> suppliers:</span>
 <span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Supplier with ID '</span> <span class="op">+</span> <span class="bu">str</span>(key) <span class="op">+</span> <span class="st">' is '</span> <span class="op">+</span> suppliers[key])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -738,7 +738,7 @@ Supplier with ID 100003 is KLM Ltd.</code></pre>
 <h2 data-number="5.5" class="anchored" data-anchor-id="sets-and-frozen-sets"><span class="header-section-number">5.5</span> Sets and Frozen Sets</h2>
 <p>A <em>set</em> is another way to store multiple items into a single variable. Sets are unordered and unindexed. This means you cannot extract individual elements using their index like a list, nor by their key like a dictionary.</p>
 <p>You can create a set by placing items (like integers or strings) inside curly brackets (<code>{}</code>) separated by commas:</p>
-<div id="8799e4f9" class="cell" data-execution_count="48">
+<div id="a908ec53" class="cell" data-execution_count="48">
 <div class="sourceCode cell-code" id="cb89"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>myset <span class="op">=</span> {<span class="st">'apple'</span>, <span class="st">'banana'</span>, <span class="st">'cherry'</span>}</span>
 <span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a>myset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="48">
@@ -746,7 +746,7 @@ Supplier with ID 100003 is KLM Ltd.</code></pre>
 </div>
 </div>
 <p>Sets cannot have duplicate items. It only keeps the unique values. For example, suppose we provide <code>'cherry'</code> twice:</p>
-<div id="e1a073e7" class="cell" data-execution_count="49">
+<div id="d2eb7f73" class="cell" data-execution_count="49">
 <div class="sourceCode cell-code" id="cb91"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>myset <span class="op">=</span> {<span class="st">'apple'</span>, <span class="st">'banana'</span>, <span class="st">'cherry'</span>, <span class="st">'cherry'</span>}</span>
 <span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a>myset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="49">
@@ -755,7 +755,7 @@ Supplier with ID 100003 is KLM Ltd.</code></pre>
 </div>
 <p>It only keeps the first <code>'cherry'</code>.</p>
 <p>You are, however, able to add and remove elements to a set.</p>
-<div id="98919649" class="cell" data-execution_count="50">
+<div id="dd153685" class="cell" data-execution_count="50">
 <div class="sourceCode cell-code" id="cb93"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a>myset <span class="op">=</span> {<span class="st">'apple'</span>, <span class="st">'banana'</span>, <span class="st">'cherry'</span>}</span>
 <span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>myset.add(<span class="st">'pear'</span>)</span>
 <span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a>myset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -763,7 +763,7 @@ Supplier with ID 100003 is KLM Ltd.</code></pre>
 <pre><code>{'apple', 'banana', 'cherry', 'pear'}</code></pre>
 </div>
 </div>
-<div id="86b9ef91" class="cell" data-execution_count="51">
+<div id="f6dbf5e1" class="cell" data-execution_count="51">
 <div class="sourceCode cell-code" id="cb95"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a>myset <span class="op">=</span> {<span class="st">'apple'</span>, <span class="st">'banana'</span>, <span class="st">'cherry'</span>}</span>
 <span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a>myset.remove(<span class="st">'apple'</span>)</span>
 <span id="cb95-3"><a href="#cb95-3" aria-hidden="true" tabindex="-1"></a>myset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -772,7 +772,7 @@ Supplier with ID 100003 is KLM Ltd.</code></pre>
 </div>
 </div>
 <p>Converting a list to a set is useful if you want to get the list of unique elements:</p>
-<div id="11bc0cb9" class="cell" data-execution_count="52">
+<div id="f690e35d" class="cell" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb97"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">'apple'</span>, <span class="st">'apple'</span>, <span class="st">'apple'</span>, <span class="st">'banana'</span>, <span class="st">'cherry'</span>, <span class="st">'banana'</span>]</span>
 <span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a><span class="bu">set</span>(fruits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="52">
@@ -781,7 +781,7 @@ Supplier with ID 100003 is KLM Ltd.</code></pre>
 </div>
 <p>We can iterate over sets just like lists (with <code>for i in myset</code>). We can also perform set operations on pairs of sets.</p>
 <p>For example, for two sets <span class="math inline">A</span> and <span class="math inline">B</span>, we can find <span class="math inline">A\cap B</span> (the set of elements contained in both sets) using:</p>
-<div id="f70e0b46" class="cell" data-execution_count="53">
+<div id="34e84818" class="cell" data-execution_count="53">
 <div class="sourceCode cell-code" id="cb99"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>set_a <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">9</span>}</span>
 <span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a>set_b <span class="op">=</span> {<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>}</span>
 <span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a>set_a.intersection(set_b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -791,7 +791,7 @@ Supplier with ID 100003 is KLM Ltd.</code></pre>
 </div>
 <p>The numbers 2 and 8 are the only numbers in both sets.</p>
 <p>To find <span class="math inline">A\cup B</span> (the set of elements contained in either set) we can do:</p>
-<div id="f964c872" class="cell" data-execution_count="54">
+<div id="eb52ab2c" class="cell" data-execution_count="54">
 <div class="sourceCode cell-code" id="cb101"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a>set_a.union(set_b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="54">
 <pre><code>{1, 2, 3, 4, 5, 6, 7, 8, 9}</code></pre>
@@ -799,7 +799,7 @@ Supplier with ID 100003 is KLM Ltd.</code></pre>
 </div>
 <p>This gets all the numbers appearing in the two sets (dropping duplicates).</p>
 <p>To find <span class="math inline">A\setminus B</span> (the set of elements in <span class="math inline">A</span> not contained in <span class="math inline">B</span>) we can do:</p>
-<div id="1e6c3bb3" class="cell" data-execution_count="55">
+<div id="a0e5e552" class="cell" data-execution_count="55">
 <div class="sourceCode cell-code" id="cb103"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a>set_a.difference(set_b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="55">
 <pre><code>{1, 4, 6, 9}</code></pre>
@@ -807,7 +807,7 @@ Supplier with ID 100003 is KLM Ltd.</code></pre>
 </div>
 <p>1, 4, 6 and 9 are in <span class="math inline">A</span> and not in <span class="math inline">B</span>. The number 2, for example, is not here because that is also in <span class="math inline">B</span>.</p>
 <p>To create a set that is immutable (so that you cannot add or remove items), you can use the <code>frozenset()</code> function:</p>
-<div id="74dbdf1a" class="cell" data-execution_count="56">
+<div id="ab7fdf78" class="cell" data-execution_count="56">
 <div class="sourceCode cell-code" id="cb105"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a>myset <span class="op">=</span> <span class="bu">frozenset</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can still use the same operations on frozensets as normal sets, except you cannot modify them once they are created.</p>
