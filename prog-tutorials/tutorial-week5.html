@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -145,238 +111,56 @@ window.Quarto = {
 <p><link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""> <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&amp;family=Fira+Sans&amp;display=swap" rel="stylesheet"></p>
 <section id="question-1" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="question-1">Question 1</h4>
-<p>Copy the following extended dataset from the course document into Python.</p>
-<div id="b2b6a69f" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> { </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a> <span class="st">'name'</span> : [<span class="st">"Aiden"</span>, <span class="st">"Bella"</span>, <span class="st">"Carlos"</span>, <span class="st">"Dalia"</span>, <span class="st">"Elena"</span>, <span class="st">"Farhan"</span>, <span class="st">"Geert"</span>, <span class="st">"Hadi"</span>, <span class="st">"Ian"</span>, <span class="st">"Jane"</span>],</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a> <span class="st">'height (cm)'</span> : [<span class="dv">185</span>, <span class="dv">155</span>, <span class="dv">190</span>, <span class="dv">185</span>, <span class="dv">160</span>, <span class="dv">170</span>, <span class="dv">165</span>, <span class="dv">178</span>, <span class="dv">192</span>, <span class="dv">158</span>],</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a> <span class="st">'weight (kg)'</span> : [<span class="dv">80</span>, <span class="dv">60</span>, <span class="dv">100</span>, <span class="dv">85</span>, <span class="dv">62</span>, <span class="dv">75</span>, <span class="dv">75</span>, <span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">70</span>],</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a> <span class="st">'age (years)'</span> : [<span class="dv">23</span>, <span class="dv">23</span>, <span class="dv">23</span>, <span class="dv">21</span>, <span class="dv">19</span>, <span class="dv">25</span>, <span class="dv">26</span>, <span class="dv">19</span>, <span class="dv">18</span>, <span class="dv">22</span>],</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a> <span class="st">'dietary preference'</span> : [<span class="st">'Veggie'</span>,<span class="st">'Veggie'</span>,<span class="st">'None'</span>,<span class="st">'None'</span>,<span class="st">'Vegan'</span>,<span class="st">'None'</span>, <span class="st">'Veggie'</span>, <span class="st">'None'</span>, <span class="st">'Vegan'</span>, <span class="st">'None'</span>]</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>} </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ol type="a">
-<li>Turn the dataset above into a Pandas data frame and print it.</li>
-</ol>
-<div id="9c2ce76a" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-stdout">
-<pre><code>     name  height (cm)  weight (kg)  age (years) dietary preference
-0   Aiden          185           80           23             Veggie
-1   Bella          155           60           23             Veggie
-2  Carlos          190          100           23               None
-3   Dalia          185           85           21               None
-4   Elena          160           62           19              Vegan
-5  Farhan          170           75           25               None
-6   Geert          165           75           26             Veggie
-7    Hadi          178           85           19               None
-8     Ian          192           90           18              Vegan
-9    Jane          158           70           22               None</code></pre>
-</div>
-</div>
-<ol start="2" type="a">
-<li>Print all the odd numbered rows from the data frame:</li>
-</ol>
-<div id="2fb05e11" class="cell" data-execution_count="3">
-<div class="cell-output cell-output-stdout">
-<pre><code>     name  height (cm)  weight (kg)  age (years) dietary preference
-1   Bella          155           60           23             Veggie
-3   Dalia          185           85           21               None
-5  Farhan          170           75           25               None
-7    Hadi          178           85           19               None
-9    Jane          158           70           22               None</code></pre>
-</div>
-</div>
-<ol start="3" type="a">
-<li>Print the following part of the frame:</li>
-</ol>
-<div id="68fed8b4" class="cell" data-execution_count="4">
-<div class="cell-output cell-output-stdout">
-<pre><code>     name dietary preference
-1   Bella             Veggie
-2  Carlos               None
-4   Elena              Vegan
-6   Geert             Veggie
-7    Hadi               None</code></pre>
-</div>
-</div>
-<ol start="4" type="a">
-<li>Print the rows of the people whose weight is greater or equal than <span class="math inline">75</span> kilograms:</li>
-</ol>
-<div id="64ca8bdf" class="cell" data-execution_count="5">
-<div class="cell-output cell-output-stdout">
-<pre><code>     name  height (cm)  weight (kg)  age (years) dietary preference
-0   Aiden          185           80           23             Veggie
-2  Carlos          190          100           23               None
-3   Dalia          185           85           21               None
-5  Farhan          170           75           25               None
-6   Geert          165           75           26             Veggie
-7    Hadi          178           85           19               None
-8     Ian          192           90           18              Vegan</code></pre>
-</div>
-</div>
-<ol start="5" type="a">
-<li>Print the rows of the people whose height is in the interval <span class="math inline">[170,190]</span>:</li>
-</ol>
-<div id="f806f9f1" class="cell" data-execution_count="6">
-<div class="cell-output cell-output-stdout">
-<pre><code>     name  height (cm)  weight (kg)  age (years) dietary preference
-0   Aiden          185           80           23             Veggie
-2  Carlos          190          100           23               None
-3   Dalia          185           85           21               None
-5  Farhan          170           75           25               None
-7    Hadi          178           85           19               None</code></pre>
-</div>
-</div>
-<p><i> Hint: Write a for-loop that checks for every row whether the height of a person is in the desired interval, and, if so, append the row index to an (initially empty) list. </i></p>
-<ol start="6" type="a">
-<li>Use a for-loop to print three frames based on the dietary preferences that the people have. So one frame containing all the rows of people whose preference is Veggie, one with people whose preference is Vegan, and one with people whose preference is None:</li>
-</ol>
-<div id="a5674f98" class="cell" data-execution_count="7">
-<div class="cell-output cell-output-stdout">
-<pre><code>    name  height (cm)  weight (kg)  age (years) dietary preference
-0  Aiden          185           80           23             Veggie
-1  Bella          155           60           23             Veggie
-6  Geert          165           75           26             Veggie
-    name  height (cm)  weight (kg)  age (years) dietary preference
-4  Elena          160           62           19              Vegan
-8    Ian          192           90           18              Vegan
-     name  height (cm)  weight (kg)  age (years) dietary preference
-2  Carlos          190          100           23               None
-3   Dalia          185           85           21               None
-5  Farhan          170           75           25               None
-7    Hadi          178           85           19               None
-9    Jane          158           70           22               None</code></pre>
-</div>
-</div>
+<p>Write a function <code>roots(a,b,c)</code> that takes as input three numbers <span class="math inline">a,b</span> and <span class="math inline">c</span> and outputs a list with as two elements the roots</p>
+<p><span class="math display">
+x_\ell = \frac{- b - \sqrt{b^2 - 4ac}}{2a} \ \ \text{ and } \ \ x_r = \frac{- b + \sqrt{b^2 - 4ac}}{2a}
+</span></p>
+<p>of the quadratic function <span class="math inline">f(x) = ax^2 + bx + c</span>. As an example, the command <code>roots(1,2,-1)</code> should return <code>[-2.414213562373095, 0.41421356237309515]</code>.</p>
 </section>
 <section id="question-2" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="question-2">Question 2</h4>
-<p>In this exercise, we will replace the metrics that are used to compute the height and weight.</p>
-<ol type="a">
-<li>Adjust the weight column so that the weights are displayed in pounds (lbs) instead of kilograms (kg). For this, you may use that 1 kg = 2.2205 lbs. The column name should be changed to <code>'weight (lbs)'</code>. The frame should look like this in the end:</li>
-</ol>
-<div id="68dad29f" class="cell" data-execution_count="8">
-<div class="cell-output cell-output-stdout">
-<pre><code>     name  height (cm)  weight (lbs)  age (years) dietary preference
-0   Aiden          185      177.6400           23             Veggie
-1   Bella          155      133.2300           23             Veggie
-2  Carlos          190      222.0500           23               None
-3   Dalia          185      188.7425           21               None
-4   Elena          160      137.6710           19              Vegan
-5  Farhan          170      166.5375           25               None
-6   Geert          165      166.5375           26             Veggie
-7    Hadi          178      188.7425           19               None
-8     Ian          192      199.8450           18              Vegan
-9    Jane          158      155.4350           22               None</code></pre>
-</div>
-</div>
-<p><i>Hint: Define a function that does the conversion from kilograms to pounds and apply it to the weight column. To rename the column, rename all columns using frame.columns.</i></p>
-<p>A common height measure used in the US is that of feet and inches. If a person is f’i’’ it means they are <span class="math inline">f</span> feet plus <span class="math inline">i</span> inches long. Here <span class="math inline">1 \text{ foot} = 30.48 \text{ cm}</span> and <span class="math inline">1 \text{ inch} = 2.54 \text{ cm}</span>. For example, if you are <span class="math inline">6'4''</span> tall, you are <span class="math inline">6 \cdot 30.48 + 4 \cdot 2.54 \approx 193</span> cm tall.</p>
-<p>Conversely, if you are <span class="math inline">193</span> cm tall, then the f’i’’ height can be computed as follows. First divide <span class="math inline">193/30.48 \approx 6.33</span>, meaning that <span class="math inline">6</span> whole feet fit in <span class="math inline">193</span> cm. Then the remainder <span class="math inline">193 - 6*30.48 = 10.12</span> can be divided by <span class="math inline">2.54</span> to obtain the number of inches, namely <span class="math inline">10.12/2.54 = 4</span>.</p>
-<ol start="2" type="a">
-<li>Adjust the heights in the frame so that they are displayed as <span class="math inline">[f,i]</span>, meaning a height of f’i’’. Adjust the column name to <code>'height (f'i'')'</code>. You may round the number of inches to an integer, which you can do with <code>round()</code>.</li>
-</ol>
-<p><i> Hint: The same hint as in part a) applies. Also recall that you can use <code>//</code> to do modulo operations. For example <code>14 // 3</code> gives <code>4</code> because <span class="math inline">3</span> fits <span class="math inline">4</span> times in <span class="math inline">14</span>.</i></p>
-<p>The new frame should look like this:</p>
-<div id="a2f278b2" class="cell" data-execution_count="9">
-<div class="cell-output cell-output-stdout">
-<pre><code>     name height (f'i'')  weight (lbs)  age (years) dietary preference
-0   Aiden       [6.0, 1]            80           23             Veggie
-1   Bella       [5.0, 1]            60           23             Veggie
-2  Carlos       [6.0, 3]           100           23               None
-3   Dalia       [6.0, 1]            85           21               None
-4   Elena       [5.0, 3]            62           19              Vegan
-5  Farhan       [5.0, 7]            75           25               None
-6   Geert       [5.0, 5]            75           26             Veggie
-7    Hadi      [5.0, 10]            85           19               None
-8     Ian       [6.0, 4]            90           18              Vegan
-9    Jane       [5.0, 2]            70           22               None</code></pre>
-</div>
-</div>
+<p>Write a function called <code>maximum()</code> that takes as input a mathematical function <span class="math inline">f : \mathbb{R} \rightarrow \mathbb{R}</span> and an initial guess <code>guess</code>. It should output an <span class="math inline">x</span> that maximizes the function <span class="math inline">f</span>. Your function should make use of <code>fmin()</code> with initial guess <code>guess</code>.</p>
+<p><i>Hint: An <span class="math inline">x</span> maximizes the function <span class="math inline">f(x)</span> if and only if it minimizes the function <span class="math inline">-f(x)</span>. </i></p>
+<p>Define the function <span class="math inline">f(x) = -x^2 - 3x + 1</span> as a Python function and test your function <code>maximum()</code> on it with initial guess <code>guess = 10</code>. The maximum should be attained at <span class="math inline">x = -1.5</span>.</p>
 </section>
 <section id="question-3" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="question-3">Question 3</h4>
-<p>The Body Mass Index (BMI) is a well-known, and sometimes critized, measure used to quantify how healthy a person is. It is a function of the height (m) and weight (kg) of a person, given by the formula</p>
-<p><span class="math display">
-\text{BMI(height, weight)} = \frac{\text{weight}}{\text{height}^2}
-</span></p>
+<p>In this exercise, we will plot a sine function and try to find all the roots that it has.</p>
 <ol type="a">
-<li>Start with the frame in Question 1a (with height in centimeters and weight in kilograms) and add a column right of the weight column that contains the BMI of every person.</li>
+<li>Replicate the figure below in Python, i.e., plot the function <span class="math inline">f(x) = 2sin(2x)</span> on the interval <span class="math inline">[-10,10]</span> with the specified figure requirements</li>
 </ol>
-<p><i>Hint: Define a function that computes the BMI for a given weight and height, and then use a for-loop to compute the BMI values.</i></p>
-<p>The new frame should look like this.</p>
-<div id="76c1d469" class="cell" data-execution_count="10">
-<div class="cell-output cell-output-stdout">
-<pre><code>     name  height (cm)  weight (kg)        BMI  age (years) dietary preference
-0   Aiden          185           80  23.374726           23             Veggie
-1   Bella          155           60  24.973985           23             Veggie
-2  Carlos          190          100  27.700831           23               None
-3   Dalia          185           85  24.835646           21               None
-4   Elena          160           62  24.218750           19              Vegan
-5  Farhan          170           75  25.951557           25               None
-6   Geert          165           75  27.548209           26             Veggie
-7    Hadi          178           85  26.827421           19               None
-8     Ian          192           90  24.414062           18              Vegan
-9    Jane          158           70  28.040378           22               None</code></pre>
-</div>
-</div>
+<p><img src="figs_tutorial/sin_function.png" class="img-fluid"></p>
+<p>The function <span class="math inline">f</span> has many roots, i.e., <span class="math inline">x</span>-values that satisfy <span class="math inline">2\sin(2x) = 0</span>, on the interval [-10,10]. We will try to find all of them and indicate them in the figure of part a).</p>
 <ol start="2" type="a">
-<li>Compute the average BMI value of the people who are 22 or younger. The answer should be roughly <span class="math inline">25.67</span>.</li>
+<li><p>Create a vector <span class="math inline">guess = [-10, -9.5, -9, \dots, -1, -0.5, 0, 0.5, 1, 1.5, 2, \dots, 10]</span> using <code>np.linspace()</code></p></li>
+<li><p>Create a for-loop that executes for every choice of initial guess in the vector <code>guess</code> the function <code>fsolve()</code> with the chosen guess. The roots that are found should be stored in a list called <code>roots</code>.</p></li>
 </ol>
+<p><i>Hint: Define an empty list <code>roots = []</code> and append the found roots to it. The output should be</i></p><i>
+</i><p><i>[-9.424777960769301, -9.42477796076938, -9.42477796076938, -9.42477796076938, -7.853981633974483, -7.853981633974483, -3.141592653589793, -6.283185307179586, -6.283185307179586, -513.6503988619313, -4.71238898038469, -4.71238898038469, -14.137166941154069, -3.141592653589793, -3.141592653589793, -3.141592653589793, -1.5707963267948966, -1.5707963267948966, -1.5707963267948966, 0.0, 0.0, 0.0, 1.5707963267948966, 1.5707963267948966, 1.5707963267948966, 3.141592653589793, 3.141592653589793, 3.141592653589793, 14.137166941154069, 4.71238898038469, 4.71238898038469, 782.2565707438586, 6.283185307179586, 6.283185307179586, 3.141592653589793, 7.853981633974483, 7.853981633974483, 9.42477796076938, 9.42477796076938, 9.42477796076938, 9.424777960769301] </i></p>
+<p>It is important to observe that different roots of <span class="math inline">f</span> might be found depending on the intitial guess chosen for <code>fsolve()</code>. You can also see that sometimes for different guesses the same root is found; you could reduce this list to only include the unique elements (<code>using np.unique()</code>) but you don’t have to worry about this for now.</p>
+<p>Next we will plot the roots in the figure of part a) as points.</p>
+<ol start="4" type="a">
+<li>Create a vector <span class="math inline">zeros = [0,0,\dots,0]</span> whose number of zeros is the same as the number of elements in the vector <code>roots</code> (i.e., the length of <code>roots</code>)</li>
+</ol>
+<p><i> Hint: You can do this with a for-loop or you might have a look at the<code>zeros()</code> function from Numpy yourself. </i></p>
+<ol start="5" type="a">
+<li>Plot the vectors <code>roots</code> and <code>zeros</code> against each other using a scatter plot (so that the combinations appear as points) in the figure generated in part a). Make the necessary adjustments so that the output looks like the figure below.</li>
+</ol>
+<p><img src="figs_tutorial/sin_function_roots.png" class="img-fluid"></p>
 </section>
 <section id="question-4" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="question-4">Question 4</h4>
-<p>In this exercise we will merge two comma-separated value files together. We start with two comma-separated values files that can be downloaded here: <a href="Week5_Q4_Part1.csv">Week5_Q4_Part1.csv</a> and <a href="Week5_Q4_Part2.csv">Week5_Q4_Part2.csv</a>. Both files contain a list of 100 names.</p>
-<ol type="a">
-<li>Load both files into a (separate) Pandas data frame and print the first 10 rows from both. The output should look like this:</li>
-</ol>
-<div id="eaf8da0c" class="cell" data-execution_count="11">
-<div class="cell-output cell-output-stdout">
-<pre><code>           0
-0      Amina
-1    Hiroshi
-2   Isabella
-3  Alejandro
-4     Fatima
-5      Johan
-6      Priya
-7     Carlos
-8   Chiamaka
-9        Mei
-         0
-0    Maria
-1     Arun
-2    Zhang
-3  Esteban
-4   Yasmin
-5  Mustafa
-6  Natalia
-7     Omar
-8    Aisha
-9    Lucia</code></pre>
-</div>
-</div>
-<p>We want to pair up the persons in the different sheets with each other so that they can form a team for a group project. That is, we want to pair up Amina with Maria, Hiroshi with Arun, Isabella with Zhang, Alejandro with Esteban, Fatima with Yasmin etc.</p>
-<ol start="2" type="a">
-<li>Create a new data frame that contains three columns: One with the team number (ranging from 1 to 100), one with the first team member from the first dataset, and one with the second team member from the second dataset. The first five rows of the new frame should look like this:</li>
-</ol>
-<div id="3b8d33ac" class="cell" data-execution_count="12">
-<div class="cell-output cell-output-stdout">
-<pre><code>   Team number   Member 1 Member 2
-0            1      Amina    Maria
-1            2    Hiroshi     Arun
-2            3   Isabella    Zhang
-3            4  Alejandro  Esteban
-4            5     Fatima   Yasmin</code></pre>
-</div>
-</div>
-<p><i>Hint: Create a dictionary for the first team like this: <code>team1 = {'Team number' : [1], 'Member 1' : ['Amina'], 'Member 2' : ['Maria'] }</code> and turn it into a Pandas frame. Then use a for-loop to add the other teams to the frame.</i></p>
-<ol start="3" type="a">
-<li>Export the frame with teams to a new comma-separated values file called <i>teams.csv</i>, without the index numbers of the frame. The folder in which you have stored your Python file should not contain a new file called <i>teams.csv</i> which should look like <a href="teams.csv">this</a>.</li>
-</ol>
+<p>Create a similar figure as in Question 3, but now with the minima indicated in the figure instead of the roots of <span class="math inline">f</span>. Your figure should look like this.</p>
+<p><img src="figs_tutorial/sin_function_minima.png" class="img-fluid"></p>
 </section>
+<section id="bonus-question" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="bonus-question">Bonus question</h4>
+<p>Combining all the previous questions, create one figure that contains all the roots (as red points), minima (as green points) and maxima (as yellow points) of the function <span class="math inline">f</span>. Your figure should look like this:</p>
+<p><img src="figs_tutorial/sin_function_bonus.png" class="img-fluid"></p>
+<p><i> Hint: To create the different colors, you can use the argument <code>c='[color]'</code> of <code>plt.scatter()</code> with [color] replaced by the desired color.</i></p><i>
+</i></section><i>
 
-</main>
+</i></main><i>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -798,9 +582,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-</div> <!-- /content -->
+</i></div><i> <!-- /content -->
 
 
 
 
-</body></html>
+</i></body></html>
