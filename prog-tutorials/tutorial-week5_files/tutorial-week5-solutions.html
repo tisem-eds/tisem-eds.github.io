@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.52">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Tutorial Exercises Week 4 - Solutions</title>
+<title>Tutorial Exercises Week 5 - Solutions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -57,18 +57,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="tutorial-week4-solutions_files/libs/clipboard/clipboard.min.js"></script>
-<script src="tutorial-week4-solutions_files/libs/quarto-html/quarto.js"></script>
-<script src="tutorial-week4-solutions_files/libs/quarto-html/popper.min.js"></script>
-<script src="tutorial-week4-solutions_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="tutorial-week4-solutions_files/libs/quarto-html/anchor.min.js"></script>
-<link href="tutorial-week4-solutions_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="tutorial-week4-solutions_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="tutorial-week4-solutions_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="tutorial-week4-solutions_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="tutorial-week4-solutions_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="tutorial-week5-solutions_files/libs/clipboard/clipboard.min.js"></script>
+<script src="tutorial-week5-solutions_files/libs/quarto-html/quarto.js"></script>
+<script src="tutorial-week5-solutions_files/libs/quarto-html/popper.min.js"></script>
+<script src="tutorial-week5-solutions_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="tutorial-week5-solutions_files/libs/quarto-html/anchor.min.js"></script>
+<link href="tutorial-week5-solutions_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="tutorial-week5-solutions_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="tutorial-week5-solutions_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="tutorial-week5-solutions_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="tutorial-week5-solutions_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
@@ -83,7 +83,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    });
 }}});
   </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -93,12 +120,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
   
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tutorial-week4-solutions.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="tutorial-week5-solutions.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Tutorial Exercises Week 4 - Solutions</h1>
+<h1 class="title">Tutorial Exercises Week 5 - Solutions</h1>
 </div>
 
 
@@ -111,13 +138,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <p><link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""> <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&amp;family=Fira+Sans&amp;display=swap" rel="stylesheet"></p>
 <section id="question-1" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="question-1">Question 1</h4>
 <p>Copy the following extended dataset from the course document into Python.</p>
-<div class="cell" data-execution_count="1">
+<div id="772d635e" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> { </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a> <span class="st">'name'</span> : [<span class="st">"Aiden"</span>, <span class="st">"Bella"</span>, <span class="st">"Carlos"</span>, <span class="st">"Dalia"</span>, <span class="st">"Elena"</span>, <span class="st">"Farhan"</span>, <span class="st">"Geert"</span>, <span class="st">"Hadi"</span>, <span class="st">"Ian"</span>, <span class="st">"Jane"</span>],</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a> <span class="st">'height (cm)'</span> : [<span class="dv">185</span>, <span class="dv">155</span>, <span class="dv">190</span>, <span class="dv">185</span>, <span class="dv">160</span>, <span class="dv">170</span>, <span class="dv">165</span>, <span class="dv">178</span>, <span class="dv">192</span>, <span class="dv">158</span>],</span>
@@ -129,7 +158,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="a">
 <li>Turn the dataset above into a Pandas data frame and print it.</li>
 </ol>
-<div class="cell" data-execution_count="2">
+<div id="ded5791b" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>frame <span class="op">=</span> pd.DataFrame(dataset)</span>
@@ -152,7 +181,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="2" type="a">
 <li>Print all the odd numbered rows from the data frame:</li>
 </ol>
-<div class="cell" data-execution_count="3">
+<div id="943a24e5" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-stdout">
 <pre><code>     name  height (cm)  weight (kg)  age (years) dietary preference
 1   Bella          155           60           23             Veggie
@@ -162,7 +191,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 9    Jane          158           70           22               None</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="4">
+<div id="0be37b64" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Store the desired rows in a new Pandas data frame x</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> frame.loc[[<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>]]</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -179,7 +208,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="3" type="a">
 <li>Print the following part of the frame:</li>
 </ol>
-<div class="cell" data-execution_count="5">
+<div id="d3810755" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-stdout">
 <pre><code>     name dietary preference
 1   Bella             Veggie
@@ -189,7 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 7    Hadi               None</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="6">
+<div id="c49a1ba4" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> frame.loc[[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">7</span>],[<span class="st">'name'</span>,<span class="st">'dietary preference'</span>]]</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -205,7 +234,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="4" type="a">
 <li>Print the rows of the people whose weight is greater or equal than <span class="math inline">75</span> kilograms:</li>
 </ol>
-<div class="cell" data-execution_count="7">
+<div id="e74da544" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-stdout">
 <pre><code>     name  height (cm)  weight (kg)  age (years) dietary preference
 0   Aiden          185           80           23             Veggie
@@ -217,7 +246,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 8     Ian          192           90           18              Vegan</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="8">
+<div id="c96a2d7b" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>threshold <span class="op">=</span> <span class="dv">75</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>weight_75 <span class="op">=</span> frame.loc[:,<span class="st">'weight (kg)'</span>] <span class="op">&gt;=</span> threshold</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -238,7 +267,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="5" type="a">
 <li>Print the rows of the people whose height is in the interval <span class="math inline">[170,190]</span>:</li>
 </ol>
-<div class="cell" data-execution_count="9">
+<div id="f8cfc3b6" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-stdout">
 <pre><code>     name  height (cm)  weight (kg)  age (years) dietary preference
 0   Aiden          185           80           23             Veggie
@@ -249,7 +278,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><i> Hint: Write a for-loop that checks for every row whether the height of a person is in the desired interval, and, if so, append the row index to an (initially empty) list. </i></p>
-<div class="cell" data-execution_count="10">
+<div id="b206ea8d" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">170</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">190</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -273,7 +302,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="6" type="a">
 <li>Use a for-loop to print three frames based on the dietary preferences that the people have. So one frame containing all the rows of people whose preference is Veggie, one with people whose preference is Vegan, and one with people whose preference is None:</li>
 </ol>
-<div class="cell" data-execution_count="11">
+<div id="4f92f941" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-stdout">
 <pre><code>    name  height (cm)  weight (kg)  age (years) dietary preference
 0  Aiden          185           80           23             Veggie
@@ -290,7 +319,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 9    Jane          158           70           22               None</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="12">
+<div id="7ffd9503" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>preferences <span class="op">=</span> [<span class="st">'Veggie'</span>,<span class="st">'Vegan'</span>,<span class="st">'None'</span>] </span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Alternatively: preferences = frame.loc[:,'dietary preference'].unique()</span></span>
@@ -322,7 +351,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="a">
 <li>Adjust the weight column so that the weights are displayed in pounds (lbs) instead of kilograms (kg). For this, you may use that 1 kg = 2.2205 lbs. The column name should be changed to <code>'weight (lbs)'</code>. The frame should look like this in the end:</li>
 </ol>
-<div class="cell" data-execution_count="13">
+<div id="587eba18" class="cell" data-execution_count="13">
 <div class="cell-output cell-output-stdout">
 <pre><code>     name  height (cm)  weight (lbs)  age (years) dietary preference
 0   Aiden          185      177.6400           23             Veggie
@@ -338,7 +367,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><i>Hint: Define a function that does the conversion from kilograms to pounds and apply it to the weight column. To rename the column, rename all columns using frame.columns.</i></p>
-<div class="cell" data-execution_count="14">
+<div id="d0967851" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> kg_to_lbs(y):</span>
@@ -374,7 +403,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p><i> Hint: The same hint as in part a) applies. Also recall that you can use <code>//</code> to do modulo operations. For example <code>14 // 3</code> gives <code>4</code> because <span class="math inline">3</span> fits <span class="math inline">4</span> times in <span class="math inline">14</span>.</i></p>
 <p>The new frame should look like this:</p>
-<div class="cell" data-execution_count="15">
+<div id="6baedc54" class="cell" data-execution_count="15">
 <div class="cell-output cell-output-stdout">
 <pre><code>     name height (f'i'')  weight (lbs)  age (years) dietary preference
 0   Aiden       [6.0, 1]      177.6400           23             Veggie
@@ -389,7 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 9    Jane       [5.0, 2]      155.4350           22               None</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="16">
+<div id="767043cc" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cm_to_fi(y):</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    foot <span class="op">=</span> y <span class="op">//</span> <span class="fl">30.48</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    inch <span class="op">=</span> (y <span class="op">-</span> foot<span class="op">*</span><span class="fl">30.48</span>)<span class="op">/</span><span class="fl">2.54</span></span>
@@ -427,7 +456,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p><i>Hint: Define a function that computes the BMI for a given weight and height, and then use a for-loop to compute the BMI values.</i></p>
 <p>The new frame should look like this.</p>
-<div class="cell" data-execution_count="17">
+<div id="32d14407" class="cell" data-execution_count="17">
 <div class="cell-output cell-output-stdout">
 <pre><code>     name  height (cm)  weight (kg)        BMI  age (years) dietary preference
 0   Aiden          185           80  23.374726           23             Veggie
@@ -442,7 +471,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 9    Jane          158           70  28.040378           22               None</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="18">
+<div id="270bdc48" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> { </span>
@@ -483,12 +512,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="2" type="a">
 <li>Compute the average BMI value of the people who are 22 or younger.</li>
 </ol>
-<div class="cell" data-execution_count="19">
+<div id="0023ad85" class="cell" data-execution_count="19">
 <div class="cell-output cell-output-stdout">
 <pre><code>25.66725157640014</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="20">
+<div id="63cf02d0" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>below_22 <span class="op">=</span> frame.loc[:,<span class="st">'age (years)'</span>] <span class="op">&lt;=</span> <span class="dv">22</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>frame_22 <span class="op">=</span> frame.loc[below_22,:]</span>
@@ -507,7 +536,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="a">
 <li>Load both files into a (separate) Pandas data frame and print the first 10 rows from both. The output should look like this:</li>
 </ol>
-<div class="cell" data-execution_count="21">
+<div id="8820a666" class="cell" data-execution_count="21">
 <div class="cell-output cell-output-stdout">
 <pre><code>           0
 0      Amina
@@ -533,7 +562,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 9    Lucia</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="22">
+<div id="b0f5e4e7" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>data_one <span class="op">=</span> pd.read_csv(<span class="st">'Week5_Q4_Part1.csv'</span>, header<span class="op">=</span><span class="va">None</span>)</span>
@@ -573,7 +602,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="2" type="a">
 <li>Create a new data frame that contains three columns: One with the team number (ranging from 1 to 100), one with the first team member from the first dataset, and one with the second team member from the second dataset. The first five rows of the new frame should look like this:</li>
 </ol>
-<div class="cell" data-execution_count="23">
+<div id="d1ba739a" class="cell" data-execution_count="23">
 <div class="cell-output cell-output-stdout">
 <pre><code>   Team number   Member 1 Member 2
 0            1      Amina    Maria
@@ -584,7 +613,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><i>Hint: Create a dictionary for the first team like this: <code>team1 = {'Team number' : [1], 'Member 1' : ['Amina'], 'Member 2' : ['Maria'] }</code> and turn it into a Pandas frame. Then use a for-loop to add the other teams to the frame.</i></p>
-<div class="cell" data-execution_count="24">
+<div id="ed17bb1e" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define number of teams</span></span>
@@ -613,7 +642,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol start="3" type="a">
 <li>Export the frame with teams to a new comma-separated values file called <i>teams.csv</i>, without the index numbers of the frame.</li>
 </ol>
-<div class="cell" data-execution_count="25">
+<div id="f742eab8" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>teams_frame.to_csv(<span class="st">'teams.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The folder in which you have stored your Python file should not contain a new file called <i>teams.csv</i> which should look like <a href="teams.csv">this</a>.</p>
@@ -656,18 +685,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -699,11 +717,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -713,8 +770,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -726,7 +792,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -770,6 +959,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -795,6 +985,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -855,6 +1071,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
