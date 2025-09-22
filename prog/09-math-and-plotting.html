@@ -269,12 +269,17 @@ window.Quarto = {
 
 <p><link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""> <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&amp;family=Fira+Sans&amp;display=swap" rel="stylesheet"></p>
 <p>In this chapter we will see some mathematical algorithms from the <code>scipy</code> package (or module) as well as how to visualize data, e.g., some of the figures we have seen in earlier chapters, using <code>matplotlib</code>.</p>
-<p><a href="https://scipy.org/">SciPy</a> is a package that can be used to perform various mathematical task and algorithms, making it very important for data anlaysis purposes. The <a href="https://matplotlib.org/">Matplotlib</a> package is essential in Python to create insightful visual representations of your data and the analysis you performed on it.</p>
+<p><a href="https://scipy.org/">SciPy</a> is a package that can be used to perform various mathematical tasks and algorithms, making it very important for data analysis purposes. The <a href="https://matplotlib.org/">Matplotlib</a> package is essential in Python to create insightful visual representations of your data and the analysis you performed on it.</p>
 <p>We first discuss two fundamental mathematical tasks: finding a root of a mathematical function and minimizing a mathematical function. After that, we will explain how to visualize data and mathematical functions.</p>
 <section id="root-finding" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="root-finding"><span class="header-section-number">9.1</span> Root finding</h2>
 <p>Consider the function <span class="math inline">f(x) = x^2 + 2x - 1</span>. A visualization of this function is given below. We will learn how to create this figure ourselves in <a href="#sec-visualization" class="quarto-xref"><span>Section 9.3</span></a>.</p>
-<div id="6dc273f1" class="cell" data-execution_count="1">
+<style>
+.cell-output-display {
+  background-color: #ffffff;
+}
+</style>
+<div id="a683c7f4" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show code generating the plot below</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -317,27 +322,42 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p><br><br></p>
-<blockquote class="blockquote">
-<p>A common task is to find a root <span class="math inline">x</span> of a mathematical function <span class="math inline">f : \mathbb{R} \rightarrow \mathbb{R}</span>. A root is a point that satisfies the equation <span class="math display">f(x) = 0.</span></p>
-</blockquote>
-<p>In our case, we want to solve the equation <span class="math inline">x^2 + 2x -1 = 0</span>. You might remember from your high school math course that, for given numbers a, b and c, the roots of the quadratic function <span class="math inline">f(x) = ax^2 + bx + c</span>, are given by</p>
+<p><br></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Root finding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A root <span class="math inline">x</span> of a function <span class="math inline">f: \mathbb{R} \rightarrow \mathbb{R}</span> is a point that satisfies the equation <span class="math inline">f(x) = 0.</span></p>
+</div>
+</div>
+<p>In our case, we want to solve the equation <span class="math inline">x^2 + 2x -1 = 0</span>. You might remember from your high school math course that, for given numbers <span class="math inline">a, b</span> and <span class="math inline">c</span>, the roots of the quadratic function <span class="math inline">f(x) = ax^2 + bx + c</span>, are given by</p>
 <p><span class="math display">
 x_\ell = \frac{- b - \sqrt{b^2 - 4ac}}{2a} \ \ \text{ and } \ \ x_r = \frac{- b + \sqrt{b^2 - 4ac}}{2a}
 </span></p>
 <p>where the subscript <span class="math inline">\ell</span> is used to denote the fact that this will be the “left” root and <span class="math inline">r</span> to denote the “right” root.</p>
-<p>For <span class="math inline">f(x) = x^2 + 2x-1</span>, we have <span class="math inline">a = 1, b = 2</span> and <span class="math inline">c = -1</span>. Plugging in these values in the formula above gives <span class="math inline">x_\ell = -1 - \sqrt{2} \approx - 2.4142</span> and <span class="math inline">x_r = -1 + \sqrt{2} \approx 0.4142</span>. Although this is an easy way to find the roots of a quadratic function, we want to be able to find roots of any function <span class="math inline">f</span>, assuming they exist.</p>
-<p>The easiest way to find a root of a general function is to use the the function <code>fsolve()</code> from the (sub)package <code>scipy.optimize</code>. This package contains many functions to carry out algorithmic tasks on mathematical functions. In order not having to write <code>scipy.optimize</code> the whole time we will import this package under the name <code>optimize</code>, just as we did with NumPy where we used the line <code>import numpy as np</code>. Below is the code snippet that carries out the root finding procedure.</p>
-<div id="cc736a69" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.optimize <span class="im">as</span> optimize</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">-</span> <span class="dv">1</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>guess <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>f_zero <span class="op">=</span> optimize.fsolve(f,guess) </span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"A root of the function f is given by"</span>, f_zero)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For <span class="math inline">f(x) = x^2 + 2x-1</span>, we have <span class="math inline">a = 1, b = 2</span> and <span class="math inline">c = -1</span>. Plugging in these values in the formula above gives <span class="math inline">x_\ell = -1 - \sqrt{2} \approx - 2.4142</span> and <span class="math inline">x_r = -1 + \sqrt{2} \approx 0.4142</span>. Although this is an easy way to find the roots of a quadratic function, we want to be able to find roots of any function <span class="math inline">f</span> if they exist.</p>
+<p>The easiest way to find a root of a general function is to use the the function <code>fsolve()</code> from the (sub)package <code>scipy.optimize</code>. This package contains many functions to carry out algorithmic tasks on mathematical functions. To avoid having to write <code>scipy.optimize</code> every time we will import this package under the name <code>optimize</code>, just as we did with NumPy where we used the line <code>import numpy as np</code>.</p>
+<p>Below is the code snippet that carries out the root finding procedure.</p>
+<div id="c22fa583" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import package containing fsolve()</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.optimize <span class="im">as</span> optimize</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the function f</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Using fsolve() to find root of f</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>guess <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>f_zero <span class="op">=</span> optimize.fsolve(f,guess) </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the found root</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"A root of the function f is given by"</span>, f_zero)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>A root of the function f is given by [0.41421356]</code></pre>
 </div>
@@ -351,11 +371,11 @@ x_\ell = \frac{- b - \sqrt{b^2 - 4ac}}{2a} \ \ \text{ and } \ \ x_r = \frac{- b 
 <li>Print a message containing the root of <span class="math inline">f</span> that was found.</li>
 </ul>
 <p>The use of <code>fsolve()</code> requires some additional explanation. It takes two input arguments, the first one being a (mathematical) function <code>f</code> and the second one an initial guess for where a root of <span class="math inline">f</span> might be, which we store in the variable <code>guess</code>. Note that you cannot reverse the order of the input arguments: <code>f_zero = optimize.fsolve(guess,f)</code> does not work!</p>
-<p>We could also have used <code>optimize.fsolve(f,3)</code> instead of separately defining <code>guess = 3</code> and then using <code>guess</code> as input argument. However, when coding, it is common practice to always define input data (the number 3 in this case) in a separate variable. Especially if the number would be used in multiple places in your code, this is useful.</p>
-<p>It is important to observe that a Python function can itself be an input argument of another Python function! That is, the function <code>f</code> is an input argument of the function <code>fsolve()</code>. It is required to define the <span class="math inline">f</span> as a Python function. That is, it is not possible to use the command <code>optimize.fsolve(x**2 + 2*x - 1,guess)</code>.</p>
+<p>We could also have used <code>optimize.fsolve(f,3)</code> instead of separately defining <code>guess = 3</code> and then using <code>guess</code> as input argument. In coding, it is common practice to always define input data, the number <span class="math inline">3</span> in this case, in a separate variable. Especially if the number would be used in multiple places in your code, this is useful.</p>
+<p>It is important to observe that a Python function itself can be an input argument of another Python function! That is, the function <code>f</code> is an input argument of the function <code>fsolve()</code>. It is important to know that, to use a function <span class="math inline">f</span> as an input <code>fsolve()</code>, it is required to define <span class="math inline">f</span> as a Python function. That is, it is not possible to use the command <code>optimize.fsolve(x**2 + 2*x - 1,guess)</code>.</p>
 <p>The second input argument <code>guess</code> is needed by <code>fsolve()</code> to execute the underlying mathematical root finding method that is used to find a root of <span class="math inline">f</span>. We do not go into the actual mathematical method that is being carried out in the background by Python when we execute <code>fsolve()</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, but the idea is that the method starts at the guess that we provide and then gradually finds its way to a root of <span class="math inline">f</span> by doing various calculations.</p>
 <p>In fact, the choice of initial guess can influence the outcome of <code>fsolve()</code>. That is, a different initial guess can lead the underlying mathematical method to a different root of the function. This is illustrated in the code below, where we find the other root <span class="math inline">-2.4142...</span>.</p>
-<div id="fbedd534" class="cell" data-execution_count="3">
+<div id="6a34966e" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>guess <span class="op">=</span> <span class="op">-</span><span class="dv">2</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>f_zero <span class="op">=</span> optimize.fsolve(f,guess)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -364,8 +384,9 @@ x_\ell = \frac{- b - \sqrt{b^2 - 4ac}}{2a} \ \ \text{ and } \ \ x_r = \frac{- b 
 <pre><code>A root of the function f is given by [-2.41421356]</code></pre>
 </div>
 </div>
-<p>As you might have noted, the output of <code>optimize.fsolve(f,guess)</code> is a list containing one number, for example, the last piece of code returned <code>[-2.41421356]</code>. If you instead only want to output the number <code>-2.41421356</code>, i.e., the value of the element in the string, you can use <code>optimize.fsolve(f,guess)[0]</code> instead. This means that what is stored in <code>f_zero</code> is the <span class="math inline">0</span>-th (and only) element of the list <code>optimize.fsolve(f,guess)</code>.</p>
-<div id="a7010ae8" class="cell" data-execution_count="4">
+<p>As you might have noted, the output of <code>optimize.fsolve(f,guess)</code> is a list containing one number, for example, the last piece of code returned <code>[-2.41421356]</code>. This happends because <code>fsolve()</code> can also be used to find roots of higher-dimensional functions, in which the case the root is a vector of numbers (stored in a list).</p>
+<p>If you instead only want to output the number <code>-2.41421356</code>, i.e., the value of the element in the string, you can use <code>optimize.fsolve(f,guess)[0]</code> instead. This means that what is stored in <code>f_zero</code> is the <span class="math inline">0</span>-th (and only) element of the list <code>optimize.fsolve(f,guess)</code>.</p>
+<div id="2fbbed46" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>guess <span class="op">=</span> <span class="op">-</span><span class="dv">2</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>f_zero <span class="op">=</span> optimize.fsolve(f,guess)[<span class="dv">0</span>]</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -378,7 +399,7 @@ x_\ell = \frac{- b - \sqrt{b^2 - 4ac}}{2a} \ \ \text{ and } \ \ x_r = \frac{- b 
 f(x) = 6.
 </span></p>
 <p>Moving the <span class="math inline">6</span> to the left, we see that this is the same as computing an <span class="math inline">x</span> such that <span class="math inline">f(x) - 6 = 0.</span> Therefore, if we define the function <span class="math inline">g(x) := f(x) - 6</span>, then an <span class="math inline">x</span> that satisfies <span class="math inline">g(x) = 0</span> also satisfies <span class="math inline">f(x) = 6</span>, and vice versa. Let us code this as well.</p>
-<div id="a680ece8" class="cell" data-execution_count="5">
+<div id="14f3fe98" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> g(x):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> f(x) <span class="op">-</span> <span class="dv">6</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -394,7 +415,7 @@ f(x) = 6.
 <p>Everything we have seen up till now also allows us to write a general Python function to solve an equation of the form <span class="math display">
 f(x) = c
 </span> for a given function <span class="math inline">f</span> and number <span class="math inline">c</span>. In the example above, we had <span class="math inline">c = 6</span>.</p>
-<div id="7f425b70" class="cell" data-execution_count="6">
+<div id="03427dae" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> solve_eq(f,c,guess):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">""" </span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Input</span></span>
@@ -418,18 +439,19 @@ f(x) = c
 <p><span class="math display">
 3x^2 -4x + 1 = 5.
 </span></p>
-<div id="cced6244" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#We create the function h(x) = 3x^2 - 4x + 1 </span></span>
+<div id="189b3aaa" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We create the function h(x) = 3x^2 - 4x + 1 </span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> h(x):</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">3</span><span class="op">*</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">4</span><span class="op">*</span>x <span class="op">+</span> <span class="dv">1</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Right hand side of the equation h(x) = 5</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Right hand side of the equation h(x) = 5</span></span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="dv">5</span> </span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Our initial guess for fsolve() (we choose 1 here).</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Our initial guess for fsolve() (we choose 1 here).</span></span>
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>initial_guess <span class="op">=</span> <span class="dv">1</span> </span>
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"A solution x to h(x) = d is given by"</span>, solve_eq(h,d,guess))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the found solution</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"A solution x to h(x) = d is given by"</span>, solve_eq(h,d,guess))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>A solution x to h(x) = d is given by 2.0</code></pre>
 </div>
@@ -439,7 +461,7 @@ f(x) = c
 <section id="minimization" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="minimization"><span class="header-section-number">9.2</span> Minimization</h2>
 <p>Another fundamental task in mathematics is to find the minimum value that a function can attain. Recall the function <span class="math inline">f(x) = x^2+2x-1</span> from the previous section.</p>
-<div id="8c3b73b9" class="cell" data-execution_count="8">
+<div id="74d2e2b5" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Show code generating the plot below</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -484,7 +506,7 @@ f(x) = c
 </div>
 <p><br><br> It can be seen that the point x at which the function <span class="math inline">f</span> is the lowest, i.e., attains its minimum is <span class="math inline">x = -1</span>, and the function values in that point is <span class="math inline">f(-1) = -2</span>. Python has various ways of finding the minimum of a function, the easiest-to-use being <code>fmin()</code> from the <code>optimize</code> module.</p>
 <p>The syntax that is used for this function is similar to that of <code>fsolve()</code>. Although we already defined the function <span class="math inline">f</span> in the previous section, we will redefine it in the code below for sake of completeness.</p>
-<div id="d361c68c" class="cell" data-execution_count="9">
+<div id="c7b88f96" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.optimize <span class="im">as</span> optimize</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
@@ -503,7 +525,7 @@ The minimum of the function f is attained at x =  [-1.]</code></pre>
 </div>
 </div>
 <p>Note that Python outputs some information in the console about the mathematical optimization procedure that was performed in order to find the minimum of the function. It displays the function value at the miminum that was found, in our case <span class="math inline">-2 = f(-1)</span>, and a number of iterations and function evaluations. These last two pieces of information are not relevant for us, but are useful for an expert who wants to understand better how well the optimization procedure performed. If you want, you can suppress all this information by adding <code>disp=False</code> or <code>disp=0</code> as an argument to the fmin() function. This is illustrated below.</p>
-<div id="a41ee208" class="cell" data-execution_count="10">
+<div id="425972d2" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>minimum <span class="op">=</span> optimize.fmin(f,guess,disp<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The minimum of the function f is attained at x = '</span>, minimum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -512,7 +534,7 @@ The minimum of the function f is attained at x =  [-1.]</code></pre>
 </div>
 </div>
 <p>Also here, if you want to return only the value <code>-1.0</code> instead of the list <code>[-1.0]</code> you can do the following as we illustrated for <code>fsolve()</code> as well.</p>
-<div id="820c40e5" class="cell" data-execution_count="11">
+<div id="d4368e44" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>minimum <span class="op">=</span> optimize.fmin(f,guess,disp<span class="op">=</span><span class="va">False</span>)[<span class="dv">0</span>]</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The minimum of the function f is attained at x = '</span>, minimum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -525,7 +547,7 @@ The minimum of the function f is attained at x =  [-1.]</code></pre>
 <h2 data-number="9.3" class="anchored" data-anchor-id="sec-visualization"><span class="header-section-number">9.3</span> Visualization</h2>
 <p>In this section we will explain the basics for plotting functions and data, for which we will use the <code>matplotlib.pyplot</code> (sub)package. We import it under the name <code>plt</code>. You might wonder why we use the name <code>plt</code> and not the perhaps more obvious choise <code>plot</code>. This is because <code>plot()</code> is a command that we will be using, so we do not want to create any conflicts with this function when executing a Python script.</p>
 <p>In this section we will explain step-by-step how to generate the figure that we have seen in the previous two sections. We start with plotting the function <span class="math inline">f(x) = x^2 + 2x -1</span> for some values of <span class="math inline">x</span> in a two-dimensional figure.</p>
-<div id="7c53f053" class="cell" data-execution_count="12">
+<div id="f118e8be" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -583,7 +605,7 @@ x = [x_1,x_2,x_3,x_4,x_5,x_6,x_7] =  [-3,-2,-1,0,1,2,3].
 </blockquote>
 <p>Next, we create an (empty) figure using the command <code>plt.figure()</code>. Then comes the most important command, <code>plt.plot(x,y)</code>, that plots the elements in the vector <span class="math inline">x</span> against the elements in the vector <span class="math inline">y = f(x)</span>, and connects consecutive combinations <span class="math inline">(x_i,y_i)</span> and <span class="math inline">(x_{i+1},y_{i+1})</span> with a line segment. For example, we have <span class="math inline">(x_1,y_1) = (-3,2)</span> and <span class="math inline">(x_2,y_2) = (-2,-1)</span>. The left most line segment is formed by connecting these points.</p>
 <p>If you only want to plot the points <span class="math inline">(x_i,y_i)</span>, and not the line segments, you can use <code>plt.scatter(x,y)</code> instead of <code>plt.plot(x,y)</code>.</p>
-<div id="de0aca5c" class="cell" data-execution_count="13">
+<div id="974a121f" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -613,7 +635,7 @@ x = [x_1,x_2,x_3,x_4,x_5,x_6,x_7] =  [-3,-2,-1,0,1,2,3].
 </div>
 <p><br><br> Observe that the (blue) line in the figure that was generated using <code>plt.plot(x,y)</code> is not as “smooth” as in the figures in the previous sections, where the function does not (visibly) have these segments. To get a smoother function line, we can include more points in the vector <span class="math inline">x</span>.</p>
 <p>A quick way to generate a number <span class="math inline">k</span> of evenly spaced points in the interval <span class="math inline">[a,b]</span> is the command <code>np.linspace(a,b,k)</code> from the Numpy package. It takes as input the bounds of the interval <span class="math inline">[a,b]</span> and the number of points <span class="math inline">k</span> that we want to have in it. Consider the following example, where we want to generate <span class="math inline">k = 11</span> points in the interval <span class="math inline">[a,b] = [0,1]</span>.</p>
-<div id="9243a9be" class="cell" data-execution_count="14">
+<div id="5740720c" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">11</span>)</span>
@@ -625,7 +647,7 @@ x = [x_1,x_2,x_3,x_4,x_5,x_6,x_7] =  [-3,-2,-1,0,1,2,3].
 </div>
 <p>Note that the end points of the interval form the first and last element in the vector <span class="math inline">x</span>. “Evenly spaced” refers to the fact that the distance between two consecutive points in <span class="math inline">x</span> is always the same. For this <span class="math inline">x</span> this common distance is <span class="math inline">0.1 = (b-a)/(k-1)</span>.</p>
 <p>Let us plot again the function <span class="math inline">f</span>, but this time with <span class="math inline">600</span> elements in <span class="math inline">x</span> in the interval <span class="math inline">[-3,3]</span>. We use <code>plt.plot()</code> again, instead of <code>plt.scatter()</code>. We now obtain a much smoother function line.</p>
-<div id="5127db17" class="cell" data-execution_count="15">
+<div id="c666b3d6" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -653,9 +675,23 @@ x = [x_1,x_2,x_3,x_4,x_5,x_6,x_7] =  [-3,-2,-1,0,1,2,3].
 </div>
 </div>
 </div>
-<p><br><br> You can add a legend for the line/points that you plot by using the label argument of <code>plt.plot()</code>. For example we can add the function description using <code>plt.plot(x,y,label='$f(x) = x^2 + 2x - 1$')</code>. This is in particular useful if you plot multiple functions in one figure, as the example below illustrates. There we plot the functions <span class="math inline">f</span> and <span class="math inline">g</span>, with <span class="math inline">g(x) = 3x</span> a new function. To have the labels appear in the legend of the figure, you need to add a legend to the figure with <code>plt.legend()</code>.</p>
+<p><br><br> You can add a legend for the line/points that you plot by using the label argument of <code>plt.plot()</code>. For example we can add the function description using <code>plt.plot(x,y,label='$f(x) = x^2 + 2x - 1$')</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you want to add a superscript in a label, you should use the <code>^</code> symbol, as opposed to <code>**</code> which you should use if you want to do an actual numerical computation with exponentiation.</p>
+</div>
+</div>
+<p>This is in particular useful if you plot multiple functions in one figure, as the example below illustrates. There we plot the functions <span class="math inline">f</span> and <span class="math inline">g</span>, with <span class="math inline">g(x) = 3x</span> a new function. To have the labels appear in the legend of the figure, you need to add a legend to the figure with <code>plt.legend()</code>.</p>
 <p>If you want to add labels to the horizontal and vertical axis, you can use the commands <code>plt.xlabel()</code> and <code>plt.ylabel()</code>.</p>
-<div id="504ebd6e" class="cell" data-execution_count="16">
+<div id="38cd79a2" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -698,7 +734,7 @@ x = [x_1,x_2,x_3,x_4,x_5,x_6,x_7] =  [-3,-2,-1,0,1,2,3].
 </div>
 <p><br><br> You might observe that the range on the vertical axis changed now that we added a second function to the plot. When we only plotted the function <span class="math inline">f</span>, the vertical axis ranged from <span class="math inline">-2</span> to <span class="math inline">14</span>, but now with the function <span class="math inline">g</span> added to it, it ranges from <span class="math inline">-10</span> to <span class="math inline">15</span>.</p>
 <p>You can fix the range <span class="math inline">[c,d]</span> on the vertical axis using the command <code>plt.ylim(c,d)</code>, and to fix the range of the horizontal axis to <span class="math inline">[a,b]</span>, you can use <code>plt.xlim(a,b)</code>. In the figure below, we fix the vertical range to <span class="math inline">[c,d] = [-10,14]</span> and the horizontal axis to <span class="math inline">[a,b] = [-3,3]</span>.</p>
-<div id="25bd0e10" class="cell" data-execution_count="17">
+<div id="69c65e61" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -744,7 +780,7 @@ x = [x_1,x_2,x_3,x_4,x_5,x_6,x_7] =  [-3,-2,-1,0,1,2,3].
 </div>
 </div>
 <p><br><br> Finally, you can also add a title to the plot using the command <code>plt.title()</code> as well as a grid in the background of the figure using <code>plt.grid()</code>. These are illustrated in the figure below.</p>
-<div id="5791d5a1" class="cell" data-execution_count="18">
+<div id="7ad8830a" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
