@@ -2,27 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tisem-eds.github.io/prog/index.html</loc>
-    <lastmod>2024-08-27T08:18:35.000Z</lastmod>
+    <lastmod>2025-08-21T11:01:23.000Z</lastmod>
   </url>
   <url>
     <loc>https://tisem-eds.github.io/prog/02-getting-started.html</loc>
-    <lastmod>2024-08-21T08:45:19.267Z</lastmod>
+    <lastmod>2025-08-21T11:08:03.000Z</lastmod>
   </url>
   <url>
     <loc>https://tisem-eds.github.io/prog/03-python-as-a-calculator.html</loc>
-    <lastmod>2024-09-03T13:58:47.000Z</lastmod>
+    <lastmod>2025-08-21T11:27:39.000Z</lastmod>
   </url>
   <url>
     <loc>https://tisem-eds.github.io/prog/04-data-types-part1.html</loc>
-    <lastmod>2024-08-27T09:18:38.000Z</lastmod>
+    <lastmod>2025-08-21T11:36:12.000Z</lastmod>
   </url>
   <url>
     <loc>https://tisem-eds.github.io/prog/05-data-types-part2.html</loc>
-    <lastmod>2024-08-27T13:36:18.000Z</lastmod>
+    <lastmod>2025-08-21T11:44:25.000Z</lastmod>
   </url>
   <url>
     <loc>https://tisem-eds.github.io/prog/06-defining-functions.html</loc>
-    <lastmod>2024-09-09T13:14:22.000Z</lastmod>
+    <lastmod>2025-09-08T13:44:21.000Z</lastmod>
   </url>
   <url>
     <loc>https://tisem-eds.github.io/prog/07-intro-to-numpy.html</loc>
@@ -30,15 +30,15 @@
   </url>
   <url>
     <loc>https://tisem-eds.github.io/prog/08-files-and-pandas.html</loc>
-    <lastmod>2025-08-19T12:51:52.857Z</lastmod>
+    <lastmod>2025-08-20T15:19:10.000Z</lastmod>
   </url>
   <url>
     <loc>https://tisem-eds.github.io/prog/09-math-and-plotting.html</loc>
-    <lastmod>2024-11-02T14:28:54.000Z</lastmod>
+    <lastmod>2025-09-22T14:12:43.000Z</lastmod>
   </url>
   <url>
     <loc>https://tisem-eds.github.io/prog/10-object-oriented-programming.html</loc>
-    <lastmod>2024-10-02T06:48:53.000Z</lastmod>
+    <lastmod>2025-09-29T13:08:27.193Z</lastmod>
   </url>
   <url>
     <loc>https://tisem-eds.github.io/prog/11-errors-and-debugging.html</loc>
@@ -46,6 +46,6 @@
   </url>
   <url>
     <loc>https://tisem-eds.github.io/prog/Programming-for-TiSEM-Essential-Digital-Skills.pdf</loc>
-    <lastmod>2025-08-19T12:53:42.922Z</lastmod>
+    <lastmod>2025-09-29T13:12:06.519Z</lastmod>
   </url>
 </urlset>
