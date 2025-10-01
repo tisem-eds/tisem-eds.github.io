@@ -164,7 +164,7 @@ window.Quarto = {
 <li>Write a method <code>corners()</code> to compute a list of all corner points</li>
 </ol>
 <p>You can check whether your class is constructed correctly by running the commands below and inspecting if you get the same output.</p>
-<div id="d4cb9e49" class="cell" data-execution_count="2">
+<div id="cf144425" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for question 1a)</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>rectangle1 <span class="op">=</span> Rectangle_3D([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>],<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -194,7 +194,7 @@ Corner points are [[1, 2, 2], [1, 2, 6], [1, 0, 2], [1, 0, 6], [4, 2, 2], [4, 2,
 <li>Create a class Student whose objects have attributes <code>name</code> and <code>progress</code>. The name is obtained as an input argument of the class (just as in the course document). The (study) progress attribute should be initialized as an empty Pandas data frame with columns Course name, Grade, and Credits. <br><br> <i>Hint: Create the data frame using a dictionary, whose keys are the column names and whose values are empty lists (which will later be filled when courses are added to the frame).</i></li>
 </ol>
 <p>Running the code on the input below should give the output as indicated.</p>
-<div id="551b4d0b" class="cell" data-execution_count="4">
+<div id="add6d6da" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>student1 <span class="op">=</span> Student(<span class="st">"Aidan Amir"</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(student1.progress)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -208,7 +208,7 @@ Index: []</code></pre>
 <li>Write a method <code>addCourse()</code> that takes as input a course code, course name, obtained grade, and obtained credits. It should add the course name, grade and credits to the relevant columns of the frame on a new row whose name is the course code.</li>
 </ol>
 <p>Running the code on the input below should give the output as indicated.</p>
-<div id="5e6d266f" class="cell" data-execution_count="6">
+<div id="a37ed9db" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>student1 <span class="op">=</span> Student(<span class="st">"Aidan Amir"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Add course Programming (30M015) </span></span>
@@ -220,7 +220,7 @@ Index: []</code></pre>
 30M015  Programming      8        6</code></pre>
 </div>
 </div>
-<div id="523679c6" class="cell" data-execution_count="7">
+<div id="bacf3554" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add course Linear Algebra (35M007) </span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># with obtained grade 6, for which 3 credits are received</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>student1.addCourse(<span class="st">"35M007"</span>,<span class="st">"Linear Algebra"</span>,<span class="dv">6</span>,<span class="dv">3</span>)</span>
@@ -231,7 +231,7 @@ Index: []</code></pre>
 35M007  Linear Algebra      6        3</code></pre>
 </div>
 </div>
-<div id="56aad206" class="cell" data-execution_count="8">
+<div id="69085c79" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add course Statistics for IBA (31AV98) </span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># with obtained grade 9, for which 6 credits are received</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>student1.addCourse(<span class="st">"31AV98"</span>,<span class="st">"Statistics for IBA"</span>,<span class="dv">9</span>,<span class="dv">6</span>)</span>
@@ -248,7 +248,7 @@ Index: []</code></pre>
 </ol>
 <p><i>Hint: Just as you can use, e.g., <code>min()</code> to compute the minimum of the elements in a frame column, you can use <code>sum()</code> to compute the sum of all the elements in a frame column. </i></p>
 <p>Running the code on the input below should give the output as indicated.</p>
-<div id="366216cc" class="cell" data-execution_count="10">
+<div id="3d6be56b" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>student1 <span class="op">=</span> Student(<span class="st">"Aidan Amir"</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>student1.addCourse(<span class="st">"30M015"</span>,<span class="st">"Programming"</span>,<span class="dv">8</span>,<span class="dv">6</span>)</span>
@@ -268,7 +268,7 @@ Index: []</code></pre>
 </span></li>
 </ol>
 <p>Running your code on the input below should give the output as indicated.</p>
-<div id="dd9daffd" class="cell" data-execution_count="12">
+<div id="3a968321" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>student1 <span class="op">=</span> Student(<span class="st">"Aidan Amir"</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>student1.addCourse(<span class="st">"30M015"</span>,<span class="st">"Programming"</span>,<span class="dv">8</span>,<span class="dv">6</span>)</span>
@@ -287,11 +287,11 @@ Index: []</code></pre>
 <p>In this exercise we will create a class BankAccount whose objects are bank accounts of people from which money can be withdrawn and deposited into. We will also keep track of the transfers that were made.</p>
 <ol type="a">
 <li><p>Create a class BankAccount whose objects have as attributes the bank account holder’s name <code>name</code>, which is an input argument of the class, as well as <code>balance</code> which keeps track of the amount of money on the account and initially is set to zero. Finally, there is an attribute <code>transactions</code> that is a list that keeps track of the amount of money that is deposited (positive number) or withdrawn from the account (negative number). This list is initalized as being an empty list.</p></li>
-<li><p>Write a method <code>deposit()</code> that takes as input an amount of money that is deposited in the account. Add this number to the balance of the account, as well as add it to the list of transactions.</p></li>
-<li><p>Write a method <code>withdraw()</code> that takes as input a (positive) amount of money that is withdrawn from the account. Substract this number from the balance of the account, as well as add it to the list of transactions (with a minus sign).</p></li>
+<li><p>Write a method <code>deposit()</code> that takes as input an amount of money that is deposited in the account. Add this number to the balance of the account (by overwriting the current value of the <code>balance</code> attribute with the current value plus the deposited amount), as well as append the number to the list of transactions.</p></li>
+<li><p>Write a method <code>withdraw()</code> that takes as input a (positive) amount of money that is withdrawn from the account. Substract this number from the current value of the balance attribute of the account, as well as append it to the list of transactions (with a minus sign).</p></li>
 </ol>
 <p>Running your methods of part b) and c) on the input below should give the output as indicated.</p>
-<div id="4d9e0ba4" class="cell" data-execution_count="14">
+<div id="fd9d043f" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>account1 <span class="op">=</span> BankAccount(<span class="st">"Bella"</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>account1.deposit(<span class="dv">100</span>)</span>
@@ -315,7 +315,7 @@ $$
 $$ 
 the plot should look like this:
 
-::: {#45ff50fe .cell execution_count=15}
+::: {#d9591755 .cell execution_count=15}
 
 ::: {.cell-output .cell-output-display}
 ![](tutorial-week6_files/figure-html/cell-16-output-1.png){width=597 height=429 fig-align='center'}
@@ -326,7 +326,12 @@ the plot should look like this:
 -->
 <p><i> Hint: Use the function <code>cumsum()</code> from the Numpy package to quickly compute the balance after each transaction based on the complete list of transactions. </i></p>
 <p>Running your code on the input below should give the output as indicated.</p>
-<div id="cb2210fc" class="cell" data-execution_count="17">
+<style>
+.cell-output-display {
+  background-color: #ffffff;
+}
+</style>
+<div id="b22829a7" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>account1 <span class="op">=</span> BankAccount(<span class="st">"Bella"</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>account1.deposit(<span class="dv">100</span>)</span>
